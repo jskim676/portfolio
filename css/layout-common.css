@@ -1,0 +1,36 @@
+
+*{margin:0; padding:0; box-sizing: border-box;}
+
+#root {
+  width:var(--vw-100);
+  height:var(--vh-100);
+  background-color: #008081;
+}
+
+main {
+  width:inherit;
+  height:94vh;
+}
+
+footer {
+  width:inherit;
+  height:6vh;
+  background-color: var(--bgc-192);
+}
+
+.line {
+  width:inherit;
+  height:2px;
+}
+
+.line > div:nth-child(1) {
+  width:inherit;
+  height:50%;
+  background-color: var(--bgc-223);
+}
+
+.line > div:nth-child(2) {
+  width:inherit;
+  height:50%;
+  background-color:var(--bgc-225);
+}
