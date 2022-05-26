@@ -9,18 +9,18 @@
 
 main {
   width:inherit;
-  height:94vh;
+  height:94%;
 }
 
 footer {
   width:inherit;
-  height:6vh;
+  height:6%;
   background-color: var(--bgc-192);
 }
 
 .line {
   width:inherit;
-  height:2px;
+  height:0.4vh;
 }
 
 .line > div:nth-child(1) {
@@ -33,4 +33,63 @@ footer {
   width:inherit;
   height:50%;
   background-color:var(--bgc-225);
+}
+
+#taskbar {
+  width:inherit;
+  height:5.6vh;
+}
+
+#start {
+  width:8%;
+  height:inherit;
+}
+
+#start >  #start-button {
+  width:80%;
+  height:90%;
+  background-color: var(--bgc-192);
+}
+
+#start > div:nth-child(2) {
+  width:4px;
+  height:90%;
+  margin-top:0.5vh;
+  margin-left:0.5vw;
+  display:flex;
+
+}
+
+#start > div:nth-child(2) > div:nth-child(1) {
+  width:50%;
+  height:inherit;
+  background-color: var(--bgc-128);
+}
+
+#start > div:nth-child(2) > div:nth-child(2) {
+  width:50%;
+  height:inherit;
+  background-color: var(--bgc-255);
+}
+
+#program {
+  width: 84%;
+  height:inherit;
+}
+
+#clock {
+  width:8%;
+  height:inherit;
+}
+
+#clock > div {
+  width:80%;
+  height:80%;
+  padding:1px 10px;
+}
+
+#clock > div > div:nth-child(1) {
+  width:20%;
+  height:50%;
+  border:1px solid black;
 }
