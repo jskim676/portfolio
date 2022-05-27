@@ -9,7 +9,63 @@
 </head>
 <body>
   <div id="root">
-    <main></main>
+    <main>
+      
+      <!-- hello world -->
+      <div id="hello-world">
+        <div class="window-style flex-column-center-center">
+          <div>
+            <h1>Hello, world!</h1>
+          </div>
+          <div class="flex-column-center-center">
+            <p>만나뵙게 되어 반갑습니다.</p>
+            <p>게임을 정말 좋아하는 한 사람을 소개해보겠습니다.</p>
+          </div>
+          <button id="confirm" class="window-style">확인</button>
+        </div>
+      </div>
+
+      <!-- Game -->
+      <div id="game" class="on">
+        <div class="flex">
+          <!-- icon -->
+          <div id="icon" class="flex-column-spaceevenly-center">
+            <div>
+              <img src="http://www.rw-designer.com/icon-image/20093-256x256x32.png" alt="game">
+              <p>Game</p>
+            </div>
+            <div>
+              <img src="http://www.rw-designer.com/icon-image/20092-256x256x32.png" alt="portfolio">
+              <p>Portfolio</p>
+            </div>
+            <div>
+              <img src="http://www.rw-designer.com/icon-image/20084-256x256x32.png" alt="curriculum">
+              <p>Curriculum</p>
+            </div>
+            <div>
+              <img src="https://www.seekpng.com/png/full/142-1426801_clipart-black-and-white-stock-modemicon-by-scorpiongamer.png" alt="contact">
+              <p>Contact</p>
+            </div>
+          </div>
+          <!-- window -->
+          <div id="window">
+
+          </div>
+          <!-- question -->
+          <div id="question" class="on">
+            <div class="flex-column-spacearound-center">
+              <div class="flex-center-center">
+                왜 이렇게 많이 게임을 하였나요?
+              </div>
+              <div class="flex-center-center">
+                게임과 웹디자이너는 어떤 연관성이 있나요?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
     <footer>
       <div class="line">
         <div></div>
@@ -18,8 +74,11 @@
       <div id="taskbar" class="flex-center-center">
         <!-- start button -->
         <div id="start" class="flex-center-center">
-          <button id="start-button" class="window-style">
+          <button id="start-button" class="flex-center-center window-style">
+            <img src="https://lh3.googleusercontent.com/-wUrxV0QuQbZEb1-icHSxFn17qGT6PJH4gpnUNBUVTCPjyLiJJNS9KuFkGadqFYoCMXyIt-d8rVh2Uc05V8XB7Q=s400" alt="시작아이콘" width="30vw" height="30vw">
+            <h1>시작</h1>
           </button>
+          <!-- 세로 선 -->
           <div>
             <div></div>
             <div></div>
@@ -39,5 +98,6 @@
       </div>
     </footer>
   </div>
+  <script src="./js/script.js"></script>
 </body>
 </html>
