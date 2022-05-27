@@ -6,6 +6,19 @@
   display:flex;
 }
 
+/* flex-flexstart-center */
+.flex-flexstart-center {
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-column-flexstart-center {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 
 
 /* flex-center-center */
