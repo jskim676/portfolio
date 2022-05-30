@@ -82,6 +82,13 @@ footer {
   height:inherit;
 }
 
+#program > div {
+  width:15vw;
+  height:5vh;
+  background-color: var(--bgc-189);
+  border:1px solid red;
+}
+
 /* 시계 */
 #clock {
   width:8%;
@@ -98,4 +105,36 @@ footer {
 #clock > div > div:nth-child(1) {
   width:20%;
   height:50%;
+}
+
+#main {
+  width:100%;
+  height:100%;
+}
+
+#main > div {
+  width:inherit;
+  height:inherit;
+}
+
+/* icon */
+#main > div > div:nth-child(1) {
+  width:8vw;
+  height:70%;
+
+}
+
+#main > div > div:nth-child(1) > div {
+  width:100px;
+  height:120px;
+}
+
+#main > div > div:nth-child(1) > div > img {
+  width:100px;
+  height:100px;
+}
+
+#main > div > div:nth-child(1) > div > p {
+  text-align: center;
+  color:var(--bgc-255);
 }

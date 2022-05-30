@@ -89,6 +89,21 @@
   align-items: center;
 }
 
+
+/* flex-spacearound-flexstart */
+.flex-spacearound-flexstart {
+  display:flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.flex-column-spacearound-flexstart {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flexstart;
+}
+
+
 /* flex-spaceevenly-center */
 .flex-spaceevenly-center {
   display:flex;
@@ -105,10 +120,10 @@
 
 
 .window-style {
-  border-top:1px solid white;
-  border-left:1px solid white;
-  border-right:1px solid black;
-  border-bottom:1px solid black;
+  border-top:2px solid white;
+  border-left:2px solid white;
+  border-right:2px solid black;
+  border-bottom:2px solid black;
 }
 
 .window-style-reverse {
