@@ -20,11 +20,13 @@ const gameicons = Array.from(document.getElementById('gameicon').children);
 const gametime = document.getElementById('gametime');
 const program = document.getElementById('program');
 
+
 // game icon
 icons[0].addEventListener('dblclick', function() {
   gameWin.classList.remove('on');
   qs.classList.remove('on');
-
+  
+  
   const programName1 = document.createElement('div');
   program.appendChild(programName1);
   
@@ -44,8 +46,8 @@ icons[0].addEventListener('dblclick', function() {
   gameWinBtn[1].addEventListener('click', e=> {
     qs.classList.add('on');
   });
-
-
+  
+  
   // X 버튼
   gameWinBtn[2].addEventListener('click', e=>{
     gameWin.classList.add('on');
@@ -65,23 +67,56 @@ const scrollParent = scrolling.parentNode;
 
 
 
-
 // portfolio
 const pfWin = document.getElementById('portfolio-window');
 const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
 
 icons[1].addEventListener('dblclick', function() {
   pfWin.classList.remove('on');
-
+  
   const programName2 = document.createElement('div');
   program.appendChild(programName2);
-
+  
+  
   pfWinBtn.addEventListener('click',e=> {
+    
     pfWin.classList.add('on');
     program.removeChild(programName2);
-    console.log(program);
   });
+  
+  
 }); 
+
+
+
+// curriculum
+const ccWin = document.getElementById('curriculum-window');
+const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
+
+icons[2].addEventListener('dblclick', function() {
+  ccWin.classList.remove('on');
+  
+  const programName3 = document.createElement('div');
+  program.appendChild(programName3);
+  
+
+  ccWinBtn.addEventListener('click',e=> {
+    
+    ccWin.classList.add('on');
+    program.removeChild(programName3);
+  });
+  
+  
+}); 
+
+
+
+
+
+
+
+
+
 
 
 
