@@ -7,7 +7,7 @@ height:100%;
 }
 
 #main > div > div:nth-child(2) > div {
-  width:30vw;
+  width:33vw;
   height:60vh;
   background-color: var(--bgc-189);
   position:absolute;
@@ -17,7 +17,7 @@ height:100%;
 
 /* name */
 #main > div > div:nth-child(2) > div > div:nth-child(1) {
-  width:29.5vw;
+  width:32.5vw;
   height:5vh;
   background: linear-gradient(90deg, #2F3A88 0%, #3384C8 100%);
 }
@@ -28,9 +28,8 @@ height:100%;
 }
 
 #main > div > div:nth-child(2) > div > div:nth-child(1) > h1{
-  width:20vw;
+  width:22vw;
   color:var(--bgc-255);
-  margin-left:0.5vw;
   font-size: 2rem;
 }
 
@@ -81,7 +80,7 @@ height:100%;
 
 /* totaltime */
 #main > div > div:nth-child(2) > div > div:nth-child(2) {
-  width:29.5vw;
+  width:32.5vw;
   height:4vh;
   border:1px solid var(--bgc-129);
 }
@@ -93,7 +92,7 @@ height:100%;
 
 /* gamelist */
 #main > div > div:nth-child(2) > div > div:nth-child(3) {
-  width:29.5vw;
+  width:32.5vw;
   height:45vh;
   background-color: var(--bgc-255);
   border-top:1px solid var(--bgc-000);
@@ -102,17 +101,27 @@ height:100%;
 }
 
 #gameicon {
-  width:27.5vw;
+  width:30.5vw;
   height:inherit;
   flex-wrap: wrap;
   overflow: hidden;
 }
 
 #gameicon > div {
-  width:7vw;
-  height:15vh;
+  width:8vw;
+  height:20vh;
   border:1px solid red;
   margin:1vw;
+}
+
+#gameicon > div > img {
+  width:8vw;
+  height:8vw;
+}
+
+#gameicon > div > p {
+  padding:5px 0;
+  text-align: center;
 }
 
 
@@ -147,7 +156,7 @@ height:100%;
 
 #scrollbar > div:nth-child(2) > div {
   width:1.8vw;
-  height:vh;
+  height:20vh;
   background-color:var(--bgc-192);  
 
   position:absolute;
@@ -167,13 +176,9 @@ height:100%;
   border-right: 0.4vw solid transparent;
 }
 
-
-
-
-
 /* gametime */
 #main > div > div:nth-child(2) > div > div:nth-child(4) {
-  width:29.5vw;
+  width:32.5vw;
   height:4vh;
   border:1px solid var(--bgc-129);
 }
@@ -194,14 +199,15 @@ height:100%;
 
 #main > div > div:nth-child(3) > div {
   width:inherit;
-  height:20%;
+  height:25%;
   position:absolute;
   bottom:0;
 }
 
 #main > div > div:nth-child(3) > div > div {
   width:inherit;
-  height:45%;
+  height:40%;
   border-radius: 10px;
   background-color:var(--bgc-qsBgc);
+  
 }

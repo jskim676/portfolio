@@ -52,6 +52,11 @@ footer {
   background-color: var(--bgc-192);
 }
 
+#start-button > img {
+  width:30px;
+  height:30px;
+}
+
 #start-button > h1 {
   margin-left:0.5vw;
 }
@@ -86,25 +91,25 @@ footer {
   width:15vw;
   height:5vh;
   background-color: var(--bgc-189);
-  border:1px solid red;
+  margin:0.2vw;
 }
 
 /* 시계 */
 #clock {
-  width:8%;
+  width:11%;
   height:inherit;
 }
 
 #clock > div {
   width:80%;
   height:80%;
-  padding:1px 10px;
+  padding:1px 5px;
 }
 
 /* 시계 알림 아이콘 */
-#clock > div > div:nth-child(1) {
-  width:20%;
-  height:50%;
+#clock > div > img {
+  width:30px;
+  height:30px;
 }
 
 #main {

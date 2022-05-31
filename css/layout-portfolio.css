@@ -27,9 +27,8 @@
 }
 
 #main > div > div:nth-child(4) > div > div:nth-child(1) > h1{
-  width:62vw;
+  width:63vw;
   color:var(--bgc-255);
-  margin-left:0.5vw;
   font-size: 2rem;
 }
 
