@@ -1,0 +1,34 @@
+
+
+/* change-window */  
+#main > div > div:nth-child(6) {
+  position:absolute;
+}
+
+#main > div > div:nth-child(6) > div {
+  width:20vw;
+  height:40vh;
+  background-color: var(--bgc-189);
+  position: relative;
+  top:54vh;
+  left:0.2vw;
+}
+
+/* name */
+#main > div > div:nth-child(6) > div > div:nth-child(1) {
+  width:3vw;
+  height:39.5vh;
+  background: linear-gradient(0deg, #0000FF 0%, #000080 100%);
+}
+
+#main > div > div:nth-child(6) > div > div:nth-child(1) > h1{
+  width:39.5vh;
+  color:var(--bgc-255);
+  /* transform: rotate(-90deg); */
+}
+
+
+#main > div > div:nth-child(6) > div > div:nth-child(2) {
+  width:17vw;
+  height:inherit;
+}
