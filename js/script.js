@@ -155,7 +155,6 @@ icons[3].addEventListener('dblclick', function() {
   ctWinBtn.addEventListener('click',e=> {
     ctWin.classList.add('on');
     programName3.parentNode.removeChild(programName3);
-    s
   });
   
 }); 
