@@ -39,33 +39,34 @@ icons[0].addEventListener('dblclick', function() {
   program.appendChild(programName0);
   programName0.classList.add('window-style');
   
-  // 최소화 버튼
-  gameWinBtn[0].addEventListener('click', e=> {
-    gameWin.classList.add('on');
-    qs.classList.add('on');
-  });
-  
-  // 작업표시줄 쪽 프로그램 클릭시 최소화 해제
-  programName0.addEventListener('click', e=> {
-    gameWin.classList.remove('on');
-    qs.classList.remove('on');
-  });
-  
-  gameWinBtn[1].addEventListener('click', e=> {
-    qs.classList.add('on');
-  });
-  
-  // X 버튼
-  gameWinBtn[2].addEventListener('click', e=>{
-    gameWin.classList.add('on');
-    qs.classList.add('on');
-    qsmark.classList.add('hidden');
-    programName0.parentNode.removeChild(programName0);
-  });
   
   changeWin.classList.add('on');
-  isStatus = true;
+  isStatus = true
 });  
+
+// 최소화 버튼
+gameWinBtn[0].addEventListener('click', e=> {
+  gameWin.classList.add('on');
+  qs.classList.add('on');
+});
+
+// 작업표시줄 쪽 프로그램 클릭시 최소화 해제
+programName0.addEventListener('click', e=> {
+  gameWin.classList.remove('on');
+  qs.classList.remove('on');
+});
+
+gameWinBtn[1].addEventListener('click', e=> {
+  qs.classList.add('on');
+});
+
+// X 버튼
+gameWinBtn[2].addEventListener('click', e=>{
+  gameWin.classList.add('on');
+  qs.classList.add('on');
+  qsmark.classList.add('hidden');
+  programName0.parentNode.removeChild(programName0);
+});
 
 const scrollBar = document.getElementById('scrollbar');
 const scrolling = document.getElementById('scroll');
@@ -83,6 +84,18 @@ for(let i=0; i<gametimeData.length; i++) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // -------------- portfolio --------------
 const pfWin = document.getElementById('portfolio-window');
 const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
@@ -96,16 +109,16 @@ icons[1].addEventListener('dblclick', function() {
   program.appendChild(programName1);
   programName1.classList.add('window-style');
 
-  pfWinBtn.addEventListener('click',e=> {
-    
-    pfWin.classList.add('on');
-    programName1.parentNode.removeChild(programName1);
-  });
   
   changeWin.classList.add('on');
   isStatus = true;
 }); 
 
+pfWinBtn.addEventListener('click',e=> {
+  
+  pfWin.classList.add('on');
+  programName1.parentNode.removeChild(programName1);
+});
 
 // -------------- curriculum --------------
 const ccWin = document.getElementById('curriculum-window');
@@ -120,15 +133,16 @@ icons[2].addEventListener('dblclick', function() {
   program.appendChild(programName2);
   programName2.classList.add('window-style');
 
-  ccWinBtn.addEventListener('click',e=> {
-    
-    ccWin.classList.add('on');
-    programName2.parentNode.removeChild(programName2);
-  });
   
   changeWin.classList.add('on');
   isStatus = true;
 }); 
+
+ccWinBtn.addEventListener('click',e=> {
+  
+  ccWin.classList.add('on');
+  programName2.parentNode.removeChild(programName2);
+});
 
 // -------------- contact --------------
 const ctWin = document.getElementById('contact-window');
@@ -143,15 +157,14 @@ icons[3].addEventListener('dblclick', function() {
   program.appendChild(programName3);
   programName3.classList.add('window-style');
   
-
-  ctWinBtn.addEventListener('click',e=> {
-    ctWin.classList.add('on');
-    programName3.parentNode.removeChild(programName3);
-  });
-  
   changeWin.classList.add('on');
   isStatus = true;
 }); 
+
+ctWinBtn.addEventListener('click',e=> {
+  ctWin.classList.add('on');
+  programName3.parentNode.removeChild(programName3);
+});
 
 // -------------- change --------------
 const changeWin = document.getElementById('change-window');
@@ -183,7 +196,7 @@ function getTime() {
   const hour = time.getHours();
   const minute = time.getMinutes();
 
-  let ampm = hour >= 12 ? "오후" : "오전";
+  let ampm = hour > 12 ? "오후" : "오전";
 
   if(hour>12) {
     clock.textContent = `${ampm} ${hour-12} : ${minute < 10 ? `0${minute}` : minute}`;
@@ -194,13 +207,15 @@ function getTime() {
   }
 }
 
-
 function init () {
-  setInterval(getTime,1000);
+  setInterval(getTime,100);
 }
 
 init();
 
 
 
+// -------------- move --------------
 
+const move = Array.from(document.getElementsByClassName('top-bar'));
+console.log(move);

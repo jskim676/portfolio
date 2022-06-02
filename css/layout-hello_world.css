@@ -10,7 +10,6 @@
 #hello-world > div > div:nth-child(1) {
   width:29.5vw;
   height:5vh;
-  background: linear-gradient(90deg, #2F3A88 0%, #3384C8 100%);
 }
 
 #hello-world > div > div:nth-child(1) > h1 {

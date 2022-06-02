@@ -19,7 +19,6 @@ height:100%;
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
   width:32.5vw;
   height:5vh;
-  background: linear-gradient(90deg, #2F3A88 0%, #3384C8 100%);
 }
 
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > img {
