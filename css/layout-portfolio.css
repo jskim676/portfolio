@@ -3,6 +3,7 @@
 /* portfolio-window */  
 #main > div > div:nth-child(3) {
   position:absolute;
+  user-select: none;
   }
   
 #main > div > div:nth-child(3) > div {

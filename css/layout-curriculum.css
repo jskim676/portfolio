@@ -3,6 +3,7 @@
 /* curriculum-window */  
 #main > div > div:nth-child(4) {
   position:absolute;
+  user-select: none;
   }
   
 #main > div > div:nth-child(4) > div {

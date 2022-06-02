@@ -5,6 +5,9 @@ const main = document.getElementById('main');
 const qs = document.getElementById('question');
 const qsmark = document.querySelector('#clock > div > img');
 
+const move = Array.from(document.getElementsByClassName('top-bar'));
+const root = document.getElementById('root');
+
 
 btnConfirm.addEventListener('click', function() {
   helloWorld.classList.add('on');
@@ -29,7 +32,7 @@ let num = 1;
 icons[0].addEventListener('dblclick', function() {
   // zIndex 값 설정
   num++;
-  gameWin.children[0].style.zIndex = num;
+  gameWin.children[0].style.zIndex = num+1;
   qs.children[0].style.zIndex = num;
 
   gameWin.classList.remove('on');
@@ -217,5 +220,60 @@ init();
 
 // -------------- move --------------
 
-const move = Array.from(document.getElementsByClassName('top-bar'));
-console.log(move);
+
+// getBoundingClientRect() 는 display none 이랑은 함께 쓸 수 없다.
+
+
+function moving (topbar,win) {
+  const {width:rootWidth, height:rootHeight} = root.getBoundingClientRect();
+  const {width:moveWidth, height:moveHeight} = win.getBoundingClientRect();
+  
+  
+  let isDragging = null;
+  let originLeft = null;
+  let originTop = null;
+  let originX = null;
+  let originY = null;
+  
+  topbar.addEventListener('mousedown', (e) =>{
+    isDragging = true;
+    originX = e.clientX;
+    originY = e.clientY;
+    originLeft = win.offsetLeft;
+    originTop = win.offsetTop;
+  });
+  
+  document.addEventListener('mouseup', (e) => {
+    isDragging = false;
+  });
+  
+  document.addEventListener('mousemove', (e)=> {
+    if(isDragging) {
+      const diffX = e.clientX - originX;
+      const diffY = e.clientY - originY;
+  
+      // 박스가 나갈수 없게 범위 지정
+      const endOfXPoint = rootWidth - moveWidth;
+      const endOfYPoint = rootHeight - moveHeight;
+  
+      win.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
+      win.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`;
+    }
+  });
+}
+
+moving(move[0],move[0].parentNode);
+moving(move[1],move[1].parentNode);
+moving(move[2],move[2].parentNode);
+moving(move[3],move[3].parentNode);
+moving(move[4],move[4].parentNode);
+
+
+// -------------- gamelist --------------
+// const gameicon = document.getElementById('gameicon');
+
+// console.log(gameicon.parentNode.getBoundingClientRect());
+
+// gameicon.parentNode.addEventListener('wheel',e=> {
+  
+// });

@@ -1,5 +1,6 @@
 .on {
-  display:none;
+  /* display:none; */
+  visibility: hidden;
 }
 
 .hidden {

@@ -16,6 +16,7 @@ footer {
   width:inherit;
   height:6%;
   background-color: var(--bgc-192);
+  position:absolute;
 }
 
 .line {

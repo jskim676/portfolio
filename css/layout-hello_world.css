@@ -3,8 +3,10 @@
   height:23vh;
   background-color: var(--bgc-189);
   position:absolute;
+  z-index: 2;
   left:35vw;
   top:30vh;
+  user-select: none;
 }
 
 #hello-world > div > div:nth-child(1) {
