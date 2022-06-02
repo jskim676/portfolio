@@ -86,9 +86,20 @@ for(let i=0; i<gametimeData.length; i++) {
   });
 }
 
+const qs1 = qs.children[0].children[0];
+const qs2 = qs.children[0].children[1];
+
+qs1.style.height = "10vh";
+qs2.style.height = "10vh";
 
 
+qs1.addEventListener('click', e=> {
+  qs1.style.transform = "translate(1,3)"
+  });
 
+qs2.addEventListener('click', e=> {
+
+});
 
 
 
