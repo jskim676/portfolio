@@ -1,4 +1,5 @@
 
+
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
 const main = document.getElementById('main');
@@ -86,28 +87,28 @@ for(let i=0; i<gametimeData.length; i++) {
   });
 }
 
+
+// 질문 늘어나는 효과
 const qs1 = qs.children[0].children[0];
 const qs2 = qs.children[0].children[1];
 
-qs1.style.height = "10vh";
-qs2.style.height = "10vh";
+function slide (target) {
+  let slideStatus = true;
+  target.addEventListener('click', e=> {
+      if(slideStatus === true) {
+        target.style.height = "40vh";
+        target.style.transition = "0.5s";
+        slideStatus = false;
+      } else {
+        target.style.height = "10vh";
+        slideStatus = true;
+      }
+      qs.style.transition = "0.1s";
+    });
+}
 
-
-qs1.addEventListener('click', e=> {
-  qs1.style.transform = "translate(1,3)"
-  });
-
-qs2.addEventListener('click', e=> {
-
-});
-
-
-
-
-
-
-
-
+slide(qs1);
+slide(qs2);
 
 
 // -------------- portfolio --------------

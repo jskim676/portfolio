@@ -24,6 +24,18 @@
   align-items: center;
 }
 
+/* flex-flexend-center */
+.flex-flexebd-center {
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-column-flexend-center {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 
 /* flex-center-center */
 .flex-center-center {

@@ -7,7 +7,7 @@
   }
   
 #main > div > div:nth-child(3) > div {
-  width:70vw;
+  width:60vw;
   height:60vh;
   background-color: var(--bgc-189);
   position: absolute;
@@ -17,7 +17,7 @@
 
 /* name */
 #main > div > div:nth-child(3) > div > div:nth-child(1) {
-  width:69.5vw;
+  width:99.5%;
   height:5vh;
 }
 
@@ -27,7 +27,7 @@
 }
 
 #main > div > div:nth-child(3) > div > div:nth-child(1) > h1{
-  width:63vw;
+  width:90%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
