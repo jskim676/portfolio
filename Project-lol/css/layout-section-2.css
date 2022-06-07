@@ -1,0 +1,14 @@
+#section-2 {
+  width:inherit;
+  height:100vh;
+  border:1px solid blue;
+}
+
+#section-2 > div:nth-child(1) {
+  margin-left:20vw;
+  margin-top:5vh;
+}
+
+#section-2 > div:nth-child(1) > h1 {
+  line-height: 8vh;
+}
