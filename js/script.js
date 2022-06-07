@@ -72,9 +72,54 @@ gameWinBtn[2].addEventListener('click', e=>{
   programName0.parentNode.removeChild(programName0);
 });
 
-const scrollBar = document.getElementById('scrollbar');
+// const scrollBar = document.getElementById('scrollbar');
 const scrolling = document.getElementById('scroll');
 const scrollParent = scrolling.parentNode;
+
+const {width:containerWidth, height:containerHeight} = scrollParent.getBoundingClientRect();
+
+console.log(containerHeight);
+
+function scr (scr) {
+  const {width:containerWidth, height:containerHeight} = scrollParent.getBoundingClientRect();
+  const {width:moveWidth, height:moveHeight} = scr.getBoundingClientRect();
+  
+  
+  let isDragging = null;
+  let originLeft = null;
+  let originTop = null;
+  let originX = null;
+  let originY = null;
+  
+  scr.addEventListener('mousedown', (e) =>{
+    isDragging = true;
+    originX = e.clientX;
+    originY = e.clientY;
+    originLeft = scr.offsetLeft;
+    originTop = scr.offsetTop;
+  });
+  
+  document.addEventListener('mouseup', (e) => {
+    isDragging = false;
+  });
+  
+  document.addEventListener('mousemove', (e)=> {
+    if(isDragging) {
+      const diffX = e.clientX - originX;
+      const diffY = e.clientY - originY;
+  
+      // 박스가 나갈수 없게 범위 지정
+      const endOfXPoint = containerWidth - moveWidth;
+      const endOfYPoint = containerHeight - moveHeight;
+  
+      scr.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
+      scr.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`;
+    }
+  });
+}
+
+scr(scrolling);
+
 
 let gametimeData = ["League of Legends 5,711 Hours", "Maplestory 5,000 Hours", "Mabinogi 3,200 Hours", "Dead by Daylight 1,500 Hours", "PUBG 1,250 Hours", "Apex Legends 600 Hours"
 ]

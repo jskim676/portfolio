@@ -45,6 +45,7 @@
 
 
       display:flex;
+      flex-direction: column;
       flex-wrap: wrap;
     }
 
@@ -74,7 +75,7 @@
     }
 
     #scrollbar > div:nth-child(2) {
-      width:3.5vw;
+      width:3.3vw;
       height:30vh;
       display: flex;
       justify-content: center;
@@ -125,27 +126,26 @@
   </div>
   <script>
     const main = document.getElementById('main');
-
+    const scr = document.querySelector('#scrollbar > div:nth-child(2) > div');
+    console.log(scr);
+    const container = scr.parentNode;
 
     let number = 0;
 
     main.addEventListener('wheel', (e) => { 
     console.log(e.deltaY, e.deltaX);
       if(e.deltaY===100) {
-        main.style.top = `-${number}0%`;
         if(number<10) {
           number++;
+          main.style.top = `-${number}0%`;
         }
       } else {
-        main.style.top = `-${number}0%`;
         if(number>0) {
           number--;
+          main.style.top = `-${number}0%`;
         }
       }
     });
-
-    const scr = document.querySelector('#scrollbar > div:nth-child(2) > div');
-    console.log(scr);
 
 
     scr.addEventListener('mousedown', e=> {
@@ -157,7 +157,45 @@
     });
 
 
+function moving (scr) {
+  const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
+  const {width:moveWidth, height:moveHeight} = scr.getBoundingClientRect();
+  
+  
+  let isDragging = null;
+  let originLeft = null;
+  let originTop = null;
+  let originX = null;
+  let originY = null;
+  
+  scr.addEventListener('mousedown', (e) =>{
+    isDragging = true;
+    originX = e.clientX;
+    originY = e.clientY;
+    originLeft = scr.offsetLeft;
+    originTop = scr.offsetTop;
+  });
+  
+  document.addEventListener('mouseup', (e) => {
+    isDragging = false;
+  });
+  
+  document.addEventListener('mousemove', (e)=> {
+    if(isDragging) {
+      const diffX = e.clientX - originX;
+      const diffY = e.clientY - originY;
+  
+      // 박스가 나갈수 없게 범위 지정
+      const endOfXPoint = containerWidth - moveWidth;
+      const endOfYPoint = containerHeight - moveHeight;
+  
+      scr.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
+      scr.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`;
+    }
+  });
+}
 
+moving(scr);
 
   </script>
 </body> 
