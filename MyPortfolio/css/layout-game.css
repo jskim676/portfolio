@@ -1,0 +1,222 @@
+
+/* game-window */  
+#main > div > div:nth-child(2) {
+  width:92vw;
+  height:100vh;
+  user-select: none;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) {
+  width:33vw;
+  height:65vh;
+  background-color: var(--bgc-189);
+  position:absolute;
+  left:10vw;
+  top:10vh;
+}
+
+/* name */
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+  width:32.5vw;
+  height:5vh;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > img {
+  width:40px;
+  height:40px;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1{
+  width:22vw;
+  color:var(--bgc-255);
+  font-size: 2rem;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
+  width:6vw;
+  height:100%;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div {
+  width:1.8vw;
+  height:1.8vw;
+  background-color:var(--bgc-192);
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) > div {
+  width:1vw;
+  height:1vw;
+  border-bottom: 2px solid var(--bgc-000);
+} 
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div {
+  width:1vw;
+  height:1vw;
+  border:2px solid var(--bgc-000);
+  border-top: 3px solid var(--bgc-000);
+} 
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(1) {
+  width:1.2vw;
+  height:0.25vh;
+  background-color: var(--bgc-000);
+  border-radius: 1vw;
+  transform: rotate(42.5deg);
+  
+  position:absolute;
+} 
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(2) {
+  width:1.2vw;
+  height:0.25vh;
+  background-color: var(--bgc-000);
+  border-radius: 1vw;
+  transform: rotate(-42.5deg);
+
+  position:absolute;
+
+} 
+
+/* totaltime */
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+  width:32.5vw;
+  height:4vh;
+  border:1px solid var(--bgc-129);
+}
+
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div {
+  margin-left:0.5vw;
+}
+
+/* gamelist */
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
+  width:32.5vw;
+  height:50vh;
+  background-color: var(--bgc-255);
+  border-top:1px solid var(--bgc-000);
+  border-left:1px solid var(--bgc-000);
+  overflow:hidden;
+}
+
+#gameicon {
+  width:30.5vw;
+  height:100vh;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  position: relative;
+}
+
+#gameicon > div {
+  width:8vw;
+  height:20vh;
+  margin:1vw;
+}
+
+#gameicon > div > img {
+  width:8vw;
+  height:8vw;
+}
+
+#gameicon > div > p {
+  padding:5px;
+  text-align: center;
+}
+
+#scrollbar {
+  width:2vw;
+  height:50vh;
+  background-color: var(--bgc-224);
+
+  position:relative;
+}
+
+#scrollbar > div:nth-child(1) {
+  width:1.8vw;
+  height:1.8vw;
+  background-color:var(--bgc-192);
+}
+
+#scrollbar > div:nth-child(1) > div {
+  width: 0px;
+  height: 0px;
+  border-bottom: 0.4vw solid var(--bgc-000);
+  border-left: 0.4vw solid transparent;
+  border-right: 0.4vw solid transparent;
+}
+
+#scrollbar > div:nth-child(2) {
+  width:1.8vw;
+  height:45vh;
+  
+  position:relative;
+}
+
+#scrollbar > div:nth-child(2) > div {
+  width:1.8vw;
+  height:20vh;
+  background-color:var(--bgc-192);  
+
+  position:absolute;
+}
+
+#scrollbar > div:nth-child(3) {
+  width:1.8vw;
+  height:1.8vw;
+  background-color:var(--bgc-192);
+}
+
+#scrollbar > div:nth-child(3) > div {
+  width: 0px;
+  height: 0px;
+  border-top: 0.4vw solid var(--bgc-000);
+  border-left: 0.4vw solid transparent;
+  border-right: 0.4vw solid transparent;
+}
+
+/* gametime */
+#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) {
+  width:32.5vw;
+  height:4vh;
+  border:1px solid var(--bgc-129);
+}
+
+#gametime {
+  margin-left:0.5vw;
+}
+
+
+/* question */
+#main > div > div:nth-child(2) > div:nth-child(2)  {
+  width:22vw;
+  height:94.4vh;
+  position:absolute;
+  bottom:6vh;
+  right:0;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(2)  > div {
+  width:inherit;
+  height:100%;
+  position:absolute;
+  bottom:0;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(2)  > div > div {
+  width:inherit;
+  height:10vh;
+  border-radius: 10px;
+  background-color:var(--bgc-qsBgc);
+  margin:1vh 0;
+  overflow: hidden;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p {
+  margin:4vh 1.2vw;
+}
+
+#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(2) {
+  line-height:2.5vh;
+}
+
+
