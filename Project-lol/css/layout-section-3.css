@@ -1,12 +1,11 @@
 #section-3 {
   width:var(--vw-100);
   height:var(--vh-100);
-  border:1px solid blue;
 }
 
 #section-3 > div:nth-child(1) {
-  margin-right:30vw;
-  margin-bottom:5vh;
+  margin-right:12vw;
+  margin-bottom:2vh;
   line-height: 8vh;
 }
 
@@ -17,8 +16,8 @@
 
 
 #window {
-  width:65vw;
-  height:70vh;
+  width:70vw;
+  height:75vh;
   border-radius: 20px;
   background-color:var(--bgc-section);
 }
@@ -61,7 +60,7 @@
 }
 
 #window > main > nav {
-  width:18%;
+  width:20%;
   height:100%;
   border-radius: 0 0 0 20px;
   background-color:var(--bgc-nav);
@@ -78,8 +77,20 @@
   height:20%;
   font-size: 0.8rem;
   color:black;
+
   /* border:1px solid salmon; */
 }
+
+#window > main > nav > ul > li > img {
+  width:1vw;
+  height:1vw;
+  margin-left:5%;  
+}
+
+#window > main > nav > ul > li > p {
+  margin-left:5%;
+}
+
 
 
 
@@ -193,13 +204,24 @@
   height:40%;
 }
 
-#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > p{
-  color:black;
+#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) {
+  width:60%;
+  height:100%;
 }
 
 
+#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > img{
+  width:1vw;
+  height:1vw;
+  margin-left:5%;
+}
 
-#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div{
+#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > p{
+  color:black;
+  margin-left:5%;
+}
+
+#window > main > section > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) {
   width:30%;
   height:70%;
   border-radius: 50px;

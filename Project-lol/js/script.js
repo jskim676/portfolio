@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // --------------- section-2 ---------------
 const section2 = document.getElementById('section-2');
-const h1Text = document.querySelector('#section-2 > div:nth-child(1)');
+const s2h1Text = document.querySelector('#section-2 > div:nth-child(1)');
 const img = document.querySelector('#section-2 > div:nth-child(2)');
 
 const {height : sectionHeight} = section2.getBoundingClientRect(); 
@@ -66,12 +66,12 @@ const {height : sectionHeight} = section2.getBoundingClientRect();
 
 window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
-  if(winY > sectionHeight/4) {
-    h1Text.classList.remove('hidden');
-    h1Text.classList.add('animation');
+  if(winY > sectionHeight/6) {
+    s2h1Text.classList.remove('hidden');
+    s2h1Text.classList.add('animation');
   } else {
-    h1Text.classList.add('hidden');
-    h1Text.classList.remove('animation');
+    s2h1Text.classList.add('hidden');
+    s2h1Text.classList.remove('animation');
   }
   
   if(winY > sectionHeight/1.5) {
@@ -81,7 +81,6 @@ window.addEventListener('wheel',e=> {
     img.classList.add('hidden');
     img.classList.remove('animation');
   }
-  
 });
 
 
@@ -96,6 +95,8 @@ const guessingGameBtn = document.getElementById('guessingGameBtn');
 const randomChampionBtn = document.getElementById('randomChampionBtn');
 const tarotCardBtn = document.getElementById('tarotCardBtn');
 
+const s3h1Text = document.querySelector('#section-3 > div:nth-child(1)');
+const win = document.getElementById('window');
 
 
 for(let i=0; i<ul.children.length; i++) {
@@ -105,23 +106,32 @@ for(let i=0; i<ul.children.length; i++) {
     console.log(getDataset);
     for(let i = 0; i<ul.children.length; i++) {
       if(ul.children[i].dataset.menu === getDataset) {
-        // main.children[i+1].classList.remove('hidden');
+        main.children[i+1].classList.remove('on');
         ul.children[i].classList.add('select');
       } else {
         ul.children[i].classList.remove('select');
-        // main.children[i+1].classList.add('hidden');
+        main.children[i+1].classList.add('on');
       }
     }
   });
 }
 
-// const sectionContent = document.querySelector('section');
-// console.log(sectionContent);
 
-// ul.children[0].addEventListener('click', function() {
-//   sectionContent.classList.remove('hidden');
-// });
-
-// ul.children[1].addEventListener('click', function() {
-//   sectionContent.classList.add('hidden');
-// });
+window.addEventListener('wheel',e=> {
+  let winY = window.pageYOffset;
+  if(winY > sectionHeight+sectionHeight/6) {
+    s3h1Text.classList.remove('hidden');
+    s3h1Text.classList.add('animation');
+  } else {
+    s3h1Text.classList.add('hidden');
+    s3h1Text.classList.remove('animation');
+  }
+  
+  if(winY > sectionHeight+sectionHeight/1.5) {
+    win.classList.remove('hidden');
+    win.classList.add('animation');
+  } else {
+    win.classList.add('hidden');
+    win.classList.remove('animation');
+  }
+});

@@ -4,7 +4,7 @@
 }
 
 #section-2 > div:nth-child(1) {
-  margin-right:30vw;
+  margin-right:25vw;
   line-height: 8vh;
 }
 
@@ -43,7 +43,7 @@
 
 @keyframes fadeIn {
   0% {
-    transform: translateY(3vh);
+    transform: translateY(10vh);
     opacity:0;
   }
 

@@ -11,12 +11,12 @@
   <script>
     const ajax = new XMLHttpRequest();
     console.log(ajax);
-    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/201.json";
+    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/102.json";
       ajax.open('GET', URL, false);
       ajax.send();
       const champions = JSON.parse(ajax.response);
       console.log(champions);
-      const getData = champions.skins[2].splashPath;
+      const getData = champions.skins[5].splashPath;
       console.log(getData);
       const championIllust = getData.slice(getData.indexOf("v1/")+3, getData.length);
       console.log(getData.indexOf("v1/"));
