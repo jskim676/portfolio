@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
   *{margin:0; padding:0; box-sizing: border-box;}
+  li{list-style:none;}
 
+  body {
+    overflow-x:hidden; 
+    overflow-y:auto;
+  }
+  
   #root {
-    width:100vw;
-    height:500vh;
+    width:var(--vw-100);
+    height:var(--vh-500);
     background-color: rgb(22, 22, 24);
     font-family: 'Montserrat', sans-serif;
     color: #eee;

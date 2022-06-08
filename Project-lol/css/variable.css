@@ -1,0 +1,18 @@
+:root {
+  --vw-100:100vw;
+  --vh-100:100vh;
+
+  --vw-500:500vw;
+  --vh-500:500vh;
+
+  --bgc-header:#777777;
+  --bgc-nav:#CECECE;
+  --bgc-section:#EDEDED;
+  --bgc-item:#C4C4C4;
+
+  --opgg-color:#5383E8;
+  --fowkr-color:#DFBB66;
+  --inven-color:#B41010;
+  --loliteo-color:#CDD1FF;
+
+}
