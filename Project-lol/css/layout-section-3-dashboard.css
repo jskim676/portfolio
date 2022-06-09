@@ -12,7 +12,7 @@
 
 #section-dashboard > div > h2 {
   height:20%;
-  color:black;
+  color:var(--border-color);
   font-size: 2rem;
 }
 
@@ -31,12 +31,12 @@
   width:80%;
   height:90%;
   border-radius: 10px;
-  border:1px solid black;
+  border:1px solid var(--border-color);
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h3 {
   font-size: 1.2rem;
-  color:black;
+  color:var(--border-color);
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
@@ -60,12 +60,12 @@
   width:80%;
   height:90%;
   border-radius: 10px;
-  border:1px solid black;
+  border:1px solid var(--border-color);
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > h3 {
   font-size: 1.2rem;
-  color:black;
+  color:var(--border-color);
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > div {
@@ -91,7 +91,7 @@
   width:80%;
   height:90%;
   border-radius: 10px;
-  border:1px solid black;
+  border:1px solid var(--border-color);
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div {
@@ -112,8 +112,8 @@
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(1) > p{
-  color:black;
-  margin-left:5%;
+  color:var(--border-color);
+  margin-left:5%; 
 }
 
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(2) {
@@ -122,3 +122,4 @@
   border-radius: 50px;
   background-color:var(--bgc-item);
 }
+

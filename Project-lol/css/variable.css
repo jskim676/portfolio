@@ -2,8 +2,8 @@
   --vw-100:100vw;
   --vh-100:100vh;
 
-  --vw-200:200vw;
-  --vh-200:200vh;
+  --vw-120:120vw;
+  --vh-120:120vh;
 
   --vw-500:500vw;
   --vh-500:500vh;
@@ -12,10 +12,15 @@
   --bgc-nav:#CECECE;
   --bgc-section:#EDEDED;
   --bgc-item:#C4C4C4;
+  --bgc-255:#FFFFFF;
 
   --opgg-color:#5383E8;
   --fowkr-color:#DFBB66;
   --inven-color:#B41010;
   --loliteo-color:#CDD1FF;
 
+  --border-color:#333333;
+
+  --redteam:#FC6264;
+  --blueteam:#62A9F9;
 }

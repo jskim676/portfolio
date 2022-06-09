@@ -1,6 +1,6 @@
 #section-3 {
   width:var(--vw-100);
-  height:var(--vh-100);
+  height:var(--vh-120);
   
   overflow: hidden;
 }
@@ -38,9 +38,10 @@
 
 
 #window {
-  width:70vw;
+  width:65vw;
   height:75vh;
   border-radius: 20px;
+  overflow: hidden;
   background-color:var(--bgc-section);
 }
 
@@ -49,7 +50,7 @@
   height:10%;
   border-radius: 20px 20px 0 0;
   background-color:var(--bgc-header);
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   
   position: relative;
 }
@@ -69,7 +70,7 @@
 #window > header > div > p {
   margin-left:10%;
   font-size: 1.2rem;
-  color:black;
+  color:var(--border-color);
 }
 
 #window > main {
@@ -80,7 +81,6 @@
 #window > main > nav {
   width:20%;
   height:100%;
-  border-radius: 0 0 0 20px;
   background-color:var(--bgc-nav);
 }
 
@@ -94,7 +94,7 @@
   width:100%;
   height:20%;
   font-size: 0.8rem;
-  color:black;
+  color:var(--border-color);
 }
 
 #window > main > nav > ul > li > img {

@@ -6,8 +6,12 @@
   visibility: hidden;
 }
 
-.animationX{
+.animationX {
   animation:fadeInX 1.5s ease;
+}
+
+.animationXFast {
+  animation:fadeInX 0.2s ease;
 }
 
 @keyframes fadeInX {
@@ -22,8 +26,12 @@
   }
 }
 
-.animationY{
+.animationY {
   animation:fadeInY 1.5s ease;
+}
+
+.animationYFast {
+  animation:fadeInY 0.5s ease;
 }
 
 @keyframes fadeInY {
@@ -43,6 +51,8 @@
   height:100%;
   background-color:var(--bgc-section);
   border-radius: 30px 0 0 30px;
+  position: relative;
+  z-index: 3;
 }
 
 .left {
@@ -120,6 +130,19 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
+}
+
+/* flex-flexend-flexend */
+.flex-flexend-flexend {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.flex-column-flexend-flexend {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: flex-end;
 }
 

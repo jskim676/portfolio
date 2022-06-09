@@ -250,7 +250,7 @@ function getTime() {
 }
 
 function init () {
-  setInterval(getTime,100);
+  setInterval(getTime,1000);
 }
 
 init();

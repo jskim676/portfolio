@@ -123,12 +123,9 @@ for(let i=0; i<ul.children.length; i++) {
   });
 }
 
-
-
-
 window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
-  if(winY > sectionHeight+sectionHeight/3) {
+  if(winY > sectionHeight+sectionHeight/4) {
     s3h1Text.classList.remove('hidden');
     s3h1Text.classList.add('animationY');
   } else {
@@ -150,3 +147,27 @@ window.addEventListener('wheel',e=> {
 });
 
 
+
+// --------------- section-3 list---------------
+const cog = document.getElementById('cog');
+console.log(cog);
+
+let cogData = true;
+
+cog.addEventListener('click',e=> {
+  if(cogData === true) {
+    cog.style.transform = "rotate(0.5turn)";
+    cog.style.transition = "1s";
+
+
+
+    cogData = false;
+  } else {
+    cog.style.transform = "rotate(0turn)";
+    cog.style.transition = "1s";
+
+
+
+    cogData = true;
+  }
+});
