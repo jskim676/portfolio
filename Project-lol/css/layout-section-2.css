@@ -40,15 +40,3 @@
   height:30vh;
 }
 
-
-@keyframes fadeIn {
-  0% {
-    transform: translateY(10vh);
-    opacity:0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}

@@ -68,18 +68,18 @@ window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
   if(winY > sectionHeight/6) {
     s2h1Text.classList.remove('hidden');
-    s2h1Text.classList.add('animation');
+    s2h1Text.classList.add('animationY');
   } else {
     s2h1Text.classList.add('hidden');
-    s2h1Text.classList.remove('animation');
+    s2h1Text.classList.remove('animationY');
   }
   
   if(winY > sectionHeight/1.5) {
     img.classList.remove('hidden');
-    img.classList.add('animation');
+    img.classList.add('animationY');
   } else {
     img.classList.add('hidden');
-    img.classList.remove('animation');
+    img.classList.remove('animationY');
   }
 });
 
@@ -96,42 +96,57 @@ const randomChampionBtn = document.getElementById('randomChampionBtn');
 const tarotCardBtn = document.getElementById('tarotCardBtn');
 
 const s3h1Text = document.querySelector('#section-3 > div:nth-child(1)');
+const indi = document.getElementById('indicate');
+const indiBox = document.querySelectorAll('#indicate > div');
 const win = document.getElementById('window');
+
+const rightNav = document.getElementById('rightNav');
 
 
 for(let i=0; i<ul.children.length; i++) {
   ul.children[i].addEventListener('click', (event) => {
-    console.log(main.children[i+1]);
     let getDataset = event.target.dataset.menu;
-    console.log(getDataset);
     for(let i = 0; i<ul.children.length; i++) {
       if(ul.children[i].dataset.menu === getDataset) {
         main.children[i+1].classList.remove('on');
         ul.children[i].classList.add('select');
       } else {
-        ul.children[i].classList.remove('select');
         main.children[i+1].classList.add('on');
+        ul.children[i].classList.remove('select');
       }
+    }
+    if(ul.children[i].dataset.menu === "1"||ul.children[i].dataset.menu === "2") {
+      rightNav.classList.remove('on');
+    } else {
+      rightNav.classList.add('on');
     }
   });
 }
 
 
+
+
 window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
-  if(winY > sectionHeight+sectionHeight/6) {
+  if(winY > sectionHeight+sectionHeight/3) {
     s3h1Text.classList.remove('hidden');
-    s3h1Text.classList.add('animation');
+    s3h1Text.classList.add('animationY');
   } else {
     s3h1Text.classList.add('hidden');
-    s3h1Text.classList.remove('animation');
+    s3h1Text.classList.remove('animationY');
   }
   
   if(winY > sectionHeight+sectionHeight/1.5) {
     win.classList.remove('hidden');
-    win.classList.add('animation');
+    win.classList.add('animationY');
+    indi.classList.remove('hidden');
+    indi.classList.add('animationX');
   } else {
     win.classList.add('hidden');
-    win.classList.remove('animation');
+    win.classList.remove('animationY');
+    indi.classList.add('hidden');
+    indi.classList.remove('animationX');
   }
 });
+
+

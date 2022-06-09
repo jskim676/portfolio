@@ -6,13 +6,36 @@
   visibility: hidden;
 }
 
-.animation {
-  animation:fadeIn 1.5s ease;
+.animationX{
+  animation:fadeInX 1.5s ease;
 }
 
+@keyframes fadeInX {
+  0% {
+    transform: translateX(10vw);
+    opacity:0;
+  }
 
-.flex {
-  display:flex;
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animationY{
+  animation:fadeInY 1.5s ease;
+}
+
+@keyframes fadeInY {
+  0% {
+    transform: translateY(10vh);
+    opacity:0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .select {
@@ -20,8 +43,18 @@
   height:100%;
   background-color:var(--bgc-section);
   border-radius: 30px 0 0 30px;
-  position: relative;
-  
+}
+
+.left {
+  left:12vw;
+}
+
+.right {
+  right:12vw;
+}
+
+.flex {
+  display:flex;
 }
 
 /* flex-flexstart-center */
