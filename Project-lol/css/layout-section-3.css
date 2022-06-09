@@ -10,6 +10,7 @@
   line-height: 8vh;
 }
 
+/* indicate */
 #section-3 > div:nth-child(2) {
   width:10vw;
   height:8vh;
@@ -18,7 +19,7 @@
 }
 
 #section-3 > div:nth-child(2) > div {
-  width:68vw;
+  width:65vw;
   height:inherit;
   position: absolute;
   left:0;
@@ -29,7 +30,13 @@
   height:5vh;
   border:2px solid var(--bgc-item);
   border-radius: 30px;
+  opacity: 0.5;
 }
+
+#section-3 > div:nth-child(2) > div > div:nth-child(1) {
+  opacity: 1;
+}
+
 
 #section-3 > div:nth-child(3) {
   width:100vw;

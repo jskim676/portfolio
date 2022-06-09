@@ -66,7 +66,7 @@ const {height : sectionHeight} = section2.getBoundingClientRect();
 
 window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
-  if(winY > sectionHeight/6) {
+  if(winY > sectionHeight/4) {
     s2h1Text.classList.remove('hidden');
     s2h1Text.classList.add('animationY');
   } else {
@@ -97,7 +97,7 @@ const tarotCardBtn = document.getElementById('tarotCardBtn');
 
 const s3h1Text = document.querySelector('#section-3 > div:nth-child(1)');
 const indi = document.getElementById('indicate');
-const indiBox = document.querySelectorAll('#indicate > div');
+const indiBox = document.querySelectorAll('#indicate > div > div');
 const win = document.getElementById('window');
 
 const rightNav = document.getElementById('rightNav');
@@ -110,9 +110,12 @@ for(let i=0; i<ul.children.length; i++) {
       if(ul.children[i].dataset.menu === getDataset) {
         main.children[i+1].classList.remove('on');
         ul.children[i].classList.add('select');
+        indi.style.right = `${14*i}vw`;
+        indiBox[i].style.opacity = 1;
       } else {
         main.children[i+1].classList.add('on');
         ul.children[i].classList.remove('select');
+        indiBox[i].style.opacity = 0.5;
       }
     }
     if(ul.children[i].dataset.menu === "1"||ul.children[i].dataset.menu === "2") {
@@ -150,24 +153,16 @@ window.addEventListener('wheel',e=> {
 
 // --------------- section-3 list---------------
 const cog = document.getElementById('cog');
-console.log(cog);
-
 let cogData = true;
 
 cog.addEventListener('click',e=> {
   if(cogData === true) {
     cog.style.transform = "rotate(0.5turn)";
     cog.style.transition = "1s";
-
-
-
     cogData = false;
   } else {
     cog.style.transform = "rotate(0turn)";
     cog.style.transition = "1s";
-
-
-
     cogData = true;
   }
 });
