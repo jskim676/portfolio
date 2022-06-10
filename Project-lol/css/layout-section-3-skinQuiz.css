@@ -124,12 +124,27 @@
 }
 
 #section-skinQuiz > div > div:nth-child(2) > img {
-  width:auto;
-  height:90%;
+  width:85%;
+  height:95%;
   background-size: cover;
 
   position:absolute;
 }
+
+#section-skinQuiz > div > div:nth-child(2) > img:nth-child(1) {
+}
+
+#section-skinQuiz > div > div:nth-child(2) > img:nth-child(2) {
+
+}
+
+#section-skinQuiz > div > div:nth-child(2) > div:nth-child(3) {
+  width:85%;
+  height:95%;
+  color:var(--bgc-255);
+  backdrop-filter: blur(10px);
+}
+
 
 
 /* chat */
@@ -153,19 +168,19 @@
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) > div {
   width:22%;
   height: 20%;
-  background-color:var(--blueteam);
+  border:1px solid var(--blueteam);
   border-radius:30px;
   margin-right:2%;
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(2) {
   width:20%;
-  background-color:var(--redteam);
+  border:1px solid var(--redteam);
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) > div:nth-child(3) {
   width:17%;
-  background-color:var(--blueteam);
+  border:1px solid var(--blueteam);
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) {

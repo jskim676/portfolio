@@ -46,21 +46,16 @@
   height:2.5vw;
 }
 
-#champion {
+#championChoice {
   width:inherit;
   height:55%;
 }
 
-#champion > div {
-  width:15%;
-  height:90%;
-  background-color: #ccc;
+#championChoice > img {
+  width:18%;
+  height:85%;
+  background-size: cover;
 }
-
-/* #champion > img {
-  width:15%;
-  height:90%;
-} */
 
 #reroll {
   width:inherit;

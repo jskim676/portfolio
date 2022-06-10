@@ -12,3 +12,5 @@ for(let i=0; i<championsList.length; i++) {
 
 const randomKey = Math.floor(Math.random()*championsKeyValue.length);
 
+
+console.log(list);
