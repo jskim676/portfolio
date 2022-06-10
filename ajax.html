@@ -11,24 +11,36 @@
   <script>
     const ajax = new XMLHttpRequest();
     console.log(ajax);
-    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/102.json";
+    const URL = "http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json";
       ajax.open('GET', URL, false);
       ajax.send();
       const champions = JSON.parse(ajax.response);
-      console.log(champions);
-      const getData = champions.skins[5].splashPath;
-      console.log(getData);
-      const championIllust = getData.slice(getData.indexOf("v1/")+3, getData.length);
-      console.log(getData.indexOf("v1/"));
-      console.log(getData.length);
-      console.log(championIllust);
-      const root = document.getElementById('root');
-      const img = document.createElement('img');
+      const list = champions.data;
+      console.log(list);
 
-      img.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + championIllust;
-      root.appendChild(img);
+      
+      const championsList = Object.keys(champions.data);
+      console.log(championsList);
 
-      console.log(img);
+      const randomChampion = championsList[Math.floor(Math.random()*championsList.length)];
+      console.log(randomChampion);
+      console.log(typeof randomChampion);
+
+    
+      
+
+      /*
+      객체들로 이루어진 챔피언 목록에서 랜덤한 챔피언의 이름을 변수로 가져와서
+      챔피언 목록에 변수를 대입
+      */ 
+      
+
+
+
+
+
+
+
   </script>
 </body>
 </html>

@@ -120,18 +120,22 @@
 #section-skinQuiz > div > div:nth-child(2) {
   width:100%;
   height:50%;
+  position:relative;
 }
 
 #section-skinQuiz > div > div:nth-child(2) > img {
-  width:95%;
-  height:95%;
+  width:auto;
+  height:90%;
+  background-size: cover;
+
+  position:absolute;
 }
 
 
 /* chat */
 #section-skinQuiz > div > div:nth-child(3) {
   width:100%;
-  height:30%;
+  height:29%;
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div {

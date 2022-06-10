@@ -1,6 +1,6 @@
 #section-3 {
   width:var(--vw-100);
-  height:var(--vh-120);
+  height:var(--vh-110);
   
   overflow: hidden;
 }
@@ -40,13 +40,13 @@
 
 #section-3 > div:nth-child(3) {
   width:100vw;
-  height:75vh;
+  height:95vh;
 }
 
-
+/* window */
 #window {
   width:65vw;
-  height:75vh;
+  height:85vh;
   border-radius: 20px;
   overflow: hidden;
   background-color:var(--bgc-section);
