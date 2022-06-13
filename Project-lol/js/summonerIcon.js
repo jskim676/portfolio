@@ -4,8 +4,6 @@ ajax.open('GET', iconURL, false);
 ajax.send();
 const summonericon = JSON.parse(ajax.response);
 const summoner = document.getElementById('summoner');
-const aTeamMember = document.getElementById('aTeamMember');
-const bTeamMember = document.getElementById('bTeamMember');
 
 function icon (target) {
   for(let i=0; i<summoner.children.length; i++) {
@@ -16,4 +14,6 @@ function icon (target) {
   }
 }
 
-setTimeout(() => {icon(aTeamMember), icon(bTeamMember), icon(summoner)}, 5000);
+// icon(summoner);
+setTimeout(() => {icon(summoner)}, 1000);
+

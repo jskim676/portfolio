@@ -78,7 +78,7 @@
   height:50%;
 }
 
-#section-guessingGame > div > div:nth-child(1) > div:nth-child(3) > div  > img {
+#section-guessingGame > div > div:nth-child(1) > div:nth-child(3) > div  > div {
   width:2vw;
   height:2vw;
   border-radius: 50%;
