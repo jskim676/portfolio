@@ -14,10 +14,6 @@ for(let i=0; i<skinImg.children.length; i++) {
   skinImg.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 }
 
-console.log(skinQuizRoute);
-console.log(skinAnswer);
-console.log(skinData);
-
 for(let j=0; j<skinData.length; j++) {
   if(skinData[j].id === skinAnswer) {
     console.log(skinData[j].name);

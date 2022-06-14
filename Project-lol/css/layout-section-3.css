@@ -30,7 +30,7 @@
   height:5vh;
   border:2px solid var(--bgc-item);
   border-radius: 30px;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #section-3 > div:nth-child(2) > div > div:nth-child(1) {
