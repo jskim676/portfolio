@@ -11,20 +11,13 @@
   <script>
     const ajax = new XMLHttpRequest();
     console.log(ajax);
-    const URL = "http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json";
+    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/1.json";
       ajax.open('GET', URL, false);
       ajax.send();
       const champions = JSON.parse(ajax.response);
-      const list = champions.data;
-      console.log(list);
 
-      
-      const championsList = Object.keys(champions.data);
-      console.log(championsList);
+      console.log(champions);
 
-      const randomChampion = championsList[Math.floor(Math.random()*championsList.length)];
-      console.log(randomChampion);
-      console.log(typeof randomChampion);
 
     
       

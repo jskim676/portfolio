@@ -160,9 +160,11 @@
   border-radius: 10px;
 }
 
+/* appearAnswer */
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) {
   width:98%;
   height:65%;
+  color:var(--border-color);
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) {
@@ -170,9 +172,11 @@
   height:20%;
 }
 
-#section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) > div {
+/* inputAnswer */
+#section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) > input {
   width:98%;
   height:95%;
+  background-color: var(--bgc-section);
   border:1px solid var(--border-color);
   border-radius:5px;
 }

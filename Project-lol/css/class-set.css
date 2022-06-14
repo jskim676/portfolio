@@ -1,18 +1,14 @@
-.on {
-  display:none;
-}
+.on {display:none;}
 
-.hidden {
-  visibility: hidden;
-}
+.hidden { visibility: hidden;}
 
-.animationX {
-  animation:fadeInX 1.5s ease;
-}
+.animationX {animation:fadeInX 1.5s ease;}
 
-.animationXFast {
-  animation:fadeInX 0.2s ease;
-}
+.animationXFast {animation:fadeInX 0.5s ease;}
+
+.animationY {animation:fadeInY 1.5s ease;}
+
+.animationYFast {animation:fadeInY 0.5s ease;}
 
 @keyframes fadeInX {
   0% {
@@ -24,14 +20,6 @@
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-.animationY {
-  animation:fadeInY 1.5s ease;
-}
-
-.animationYFast {
-  animation:fadeInY 0.5s ease;
 }
 
 @keyframes fadeInY {
@@ -56,6 +44,19 @@
   z-index: 3;
 }
 
+.answerBox {
+  height:4vh;
+  border-radius: 30px;
+  background-color: salmon;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding:15px;
+}
+
+
+
+
 .left {
   left:12vw;
 }
@@ -67,6 +68,7 @@
 .flex {
   display:flex;
 }
+
 
 /* flex-flexstart-center */
 .flex-flexstart-center {

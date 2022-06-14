@@ -99,6 +99,7 @@ const s3h1Text = document.querySelector('#section-3 > div:nth-child(1)');
 const indi = document.getElementById('indicate');
 const indiBox = document.querySelectorAll('#indicate > div > div');
 const win = document.getElementById('window');
+const explain = document.getElementById('explain');
 
 const rightNav = document.getElementById('rightNav');
 
@@ -110,7 +111,7 @@ for(let i=0; i<ul.children.length; i++) {
       if(ul.children[i].dataset.menu === getDataset) {
         main.children[i+1].classList.remove('on');
         ul.children[i].classList.add('select');
-        indi.style.right = `${14*i}vw`;
+        indi.style.right = `${13*i}vw`;
         indiBox[i].style.opacity = 1;
       } else {
         main.children[i+1].classList.add('on');
@@ -141,11 +142,15 @@ window.addEventListener('wheel',e=> {
     win.classList.add('animationY');
     indi.classList.remove('hidden');
     indi.classList.add('animationX');
+    explain.classList.remove('hidden');
+    explain.classList.add('animationY');
   } else {
     win.classList.add('hidden');
     win.classList.remove('animationY');
     indi.classList.add('hidden');
     indi.classList.remove('animationX');
+    explain.classList.add('hidden');
+    explain.classList.remove('animationY');
   }
 });
 

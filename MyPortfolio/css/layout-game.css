@@ -216,7 +216,8 @@
 }
 
 #main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(2) {
-  line-height:2.5vh;
+  line-height:3.5vh;
+  margin:2vh 1.2vw;
 }
 
 

@@ -72,13 +72,24 @@
           </div>
         </div>
       </div>
+
+      <!-- explain -->
+      <div id="explain" class="flex-center-center hidden">
+        <h2>설명1</h2>
+        <!-- <h2>설명2</h2>
+        <h2>설명3</h2>
+        <h2>설명4</h2>
+        <h2>설명5</h2> -->
+      </div>
       
       <!-- window -->
       <div class="flex-spacearound-center">
         <div id="window" class="hidden">
           <header class="flex-flexend-center">
             <div class="flex-flexstart-center">
-              <div></div>
+              <div id="myIcon">
+                <img src="" alt="myIcon">
+              </div>
               <p>~ 님 안녕하세요</p>
             </div>
           </header>
@@ -210,7 +221,7 @@
                   </div>
                 </div>
                 <!-- skin -->
-                <div id="skinImg" class="flex-center-center">
+                <div id="skinImg" class="flex-center-center hidden">
                   <img src="" alt="skin">
                   <img src="" alt="">
                   <div id="backDropFilter"></div>
@@ -218,9 +229,9 @@
                 <!-- chat -->
                 <div class="flex-center-center">
                   <div class="flex-column-spacearound-center">
-                    <div class="flex"></div>
+                    <div id="appearAnswer" class="flex"></div>
                     <div class="flex-center-center">
-                      <div></div>
+                      <input id="inputAnswer" onchange="printName()" placeholder="정답을 입력해보세요"/>
                     </div>
                   </div>
                 </div>

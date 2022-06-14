@@ -10,12 +10,40 @@ const skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1
 const skinImg = document.getElementById('skinImg');
 // // uncenteredSplashPath
 
+const backDropFilter = document.getElementById('backDropFilter');
+
 for(let i=0; i<skinImg.children.length; i++) {
   skinImg.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 }
 
-for(let j=0; j<skinData.length; j++) {
-  if(skinData[j].id === skinAnswer) {
-    console.log(skinData[j].name);
+function printName () {
+  for(let j=0; j<skinData.length; j++) {
+    if(skinData[j].id === skinAnswer) {
+      console.log(skinData[j].name);
+      const inputAnswer = document.getElementById('inputAnswer').value;
+      const apperAnswer = document.getElementById('appearAnswer');
+      if(apperAnswer.children.length >= 0) {
+        const answerBox = document.createElement('div');
+        apperAnswer.appendChild(answerBox);
+        answerBox.classList.add('answerBox');
+        answerBox.innerText = inputAnswer;
+        if(skinData[j].name === inputAnswer) {
+          backDropFilter.classList.add('hidden');
+        } else {
+
+        }
+      }
+    }
+    }
   }
-}
+
+
+  const playBtn = document.getElementById('playBtn');
+  playBtn.addEventListener('click', function() {
+    skinImg.classList.remove('hidden');
+  });
+
+
+
+
+

@@ -95,7 +95,6 @@ gameicon.addEventListener('wheel', (e) => {
     }
   }
   let topValue = gameicon.style.top;
-  console.log(topValue);
 });
 
 
@@ -119,7 +118,7 @@ function slide (target) {
   let slideStatus = true;
   target.addEventListener('click', e=> {
       if(slideStatus === true) {
-        target.style.height = "40vh";
+        target.style.height = "45vh";
         target.style.transition = "0.5s";
         slideStatus = false;
       } else {
