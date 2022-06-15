@@ -132,13 +132,36 @@ function slide (target) {
 slide(qs1);
 slide(qs2);
 
+// -------------- curriculum --------------
+const ccWin = document.getElementById('curriculum-window');
+const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
+const programName2 = document.createElement('div');
+
+icons[1].addEventListener('dblclick', function() {
+  num++;
+  ccWin.children[0].style.zIndex = num;
+  ccWin.classList.remove('on');
+  
+  program.appendChild(programName2);
+  programName2.classList.add('window-style');
+
+  
+  changeWin.classList.add('on');
+  isStatus = true;
+}); 
+
+ccWinBtn.addEventListener('click',e=> {
+  
+  ccWin.classList.add('on');
+  programName2.parentNode.removeChild(programName2);
+});
 
 // -------------- portfolio --------------
 const pfWin = document.getElementById('portfolio-window');
 const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
 const programName1 = document.createElement('div');
 
-icons[1].addEventListener('dblclick', function() {
+icons[2].addEventListener('dblclick', function() {
   num++;
   pfWin.children[0].style.zIndex = num;
   pfWin.classList.remove('on');
@@ -157,29 +180,6 @@ pfWinBtn.addEventListener('click',e=> {
   programName1.parentNode.removeChild(programName1);
 });
 
-// -------------- curriculum --------------
-const ccWin = document.getElementById('curriculum-window');
-const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
-const programName2 = document.createElement('div');
-
-icons[2].addEventListener('dblclick', function() {
-  num++;
-  ccWin.children[0].style.zIndex = num;
-  ccWin.classList.remove('on');
-  
-  program.appendChild(programName2);
-  programName2.classList.add('window-style');
-
-  
-  changeWin.classList.add('on');
-  isStatus = true;
-}); 
-
-ccWinBtn.addEventListener('click',e=> {
-  
-  ccWin.classList.add('on');
-  programName2.parentNode.removeChild(programName2);
-});
 
 // -------------- contact --------------
 const ctWin = document.getElementById('contact-window');
