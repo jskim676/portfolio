@@ -1,3 +1,4 @@
+// 
 const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json`;
 ajax.open('GET', skinURL, false);
 ajax.send();
@@ -16,6 +17,7 @@ for(let i=0; i<skinImg.children.length; i++) {
   skinImg.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 }
 
+// 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 알림을 해줌
 function printName () {
   for(let j=0; j<skinData.length; j++) {
     if(skinData[j].id === skinAnswer) {
@@ -29,6 +31,7 @@ function printName () {
         answerBox.innerText = inputAnswer;
         if(skinData[j].name === inputAnswer) {
           backDropFilter.classList.add('hidden');
+          alert('정답입니다');
         } else {
 
         }
@@ -37,7 +40,7 @@ function printName () {
     }
   }
 
-
+  // 시작 버튼 클릭시 스킨 이미지가 나타남
   const playBtn = document.getElementById('playBtn');
   playBtn.addEventListener('click', function() {
     skinImg.classList.remove('hidden');

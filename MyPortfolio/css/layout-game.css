@@ -211,7 +211,8 @@
   overflow: hidden;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p {
+#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(1) {
+  font-weight:bold;
   margin:4vh 1.2vw;
 }
 
