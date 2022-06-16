@@ -3,22 +3,19 @@ const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-
 ajax.open('GET', skinURL, false);
 ajax.send();
 const champions = JSON.parse(ajax.response);
-const skinData = Object.values(champions);
+const skinAllData = Object.values(champions);
+let skinData = [];
+for(let j=0; j<skinAllData.length; j++) {
+  if(Object.values(champions)[j].id%1000 !== 0) {
+    skinData.push(Object.values(champions)[j]);
+  }
+}
 const skinQuizData = Math.floor(Math.random()*skinData.length);
 const skinQuizRoute = skinData[skinQuizData].splashPath;
 const skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
 const skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
 const skinImg = document.getElementById('skinImg');
 // // uncenteredSplashPath
-
-
-// for(let j=0; j<skinData.length; j++) {
-//   const skinData = [];
-//   if(Object.values(champions)[j].id%1000 !== 0) {
-
-//   }
-// }
-
 
 
 const backDropFilter = document.getElementById('backDropFilter');
@@ -47,8 +44,8 @@ function printName () {
         }
       }
     }
-    }
   }
+}
 
   // 시작 버튼 클릭시 스킨 이미지가 나타남
   const playBtn = document.getElementById('playBtn');

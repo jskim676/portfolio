@@ -47,11 +47,12 @@
 .answerBox {
   height:4vh;
   border-radius: 30px;
-  background-color: salmon;
+  background-color: rgb(180, 180, 180);
   display:flex;
   justify-content: center;
   align-items: center;
   padding:15px;
+  margin:0 1%;
 }
 
 

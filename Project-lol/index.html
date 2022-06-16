@@ -75,11 +75,11 @@
 
       <!-- explain -->
       <div id="explain" class="flex-center-center hidden">
-        <h3>설명1</h3>
-        <!-- <h2>설명2</h2>
-        <h2>설명3</h2>
-        <h2>설명4</h2>
-        <h2>설명5</h2> -->
+        <h3>메인화면으로써 로그인을 할 수 있으며 다른 유저들이 쓴 글을 볼 수 있는 게시판과 미니게임 빠른 참여를 할 수 있다.</h3>
+        <h3>유저들끼리 개인전 혹은 팀전으로 롤 스킨을 많이 맞추어 승리하는 미니게임</h3>
+        <h3>문제를 내는 사람에게 질문을 하여 힌트를 얻고 정답이 무엇인지 맞추는 미니게임</h3>
+        <h3>각자의 포지션을 정하고 랜덤으로 받은 챔피언으로 조합을 구성 </h3>
+        <h3>롤이라는 주제로 만든 재미로 보는 오늘의 타로 카드</h3>
       </div>
       
       <!-- window -->
@@ -95,7 +95,7 @@
             </div>
           </header>
           <main class="flex">
-            <nav>
+            <nav class="">
               <ul>
                 <li id="dashboardBtn" class="flex-flexstart-center select" data-menu="0">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="0">
@@ -197,18 +197,38 @@
                   <!-- user -->
                   <div>
                     <div id="aTeamMember" class="flex-spacearound-center">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                      <div data-icon="0">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="1">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="2">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="3">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="4">
+                        <img src="" alt="" class="hidden">
+                      </div>
                     </div>
                     <div id="bTeamMember" class="flex-spacearound-center">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                      <div data-icon="0">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="1">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="2">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="3">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="4">
+                        <img src="" alt="" class="hidden">
+                      </div>
                     </div>
                   </div>
                   <!-- cog, play -->
@@ -302,7 +322,13 @@
                 <div class="flex-center-center">
                   <div class="flex-column-spacearound-center">
                     <div class="flex">
-
+                      <div></div>
+                      <div class="flex-column-spacearound-center">
+                        <div>
+                          <img id="squareIcon" src="" alt="squareIcon" class="hidden">
+                        </div>
+                        <button id="squareBtn"></button>
+                      </div>
                     </div>
                     <div class="flex-center-center">
                       <div></div>
@@ -463,8 +489,9 @@
     <script src="./js/script.js"></script>
     <script src="./js/summonerIcon.js"></script>
     <script src="./js/championsKey.js"></script>
-    <script src="./js/skin.js"></script>
+    <script src="./js/skinQuiz.js"></script>
     <script src="./js/randomChampion.js"></script>
+    <script src="./js/guessingGame.js"></script>
   </div>
 </body>
 </html>

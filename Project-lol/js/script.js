@@ -100,7 +100,6 @@ const indi = document.getElementById('indicate');
 const indiBox = document.querySelectorAll('#indicate > div > div');
 const win = document.getElementById('window');
 const explain = document.getElementById('explain');
-
 const rightNav = document.getElementById('rightNav');
 
 
@@ -113,10 +112,12 @@ for(let i=0; i<ul.children.length; i++) {
         ul.children[i].classList.add('select');
         indi.style.right = `${13*i}vw`;
         indiBox[i].style.opacity = 1;
+        explain.children[i].style.opacity = 1;
       } else {
         main.children[i+1].classList.add('on');
         ul.children[i].classList.remove('select');
         indiBox[i].style.opacity = 0.5;
+        explain.children[i].style.opacity = 0;
       }
     }
     if(ul.children[i].dataset.menu === "1"||ul.children[i].dataset.menu === "2") {

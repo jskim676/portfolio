@@ -132,6 +132,38 @@
   height:85%;
 }
 
+#section-guessingGame > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) {
+  width:80%;
+  height:100%;
+  border:1px solid red;
+}
+
+#section-guessingGame > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) {
+  width:20%;
+  height:40%;
+}
+
+#section-guessingGame > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div {
+  width:6vw;
+  height:6vw;
+  border:1px solid var(--border-color);
+}
+
+#section-guessingGame > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > img {
+  width:6vw;
+  height:6vw;
+}
+
+
+#section-guessingGame > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > button {
+  width:50%;
+  height:15%;
+}
+
+
+
+
+
 #section-guessingGame > div > div:nth-child(2) > div > div:nth-child(2) {
   width:100%;
   height:8%;

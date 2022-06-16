@@ -5,6 +5,8 @@ ajax.send();
 const summonericon = JSON.parse(ajax.response);
 const myIcon = document.getElementById('myIcon');
 const summoner = document.getElementById('summoner');
+const aTeamMember = document.getElementById('aTeamMember');
+const bTeamMember = document.getElementById('bTeamMember');
 
 function icon (target) {
   for(let i=0; i<summoner.children.length; i++) {
@@ -18,4 +20,21 @@ function icon (target) {
 
 // icon(summoner);
 setTimeout(() => {icon(summoner)}, 2000);
+
+function teamSelection (team1, team2) {
+  team1.addEventListener('click',(event)=> {
+    let getDataset = event.target.dataset.icon;
+    for(j=0; j<team1.children.length; j++) {
+      team2.children[j].children[0].classList.add('hidden');
+      if(team1.children[j].dataset.icon === getDataset) {
+        team1.children[j].children[0].src = summoner.children[0].src;
+        team1.children[j].children[0].classList.remove('hidden');
+      } else {
+        team1.children[j].children[0].classList.add('hidden');
+      }
+    }
+  });
+}
+
+teamSelection(aTeamMember, bTeamMember); teamSelection(bTeamMember, aTeamMember); 
 

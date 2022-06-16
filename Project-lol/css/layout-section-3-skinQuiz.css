@@ -85,6 +85,13 @@
   border:1px solid var(--border-color);
 }
 
+#section-skinQuiz > div > div:nth-child(1) > div:nth-child(3) > div  > div > img {
+  width:2vw;
+  height:2vw;
+  border-radius: 50%;
+}
+
+
 
 /* setting, play */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(4) {
@@ -177,6 +184,7 @@
 #section-skinQuiz > div > div:nth-child(2) {
   width:90%;
   height:50%;
+
   position:relative;
 }
 
@@ -222,6 +230,7 @@
   width:98%;
   height:65%;
   color:var(--border-color);
+  flex-wrap: warp;
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) {

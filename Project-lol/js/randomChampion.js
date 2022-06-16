@@ -2,9 +2,9 @@ const championChoice = document.getElementById('championChoice');
 const randomLoadScreenData = [];
 const reroll = document.querySelector('#reroll > button');
 
-for(let i=0; i<skinData.length; i++) {
-  if(skinData[i].id%1000 === 0) {
-    randomLoadScreenData.push(skinData[i].loadScreenPath);
+for(let i=0; i<skinAllData.length; i++) {
+  if(skinAllData[i].id%1000 === 0) {
+    randomLoadScreenData.push(skinAllData[i].loadScreenPath);
   }
 }
 
