@@ -43,12 +43,10 @@
   height:7vh;
 }
 
-#explain > h2 {
+#explain > h3 {
 
   position:absolute;
 }
-
-
 
 
 #section-3 > div:nth-child(4) {
@@ -61,7 +59,6 @@
   width:60vw;
   height:inherit;
   border-radius: 20px;
-  overflow: hidden;
   background-color:var(--bgc-section);
 }
 
@@ -132,4 +129,3 @@
 #window > main > nav > ul > li > p {
   margin-left:5%;
 }
-

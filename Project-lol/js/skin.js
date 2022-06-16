@@ -11,6 +11,16 @@ const skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1
 const skinImg = document.getElementById('skinImg');
 // // uncenteredSplashPath
 
+
+// for(let j=0; j<skinData.length; j++) {
+//   const skinData = [];
+//   if(Object.values(champions)[j].id%1000 !== 0) {
+
+//   }
+// }
+
+
+
 const backDropFilter = document.getElementById('backDropFilter');
 
 for(let i=0; i<skinImg.children.length; i++) {
