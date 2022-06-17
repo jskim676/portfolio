@@ -10,10 +10,11 @@ for(let i=0; i<skinAllData.length; i++) {
 
 reroll.addEventListener('click',function() {
   championChoice.classList.remove('hidden');
-  const lsData = [];
+  let lsData = [];
   let idx = 0;
   for(let j=0; j<championChoice.children.length; j++) {
     idx = Math.floor(Math.random()*randomLoadScreenData.length);
+    console.log(idx);
     if(lsData.indexOf(idx) === -1) {
       lsData.push(randomLoadScreenData[idx]);
     } else {
@@ -25,5 +26,3 @@ reroll.addEventListener('click',function() {
     console.log(lsIllust);
   }
 });
-
-
