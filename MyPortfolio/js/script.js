@@ -307,4 +307,3 @@ moving(move[2],move[2].parentNode,root);
 moving(move[3],move[3].parentNode,root);
 moving(move[4],move[4].parentNode,root);
 
-

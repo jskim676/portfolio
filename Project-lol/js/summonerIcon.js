@@ -19,7 +19,8 @@ function icon (target) {
 }
 
 // icon(summoner);
-setTimeout(() => {icon(summoner)}, 2000);
+setTimeout(() => {icon(summoner)}, 3000);
+
 
 function teamSelection (team1, team2) {
   team1.addEventListener('click',(event)=> {
