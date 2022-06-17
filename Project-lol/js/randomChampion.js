@@ -14,7 +14,6 @@ reroll.addEventListener('click',function() {
   let idx = 0;
   for(let j=0; j<championChoice.children.length; j++) {
     idx = Math.floor(Math.random()*randomLoadScreenData.length);
-    console.log(idx);
     if(lsData.indexOf(idx) === -1) {
       lsData.push(randomLoadScreenData[idx]);
     } else {
@@ -23,6 +22,5 @@ reroll.addEventListener('click',function() {
     let lowerCaseLsPath = lsData[j].toLowerCase();
     let lsIllust = lowerCaseLsPath.slice(lowerCaseLsPath.indexOf("assets/")+7, lowerCaseLsPath.length);
     championChoice.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + lsIllust;
-    console.log(lsIllust);
   }
 });

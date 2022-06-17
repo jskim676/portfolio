@@ -3,21 +3,19 @@
 
 
   for(let i = 0; i < tarotCard.children.length; i++) {
-    tarotCard.children[i].style.zIndex = i;
-    tarotCard.children[i].style.left = `${i/2}vw`;
+    const card = tarotCard.children
+    card[i].style.zIndex = i;
+    card[i].style.left = `${i*1.6}vw`;
 
-    // tarotCard.children[i].style.transform = `rotate(${i-11}deg)`;
+    card[i].style.transform = `rotate(${(i-10)}deg)`;
+  
+    if(i<11) {
+      card[i].style.bottom = `${2*i/15}vh`;
+    } else {
+      card[i].style.bottom = `${(2*(card.length-1-i))/15}vh`;
+    }
 
-    // if (i <= 10) {
-    //   tarotCard.children[i].style.bottom = `${i/2}vh`;
-    // }
-
-    tarotCard.children[i].addEventListener('mouseover',function(){
-      tarotCard.children[i].style.top = "2vh";
-      tarotCard.children[i].style.zIndex = `${tarotCard.children.length}`;
-    }); 
-
-    tarotCard.children[i].addEventListener('mouseout',function(){
-      tarotCard.children[i].style.zIndex = i;
-    }); 
+    card[i].addEventListener('dblclick', function() {
+      card[i].style.top = "0vh";
+    });
   };

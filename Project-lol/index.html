@@ -167,26 +167,22 @@
             <section id="section-skinQuiz" class="animationXFast on">
               <div class="flex-column-center-center">
                 <!-- game info -->
-                <div class="flex">
+                <div class="flex-center-center">
                   <!-- time , score -->
                   <div class="flex-column-spacearound-center">
-                    <div class="flex-column-flexend-flexend">
+                    <div class="flex-column-spacearound-flexend">
                       <div>
                         <div id="timeBar"></div>
                       </div>
-                      <p id="timeValue">시간</p>
+                      <p id="timeValue">2 : 00</p>
                     </div>
-                    <div class="flex-column-flexend-flexend">
-                      <div>
-                        <div id="aTeamScore"></div>
-                      </div>
-                      <p id="aTeamValue">점수</p>
+                    <div class="flex-column-spacearound-flexend">
+                      <div id="aTeamScore"></div>
+                      <p id="aTeamValue">0 / 9</p>
                     </div>
-                    <div class="flex-column-flexend-flexend">
-                      <div>
-                        <div id="bTeamScore"></div>
-                      </div>
-                      <p id="bTeamValue">점수</p>
+                    <div class="flex-column-spacearound-flexend">
+                      <div id="bTeamScore"></div>
+                      <p id="bTeamValue">0 / 9</p>
                     </div>
                   </div>
                   <!-- team -->
@@ -253,7 +249,7 @@
                   <div class="flex-column-spacearound-center">
                     <div id="appearAnswer" class="flex"></div>
                     <div class="flex-center-center">
-                      <input id="inputAnswer" onchange="printName()" placeholder="정답을 입력해보세요"/>
+                      <input id="skinInputAnswer" onkeypress="if(window.event.keyCode === 13) {printName() , value=null}" placeholder="정답을 입력해보세요"/>
                     </div>
                   </div>
                 </div>
@@ -331,7 +327,7 @@
                       </div>
                     </div>
                     <div class="flex-center-center">
-                      <div></div>
+                      <input id="ggInputAnswer" onkeypress="if(window.event.keyCode === 13) {printName() , value=null}" placeholder="정답을 입력해보세요"/>
                     </div>
                   </div>
                 </div>
@@ -492,6 +488,7 @@
     <script src="./js/skinQuiz.js"></script>
     <script src="./js/randomChampion.js"></script>
     <script src="./js/guessingGame.js"></script>
+    <script src="./js/score.js"></script>
     <script src="./js/tarotCard.js"></script>
   </div>
 </body>

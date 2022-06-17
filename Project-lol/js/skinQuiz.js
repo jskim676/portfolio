@@ -10,13 +10,12 @@ for(let j=0; j<skinAllData.length; j++) {
     skinData.push(Object.values(champions)[j]);
   }
 }
-const skinQuizData = Math.floor(Math.random()*skinData.length);
+let skinQuizData = Math.floor(Math.random()*skinData.length);
 const skinQuizRoute = skinData[skinQuizData].splashPath;
 const skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
 const skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
 const skinImg = document.getElementById('skinImg');
 // // uncenteredSplashPath
-
 
 const backDropFilter = document.getElementById('backDropFilter');
 
@@ -24,38 +23,39 @@ for(let i=0; i<skinImg.children.length; i++) {
   skinImg.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 }
 
-// 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 알림을 해줌
-function printName () {
-  for(let j=0; j<skinData.length; j++) {
-    if(skinData[j].id === skinAnswer) {
-      console.log(skinData[j].name);
-      const inputAnswer = document.getElementById('inputAnswer').value;
-      const apperAnswer = document.getElementById('appearAnswer');
-      if(apperAnswer.children.length >= 0) {
-        const answerBox = document.createElement('div');
-        apperAnswer.appendChild(answerBox);
-        answerBox.classList.add('answerBox');
-        answerBox.innerText = inputAnswer;
-        if(skinData[j].name === inputAnswer) {
-          backDropFilter.classList.add('hidden');
-          alert('정답입니다');
-        } else {
-          
+
+
+// 시작 버튼 클릭시 스킨 이미지가 나타남
+const playBtn = document.getElementById('playBtn');
+playBtn.addEventListener('click', function() {
+    skinImg.classList.remove('hidden');
+  });
+  
+  
+  // 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
+  function printName () {
+    for(let j=0; j<skinData.length; j++) {
+      if(skinData[j].id === skinAnswer) {
+        console.log(skinData[j].name);
+        const skinInputAnswer = document.getElementById('skinInputAnswer').value;
+        const apperAnswer = document.getElementById('appearAnswer');
+        if(apperAnswer.children.length >= 0) {
+          const answerBox = document.createElement('div');
+          apperAnswer.appendChild(answerBox);
+          answerBox.classList.add('answerBox');
+          answerBox.innerText = skinInputAnswer;
+          if(skinData[j].name === skinInputAnswer) {
+            backDropFilter.classList.add('hidden');
+            alert('정답입니다');
+            if(aTeamMember.classList.contains('consistOf')) {
+              score(aTeamScore);
+              aTeamValue.innerText = `${aTeamScore.children.length} / 9`;
+            } else if (bTeamMember.classList.contains('consistOf')){
+              score(bTeamScore);
+              bTeamValue.innerText = `${bTeamScore.children.length} / 9`;
+            }
+          }
         }
       }
     }
   }
-}
-
-
-  // 시작 버튼 클릭시 스킨 이미지가 나타남
-  const playBtn = document.getElementById('playBtn');
-  playBtn.addEventListener('click', function() {
-    skinImg.classList.remove('hidden');
-  });
-
-
-
-
-
-

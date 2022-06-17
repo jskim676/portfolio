@@ -23,6 +23,8 @@ setTimeout(() => {icon(summoner)}, 2000);
 
 function teamSelection (team1, team2) {
   team1.addEventListener('click',(event)=> {
+    team1.classList.add('consistOf');
+    team2.classList.remove('consistOf');
     let getDataset = event.target.dataset.icon;
     for(j=0; j<team1.children.length; j++) {
       team2.children[j].children[0].classList.add('hidden');
