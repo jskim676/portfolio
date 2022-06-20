@@ -39,6 +39,14 @@
   overflow: hidden;
 }
 
+
+/* timeBar */
+#section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div {
+  height: 100%;
+  background-color: var(--border-color);
+}
+
+
 /* aTeamScroe */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div {
   width:calc(100%/9);
@@ -56,7 +64,7 @@
 
 /* 바 표시값 */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div > p {
-  width:40%;
+  width:50%;
   color:var(--border-color);
   text-align: right;
 }

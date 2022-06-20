@@ -29,6 +29,7 @@ for(let i=0; i<skinImg.children.length; i++) {
 const playBtn = document.getElementById('playBtn');
 playBtn.addEventListener('click', function() {
     skinImg.classList.remove('hidden');
+    gameTime(timeValue);
   });
   
   
