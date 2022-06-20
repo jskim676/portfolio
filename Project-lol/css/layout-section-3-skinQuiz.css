@@ -229,15 +229,8 @@
   position:absolute;
 }
 
-#section-skinQuiz > div > div:nth-child(2) > img:nth-child(1) {
-}
 
-#section-skinQuiz > div > div:nth-child(2) > img:nth-child(2) {
-
-}
-
-
-#section-skinQuiz > div > div:nth-child(2) > div:nth-child(3) {
+#section-skinQuiz > div > div:nth-child(2) > div:nth-child(2) {
   width:90%;
   height:95%;
   color:var(--bgc-255);

@@ -15,12 +15,13 @@ function icon (target) {
     const iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
     target.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
     myIcon.children[0].src = summoner.children[0].src;
+    aTeamMember.children[0].children[0].src = summoner.children[0].src;
   }
 }
 
 // icon(summoner);
-setTimeout(() => {icon(summoner)}, 3000);
-
+// setTimeout(() => {icon(summoner)}, 10);
+icon(summoner);
 
 function teamSelection (team1, team2) {
   team1.addEventListener('click',(event)=> {
