@@ -14,8 +14,4 @@
     } else {
       card[i].style.bottom = `${(2*(card.length-1-i))/15}vh`;
     }
-
-    card[i].addEventListener('dblclick', function() {
-      card[i].style.top = "0vh";
-    });
   };

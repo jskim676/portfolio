@@ -128,6 +128,35 @@ for(let i=0; i<ul.children.length; i++) {
   });
 }
 
+for(let j=0; j<indi.children[0].children.length; j++) {
+  indi.children[0].children[j].addEventListener('click', (event) => {
+    let getDataset = event.target.dataset.indi;
+    for(let j = 0; j<indi.children[0].children.length; j++) {
+      if(indi.children[0].children[j].dataset.indi === getDataset) {
+        main.children[j+1].classList.remove('on');
+        ul.children[j].classList.add('select');
+        indi.style.right = `${13*j}vw`;
+        indiBox[j].style.opacity = 1;
+        explain.children[j].style.opacity = 1;
+      } else {
+        main.children[j+1].classList.add('on');
+        ul.children[j].classList.remove('select');
+        indiBox[j].style.opacity = 0.5;
+        explain.children[j].style.opacity = 0;
+      }
+    }
+    if(indi.children[0].children[j].dataset.indi === "1"||indi.children[0].children[j].dataset.indi === "2") {
+      rightNav.classList.remove('on');
+    } else {
+      rightNav.classList.add('on');
+    }
+  });
+}
+
+
+
+
+
 window.addEventListener('wheel',e=> {
   let winY = window.pageYOffset;
   if(winY > sectionHeight+sectionHeight/4) {

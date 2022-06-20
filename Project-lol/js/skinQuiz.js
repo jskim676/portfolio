@@ -12,12 +12,13 @@ for(let j=0; j<skinAllData.length; j++) {
     skinData.push(Object.values(champions)[j]);
   }
 }
+
+
 let skinQuizData = Math.floor(Math.random()*skinData.length);
 let skinQuizRoute = skinData[skinQuizData].splashPath;
 let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
 let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
 // // uncenteredSplashPath
-console.log(skinQuizData);
 
 const backDropFilter = document.getElementById('backDropFilter');
 
@@ -26,30 +27,31 @@ skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be
 
 
 // 시작 버튼 클릭시 스킨 이미지가 나타남
-const playBtn = document.getElementById('playBtn');
+const skinPlayBtn = document.getElementById('skinPlayBtn');
 let playState = true;
-playBtn.addEventListener('click', function() {
+skinPlayBtn.addEventListener('click', function() {
     if(playState === true) {
       skinImg.classList.remove('hidden');
-      gameTime(timeBar, timeValue);
+      gameTime(skinTimeBar, skinTimeValue);
       playState = false;
     } else {
       console.log('test');
       playState = true;
     }
   });
+
   
   
   // 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
-  function printName () {
+  function skinPrintName () {
     for(let j=0; j<skinData.length; j++) {
       if(skinData[j].id === skinAnswer) {
         console.log(skinData[j].name);
         const skinInputAnswer = document.getElementById('skinInputAnswer').value;
-        const apperAnswer = document.getElementById('appearAnswer');
-        if(apperAnswer.children.length >= 0) {
+        const skinAppearAnswer = document.getElementById('skinAppearAnswer');
+        if(skinAppearAnswer.children.length >= 0) {
           const answerBox = document.createElement('div');
-          apperAnswer.appendChild(answerBox);
+          skinAppearAnswer.appendChild(answerBox);
           answerBox.classList.add('answerBox');
           answerBox.innerText = skinInputAnswer;
           if(skinData[j].name === skinInputAnswer) {
@@ -65,15 +67,16 @@ playBtn.addEventListener('click', function() {
             //   skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
             // }, 1000);
 
-            if(aTeamMember.classList.contains('consistOf')) {
-              score(aTeamScore);
-              aTeamValue.innerText = `${aTeamScore.children.length} / 9`;
-            } else if (bTeamMember.classList.contains('consistOf')){
-              score(bTeamScore);
-              bTeamValue.innerText = `${bTeamScore.children.length} / 9`;
+            if(skinATeamMember.classList.contains('consistOf')) {
+              score(skinATeamScore);
+              skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
+            } else if (skinATeamMember.classList.contains('consistOf')){
+              score(skinBTeamScore);
+              skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
             }
           }
         }
       }
     }
   }
+

@@ -5,8 +5,10 @@ ajax.send();
 const summonericon = JSON.parse(ajax.response);
 const myIcon = document.getElementById('myIcon');
 const summoner = document.getElementById('summoner');
-const aTeamMember = document.getElementById('aTeamMember');
-const bTeamMember = document.getElementById('bTeamMember');
+const skinATeamMember = document.getElementById('skinATeamMember');
+const skinBTeamMember = document.getElementById('skinBTeamMember');
+const ggATeamMember = document.getElementById('ggATeamMember');
+const ggBTeamMember = document.getElementById('ggBTeamMember');
 
 function icon (target) {
   for(let i=0; i<summoner.children.length; i++) {
@@ -15,13 +17,14 @@ function icon (target) {
     const iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
     target.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
     myIcon.children[0].src = summoner.children[0].src;
-    aTeamMember.children[0].children[0].src = summoner.children[0].src;
+    skinATeamMember.children[0].children[0].src = summoner.children[0].src;
+    ggATeamMember.children[0].children[0].src = summoner.children[0].src;
   }
 }
 
 // icon(summoner);
-// setTimeout(() => {icon(summoner)}, 10);
-icon(summoner);
+setTimeout(() => {icon(summoner)}, 1000);
+
 
 function teamSelection (team1, team2) {
   team1.addEventListener('click',(event)=> {
@@ -40,5 +43,6 @@ function teamSelection (team1, team2) {
   });
 }
 
-teamSelection(aTeamMember, bTeamMember); teamSelection(bTeamMember, aTeamMember); 
+teamSelection(skinATeamMember, skinBTeamMember); teamSelection(skinBTeamMember, skinATeamMember); 
 
+teamSelection(ggATeamMember, ggBTeamMember); teamSelection(ggBTeamMember, ggATeamMember); 

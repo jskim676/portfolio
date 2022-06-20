@@ -251,13 +251,22 @@
   border-radius: 10px;
 }
 
-/* appearAnswer */
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) {
   width:98%;
   height:65%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* skinAppearAnswer */
+#section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(1) > div{
+  width:100%;
   color:var(--border-color);
   flex-wrap: wrap;
-  overflow: hidden;
+  
+  position:absolute;
+  bottom:0vh;
 }
 
 #section-skinQuiz > div > div:nth-child(3) > div > div:nth-child(2) {

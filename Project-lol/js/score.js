@@ -1,11 +1,16 @@
-const aTeamScore = document.getElementById('aTeamScore');
-const bTeamScore = document.getElementById('bTeamScore');
-const aTeamValue = document.getElementById('aTeamValue');
-const bTeamValue = document.getElementById('bTeamValue');
-const timeValue = document.getElementById('timeValue');
+const skinATeamScore = document.getElementById('skinATeamScore');
+const skinBTeamScore = document.getElementById('skinBTeamScore');
+const skinATeamValue = document.getElementById('skinATeamValue');
+const skinBTeamValue = document.getElementById('skinBTeamValue');
+const ggATeamScore = document.getElementById('ggATeamScore');
+const ggBTeamScore = document.getElementById('ggBTeamScore');
+const ggATeamValue = document.getElementById('ggATeamValue');
+const ggBTeamValue = document.getElementById('ggBTeamValue');
 
-const timeBar = document.getElementById('timeBar');
-
+const skinTimeValue = document.getElementById('skinTimeValue');
+const skinTimeBar = document.getElementById('skinTimeBar');
+const ggTimeValue = document.getElementById('ggTimeValue');
+const ggTimeBar = document.getElementById('ggTimeBar');
 
 function score(team) {
   const scoreBar = document.createElement('div');

@@ -55,20 +55,20 @@
       <!-- indicate -->
       <div id="indicate" class="flex-center-center hidden">
         <div class="flex-spacebetween-center">
-          <div class="flex-center-center">
-            <p>Dashboard</p>
+          <div class="flex-center-center" data-indi="0">
+            <p data-indi="0">Dashboard</p>
           </div>
-          <div class="flex-center-center">
-            <p>Skin Quiz</p>
+          <div class="flex-center-center" data-indi="1">
+            <p data-indi="1">Skin Quiz</p>
           </div>
-          <div class="flex-center-center">
-            <p>Guessing Game</p>
+          <div class="flex-center-center" data-indi="2">
+            <p data-indi="2">Guessing Game</p>
           </div>
-          <div class="flex-center-center">
-            <p>Random Champion</p>
+          <div class="flex-center-center" data-indi="3">
+            <p data-indi="3">Random Champion</p>
           </div>
-          <div class="flex-center-center">
-            <p>Tarot Card</p>
+          <div class="flex-center-center" data-indi="4">
+            <p data-indi="4">Tarot Card</p>
           </div>
         </div>
       </div>
@@ -172,17 +172,17 @@
                   <div class="flex-column-spacearound-center">
                     <div class="flex-column-spacearound-flexend">
                       <div>
-                        <div id="timeBar"></div>
+                        <div id="skinTimeBar"></div>
                       </div>
-                      <p id="timeValue">2 : 00</p>
+                      <p id="skinTimeValue">2 : 00</p>
                     </div>
                     <div class="flex-column-spacearound-flexend">
-                      <div id="aTeamScore"></div>
-                      <p id="aTeamValue">0 / 9</p>
+                      <div id="skinATeamScore"></div>
+                      <p id="skinATeamValue">0 / 9</p>
                     </div>
                     <div class="flex-column-spacearound-flexend">
-                      <div id="bTeamScore"></div>
-                      <p id="bTeamValue">0 / 9</p>
+                      <div id="skinBTeamScore"></div>
+                      <p id="skinBTeamValue">0 / 9</p>
                     </div>
                   </div>
                   <!-- team -->
@@ -192,7 +192,7 @@
                   </div>
                   <!-- user -->
                   <div>
-                    <div id="aTeamMember" class="flex-spacearound-center consistOf">
+                    <div id="skinATeamMember" class="flex-spacearound-center consistOf">
                       <div data-icon="0">
                         <img src="" alt="" class="">
                       </div>
@@ -209,7 +209,7 @@
                         <img src="" alt="" class="hidden">
                       </div>
                     </div>
-                    <div id="bTeamMember" class="flex-spacearound-center">
+                    <div id="skinBTeamMember" class="flex-spacearound-center">
                       <div data-icon="0">
                         <img src="" alt="" class="hidden">
                       </div>
@@ -233,7 +233,7 @@
                       <img id="cog" src="https://i.ibb.co/j3GfZy1/cog.png" alt="cog">
                     </div>
                     <div class="flex-center-center">
-                      <div id="playBtn" class="flex-center-center">Play</div>
+                      <div id="skinPlayBtn" class="flex-center-center">Play</div>
                     </div>
                   </div>
                 </div>
@@ -246,9 +246,11 @@
                 <!-- chat -->
                 <div class="flex-center-center">
                   <div class="flex-column-spacearound-center">
-                    <div id="appearAnswer" class="flex"></div>
+                    <div class="flex-flexend-flexend">
+                      <div id="skinAppearAnswer" class="flex-flexend-flexend"></div>
+                    </div>
                     <div class="flex-center-center">
-                      <input id="skinInputAnswer" onkeypress="if(window.event.keyCode === 13) {printName() , value=null}" placeholder="정답을 입력해보세요"/>
+                      <input id="skinInputAnswer" onkeypress="if(window.event.keyCode === 13) {skinPrintName() , value=null}" placeholder="정답을 입력해보세요"/>
                     </div>
                   </div>
                 </div>
@@ -264,21 +266,17 @@
                   <div class="flex-column-spacearound-center">
                     <div class="flex-column-flexend-flexend">
                       <div>
-                        <div id="timeBar"></div>
+                        <div id="ggTimeBar"></div>
                       </div>
-                      <p id="timeValue">시간</p>
+                      <p id="ggTimeValue">2 : 00</p>
                     </div>
                     <div class="flex-column-flexend-flexend">
-                      <div>
-                        <div id="aTeamScore"></div>
-                      </div>
-                      <p id="aTeamValue">점수</p>
+                      <div id="ggATeamScore"></div>
+                      <p id="ggATeamValue">0 / 9</p>
                     </div>
                     <div class="flex-column-flexend-flexend">
-                      <div>
-                        <div id="bTeamScore"></div>
-                      </div>
-                      <p id="bTeamValue">점수</p>
+                      <div id="ggBTeamScore"></div>
+                      <p id="ggBTeamValue">0 / 9</p>
                     </div>
                   </div>
                   <!-- team -->
@@ -288,19 +286,39 @@
                   </div>
                   <!-- user -->
                   <div>
-                    <div class="flex-spacearound-center">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                    <div id="ggATeamMember" class="flex-spacearound-center consistOf">
+                      <div data-icon="0">
+                        <img src="" alt="" class="">
+                      </div>
+                      <div data-icon="1">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="2">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="3">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="4">
+                        <img src="" alt="" class="hidden">
+                      </div>
                     </div>
-                    <div class="flex-spacearound-center">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
+                    <div id="ggBTeamMember" class="flex-spacearound-center">
+                      <div data-icon="0">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="1">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="2">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="3">
+                        <img src="" alt="" class="hidden">
+                      </div>
+                      <div data-icon="4">
+                        <img src="" alt="" class="hidden">
+                      </div>
                     </div>
                   </div>
                   <!-- cog, play -->
@@ -309,7 +327,7 @@
                       <img id="cog" src="https://i.ibb.co/j3GfZy1/cog.png" alt="cog">
                     </div>
                     <div class="flex-center-center">
-                      <div id="playBtn" class="flex-center-center">Play</div>
+                      <div id="ggPlayBtn" class="flex-center-center">Play</div>
                     </div>
                   </div>
                 </div>
@@ -317,16 +335,19 @@
                 <div class="flex-center-center">
                   <div class="flex-column-spacearound-center">
                     <div class="flex">
-                      <div></div>
+                      <div class="flex-flexend-flexend">
+                        <div id="ggAppearAnswer" class="flex-flexend-flexend"></div>
+                      </div>
                       <div class="flex-column-spacearound-center">
                         <div>
-                          <img id="squareIcon" src="" alt="squareIcon" class="hidden">
+                          <!-- squareIcon -->
+                          <img id="squareIcon" src="" alt="squareIcon" class="flex hidden">
                         </div>
                         <button id="squareBtn"></button>
                       </div>
                     </div>
                     <div class="flex-center-center">
-                      <input id="ggInputAnswer" onkeypress="if(window.event.keyCode === 13) {printName() , value=null}" placeholder="정답을 입력해보세요"/>
+                      <input id="ggInputAnswer" onkeypress="if(window.event.keyCode === 13) {ggPrintName(), value=null}" placeholder="질문을 하여 챔피언의 힌트를 얻고 맞춰보세요"/>
                     </div>
                   </div>
                 </div>
