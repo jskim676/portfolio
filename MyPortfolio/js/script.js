@@ -1,5 +1,3 @@
-
-
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
 const main = document.getElementById('main');
@@ -13,7 +11,18 @@ const root = document.getElementById('root');
 btnConfirm.addEventListener('click', function() {
   helloWorld.classList.add('on');
   main.classList.remove('on');
-});
+  fullscreen(root)
+})
+
+
+
+const fullscreen = element => {
+  if (element.requestFullscreen) return element.requestFullscreen()
+  if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
+  if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+  if (element.msRequestFullscreen) return element.msRequestFullscreen()
+}
+
 
 
 // --------------game --------------
@@ -89,9 +98,8 @@ gameWinBtn[2].addEventListener('click', e=>{
 //스크롤 
 const scrolling = document.getElementById('scroll');
 const scrollParent = scrolling.parentNode;
-moving(scrolling, scrolling, scrollParent);
 
-console.log(scrolling.parentNode.getBoundingClientRect());
+let scrollingTop = scrolling.parentNode.getBoundingClientRect().height - scrolling.getBoundingClientRect().height;
 
 // -------------- gamelist 스크롤--------------
 const gameicon = document.getElementById('gameicon');
@@ -101,11 +109,13 @@ gameicon.addEventListener('wheel', (e) => {
     if(number<10) {
       number++;
       gameicon.style.top = `-${number}0%`;
+      scrolling.style.top = `${scrollingTop /10 * number}px`;
     }
   } else {
     if(number>0) {
       number--;
       gameicon.style.top = `-${number}0%`;
+      scrolling.style.top = `${scrollingTop /10 * number}px`;
     }
   }
 });
@@ -317,20 +327,18 @@ function init () {
   setInterval(getTime,1000);
 }
 
+function init () {
+  setInterval(getTime,1000);
+}
+
 init();
 
 
 
 // -------------- move --------------
-
-
-// getBoundingClientRect() 는 display none 이랑은 함께 쓸 수 없다.
-
-
 function moving (topbar,win,container) {
   const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
   const {width:moveWidth, height:moveHeight} = win.getBoundingClientRect();
-  
   
   let isDragging = null;
   let originLeft = null;
@@ -349,7 +357,6 @@ function moving (topbar,win,container) {
   win.addEventListener('mousedown', function() {
     num++;
     win.style.zIndex = num;
-    console.log(num);
   });
 
   document.addEventListener('mouseup', (e) => {
@@ -379,3 +386,4 @@ moving(move[1],move[1].parentNode,root);
 moving(move[2],move[2].parentNode,root);
 moving(move[3],move[3].parentNode,root);
 moving(move[4],move[4].parentNode,root);
+moving(scrolling, scrolling, scrollParent);
