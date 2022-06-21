@@ -102,7 +102,6 @@ const win = document.getElementById('window');
 const explain = document.getElementById('explain');
 const rightNav = document.getElementById('rightNav');
 
-
 for(let i=0; i<ul.children.length; i++) {
   ul.children[i].addEventListener('click', (event) => {
     let getDataset = event.target.dataset.menu;

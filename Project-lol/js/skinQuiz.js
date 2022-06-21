@@ -52,16 +52,6 @@ skinPlayBtn.addEventListener('click', function() {
             backDropFilter.classList.add('hidden');
             alert('정답입니다');
 
-            // setTimeout(function(){
-            //   skinImg.classList.add('hidden');
-            //   skinQuizData = Math.floor(Math.random()*skinData.length);
-            //   let skinQuizRoute = skinData[skinQuizData].splashPath;
-            //   let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
-            //   let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
-            //   let skinImg = document.getElementById('skinImg');
-            //   skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
-            // }, 2000);
-
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);
               skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;

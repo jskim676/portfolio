@@ -8,7 +8,7 @@
   
 #portfolio-window > div {
   width:60vw;
-  height:60vh;
+  height:50vh;
   background-color: var(--bgc-189);
   position: absolute;
   left:15vw;
@@ -67,11 +67,11 @@
 /* portfolio list */
 #portfolio-window > div > div:nth-child(2) {
   width:inherit;
-  height:45vh;
+  height:40vh;
 }
 
 #portfolio-window > div > div:nth-child(2) > div {
-  width: 25%;
+  width: 40%;
   height: 80%;
   background-color: var(--bgc-223);
 }
@@ -90,3 +90,13 @@
   background-color: var(--bgc-189);
 }
 
+/* 작업표시줄 */
+#portfolio-taskBar > img {
+  width:1.5vw;
+  height:1.5vw;
+  margin-left:0.5vw;
+}
+
+#portfolio-taskBar > p {
+  margin-left:0.5vw;
+}

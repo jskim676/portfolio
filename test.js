@@ -30,3 +30,4 @@ TIMER();
 setTimeout(function(){
     clearInterval(PlAYTIME);
 },180000);//3분이 되면 타이머를 삭제한다.
+

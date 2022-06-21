@@ -7,7 +7,7 @@
 }
 
 #main > div > div:nth-child(2) > div:nth-child(1) {
-  width:33vw;
+  width:32.5vw;
   height:65vh;
   background-color: var(--bgc-189);
   position:absolute;
@@ -17,7 +17,7 @@
 
 /* name */
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
-  width:32.5vw;
+  width:99.5%;
   height:5vh;
 }
 
@@ -27,7 +27,7 @@
 }
 
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1{
-  width:22vw;
+  width:69%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
@@ -72,14 +72,14 @@
   background-color: var(--bgc-000);
   border-radius: 1vw;
   transform: rotate(-42.5deg);
-
+  
   position:absolute;
-
+  
 } 
 
 /* totaltime */
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
-  width:32.5vw;
+  width:99.5%;
   height:4vh;
   border:1px solid var(--bgc-129);
 }
@@ -90,7 +90,7 @@
 
 /* gamelist */
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
-  width:32.5vw;
+  width:99.5%;
   height:50vh;
   background-color: var(--bgc-255);
   border-top:1px solid var(--bgc-000);
@@ -99,7 +99,7 @@
 }
 
 #gameicon {
-  width:30.5vw;
+  width:96%;
   height:100vh;
   flex-wrap: wrap;
   overflow: hidden;
@@ -176,7 +176,7 @@
 
 /* gametime */
 #main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) {
-  width:32.5vw;
+  width:99.5%;
   height:4vh;
   border:1px solid var(--bgc-129);
 }
@@ -188,7 +188,7 @@
 
 /* question */
 #main > div > div:nth-child(2) > div:nth-child(2)  {
-  width:22vw;
+  width:20vw;
   height:94.4vh;
   position:absolute;
   bottom:6vh;
@@ -212,7 +212,6 @@
 }
 
 #main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(1) {
-  font-weight:bold;
   margin:4vh 1.2vw;
 }
 
@@ -221,4 +220,13 @@
   margin:2vh 1.2vw;
 }
 
+/* 작업표시줄 */
+#game-taskBar > img {
+  width:1.5vw;
+  height:1.5vw;
+  margin-left:0.5vw;
+}
 
+#game-taskBar > p {
+  margin-left:0.5vw;
+}

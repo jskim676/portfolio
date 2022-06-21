@@ -152,3 +152,7 @@
 .top-bar {
   background: linear-gradient(90deg, #2F3A88 0%, #3384C8 100%);
 }
+
+.dashBorder {
+  border:1px dashed var(--bgc-051);
+}

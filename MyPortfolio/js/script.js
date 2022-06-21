@@ -25,7 +25,10 @@ const gametime = document.getElementById('gametime');
 const program = document.getElementById('program');
 
 
+
 const programName0 = document.createElement('div');
+const programName0Icon = document.createElement('img');
+const programName0Text = document.createElement('p');
 
 let num = 1;
 
@@ -35,13 +38,23 @@ icons[0].addEventListener('dblclick', function() {
   num++;
   gameWin.children[0].style.zIndex = num+1;
   // qs.children[0].style.zIndex = num;
-
+  
   gameWin.classList.remove('on');
   qs.classList.remove('on');
   qsmark.classList.remove('hidden');
   
   program.appendChild(programName0);
   programName0.classList.add('window-style');
+  programName0.setAttribute('id','game-taskBar')
+  programName0.appendChild(programName0Icon);
+  programName0Icon.setAttribute("src", "./img/win98_icon/game_icon.svg");
+  programName0.appendChild(programName0Text);
+  programName0Text.textContent = "Game";
+
+  programName0.addEventListener('click', function() {
+    num++;
+    gameWin.children[0].style.zIndex = num+1;
+  });
   
   
   changeWin.classList.add('on');
@@ -78,8 +91,9 @@ const scrolling = document.getElementById('scroll');
 const scrollParent = scrolling.parentNode;
 moving(scrolling, scrolling, scrollParent);
 
+console.log(scrolling.parentNode.getBoundingClientRect());
 
-// -------------- gamelist --------------
+// -------------- gamelist 스크롤--------------
 const gameicon = document.getElementById('gameicon');
 let number = 0;
 gameicon.addEventListener('wheel', (e) => { 
@@ -94,7 +108,6 @@ gameicon.addEventListener('wheel', (e) => {
       gameicon.style.top = `-${number}0%`;
     }
   }
-  let topValue = gameicon.style.top;
 });
 
 
@@ -104,8 +117,21 @@ let gametimeData = ["League of Legends 5,711 Hours", "Maplestory 5,000 Hours", "
 ]
 
 for(let i=0; i<gametimeData.length; i++) {
-  gameicons[i].addEventListener('click', e=> {
+  gameicons[i].addEventListener('click', function () {
     gametime.textContent = gametimeData[i];
+  });
+}
+
+// 게임을 클릭시 테두리가 생김
+// dataset 값을 대문자로 쓰면 인식하지 못한다
+for(let j=0; j<gameicon.children.length; j++) {
+  gameicon.addEventListener('click', (event) => {
+    let getDataset = event.target.dataset.gameicon;
+    if(gameicon.children[j].dataset.gameicon === getDataset) {
+      gameicon.children[j].classList.add('dashBorder');
+    } else {
+      gameicon.children[j].classList.remove('dashBorder');
+    }
   });
 }
 
@@ -135,15 +161,28 @@ slide(qs2);
 // -------------- curriculum --------------
 const ccWin = document.getElementById('curriculum-window');
 const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
-const programName2 = document.createElement('div');
+const programName1 = document.createElement('div');
+const programName1Icon = document.createElement('img');
+const programName1Text = document.createElement('p');
+
 
 icons[1].addEventListener('dblclick', function() {
   num++;
   ccWin.children[0].style.zIndex = num;
   ccWin.classList.remove('on');
   
-  program.appendChild(programName2);
-  programName2.classList.add('window-style');
+  program.appendChild(programName1);
+  programName1.classList.add('window-style');
+  programName1.setAttribute('id','curriculum-taskBar')
+  programName1.appendChild(programName1Icon);
+  programName1Icon.setAttribute("src", "./img/win98_icon/curriculum_icon.svg");
+  programName1.appendChild(programName1Text);
+  programName1Text.textContent = "Curriculum";
+
+  programName1.addEventListener('click', function() {
+    num++;
+    ccWin.children[0].style.zIndex = num+1;
+  });
 
   
   changeWin.classList.add('on');
@@ -153,21 +192,34 @@ icons[1].addEventListener('dblclick', function() {
 ccWinBtn.addEventListener('click',e=> {
   
   ccWin.classList.add('on');
-  programName2.parentNode.removeChild(programName2);
+  programName1.parentNode.removeChild(programName1);
 });
 
 // -------------- portfolio --------------
 const pfWin = document.getElementById('portfolio-window');
 const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
-const programName1 = document.createElement('div');
+const programName2 = document.createElement('div');
+const programName2Icon = document.createElement('img');
+const programName2Text = document.createElement('p');
+
 
 icons[2].addEventListener('dblclick', function() {
   num++;
   pfWin.children[0].style.zIndex = num;
   pfWin.classList.remove('on');
   
-  program.appendChild(programName1);
-  programName1.classList.add('window-style');
+  program.appendChild(programName2);
+  programName2.classList.add('window-style');
+  programName2.setAttribute('id','portfolio-taskBar')
+  programName2.appendChild(programName2Icon);
+  programName2Icon.setAttribute("src", "./img/win98_icon/portfolio_icon.svg");
+  programName2.appendChild(programName2Text);
+  programName2Text.textContent = "Portfolio";
+
+  programName2.addEventListener('click', function() {
+    num++;
+    pfWin.children[0].style.zIndex = num+1;
+  });
 
   
   changeWin.classList.add('on');
@@ -177,7 +229,7 @@ icons[2].addEventListener('dblclick', function() {
 pfWinBtn.addEventListener('click',e=> {
   
   pfWin.classList.add('on');
-  programName1.parentNode.removeChild(programName1);
+  programName2.parentNode.removeChild(programName2);
 });
 
 
@@ -185,6 +237,9 @@ pfWinBtn.addEventListener('click',e=> {
 const ctWin = document.getElementById('contact-window');
 const ctWinBtn = document.getElementById('contact-window-button').children[0];
 const programName3 = document.createElement('div');
+const programName3Icon = document.createElement('img');
+const programName3Text = document.createElement('p');
+
 
 icons[3].addEventListener('dblclick', function() {
   num++;
@@ -193,7 +248,17 @@ icons[3].addEventListener('dblclick', function() {
   
   program.appendChild(programName3);
   programName3.classList.add('window-style');
-  
+  programName3.setAttribute('id','contact-taskBar')
+  programName3.appendChild(programName3Icon);
+  programName3Icon.setAttribute("src", "./img/win98_icon/contact_icon.svg");
+  programName3.appendChild(programName3Text);
+  programName3Text.textContent = "Contact";
+
+  programName3.addEventListener('click', function() {
+    num++;
+    ctWin.children[0].style.zIndex = num+1;
+  });
+
   changeWin.classList.add('on');
   isStatus = true;
 }); 
@@ -281,10 +346,18 @@ function moving (topbar,win,container) {
     originTop = win.offsetTop;
   });
   
+  win.addEventListener('mousedown', function() {
+    num++;
+    win.style.zIndex = num;
+    console.log(num);
+  });
+
   document.addEventListener('mouseup', (e) => {
     isDragging = false;
   });
   
+  // 창을 드래그 할때 원래 위치했던 좌표해서 움직여진 좌표의 차이값을 원래 위치했던 left 값에 더한다.
+  // 화면 밖으로 나가지않게 범위를 지정하였다.
   document.addEventListener('mousemove', (e)=> {
     if(isDragging) {
       const diffX = e.clientX - originX;
@@ -306,4 +379,3 @@ moving(move[1],move[1].parentNode,root);
 moving(move[2],move[2].parentNode,root);
 moving(move[3],move[3].parentNode,root);
 moving(move[4],move[4].parentNode,root);
-

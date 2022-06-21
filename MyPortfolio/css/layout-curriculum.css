@@ -15,7 +15,7 @@
 
 /* name */
 #curriculum-window > div > div:nth-child(1) {
-  width:59.5vw;
+  width:99.5%;
   height:5vh;
 }
 
@@ -25,7 +25,7 @@
 }
 
 #curriculum-window > div > div:nth-child(1) > h1{
-  width:53vw;
+  width:90%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
@@ -69,7 +69,7 @@
 }
 
 #curriculum-window > div > div:nth-child(2) > div {
-  width:50vw;
+  width:55vw;
   height:55vh;
 }
 
@@ -78,9 +78,9 @@
   height:3vh;
 }
 
-
+/* [디지털디자인_웹디자인] 웹디자이너, 웹퍼블리셔 양성과정 */
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) {
-  width: 25vw;
+  width: 30vw;
   height:inherit;
   border-bottom:0;
   border-radius: 5px 5px 0 0;
@@ -102,11 +102,40 @@
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div {
   width:inherit;
   height:50%;
-  /* border:1px solid red; */
+}
+
+/* skill */
+#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > img {
+  width:10vw;
+  height:10vw;
+}
+
+#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > img:nth-child(4) {
+  width:auto;
+  height:8vw;
+}
+
+#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > img {
+  width:10vw;
+  height:10vw;
+}
+
+#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > img:nth-child(3) {
+  width:auto;
+  height:8vw;
 }
 
 
+/* 작업표시줄 */
+#curriculum-taskBar > img {
+  width:1.5vw;
+  height:1.5vw;
+  margin-left:0.5vw;
+}
 
+#curriculum-taskBar > p {
+  margin-left:0.5vw;
+}
 
 
 

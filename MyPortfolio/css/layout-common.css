@@ -59,6 +59,7 @@ footer {
 }
 
 #start-button > h1 {
+  font-size: 22px;
   margin-left:0.5vw;
 }
 
@@ -93,6 +94,9 @@ footer {
   height:5vh;
   background-color: var(--bgc-189);
   margin:0.2vw;
+
+  display:flex;
+  align-items: center;
 }
 
 /* 시계 */
