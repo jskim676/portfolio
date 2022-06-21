@@ -10,7 +10,23 @@
   #root {
     width:var(--vw-100);
     height:var(--vh-400);
-    background-color: rgb(22, 22, 24);
+    background-color: var(--bgc-color);
     font-family: 'Montserrat', sans-serif;
     color: #eee;
   }
+
+  /* 스크롤바*/
+  body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 30%;
+    background: var(--bgc-header);
+    
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--bgc-color);
+}

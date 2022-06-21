@@ -43,15 +43,9 @@ squareIcon.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game
 
 const ggPlayBtn = document.getElementById('ggPlayBtn');
 ggPlayBtn.addEventListener('click', function() {
-    if(playState === true) {
-      squareIcon.classList.remove('hidden');
-      gameTime(ggTimeBar, ggTimeValue);
-      playState = false;
-    } else {
-      console.log('test');
-      playState = true;
-    }
-  });
+  squareIcon.classList.remove('hidden');
+  gameTime(ggTimeBar, ggTimeValue);
+},{once:true});
 
 
 

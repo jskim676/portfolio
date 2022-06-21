@@ -5,6 +5,7 @@ ajax.send();
 const champions = JSON.parse(ajax.response);
 const skinAllData = Object.values(champions);
 let skinImg = document.getElementById('skinImg');
+const backDropFilter = document.getElementById('backDropFilter');
 
 let skinData = [];
 for(let j=0; j<skinAllData.length; j++) {
@@ -20,7 +21,6 @@ let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRou
 let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
 // // uncenteredSplashPath
 
-const backDropFilter = document.getElementById('backDropFilter');
 
 skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 
@@ -30,15 +30,9 @@ skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be
 const skinPlayBtn = document.getElementById('skinPlayBtn');
 let playState = true;
 skinPlayBtn.addEventListener('click', function() {
-    if(playState === true) {
-      skinImg.classList.remove('hidden');
-      gameTime(skinTimeBar, skinTimeValue);
-      playState = false;
-    } else {
-      console.log('test');
-      playState = true;
-    }
-  });
+  skinImg.classList.remove('hidden');
+  gameTime(skinTimeBar, skinTimeValue);
+},{once:true});
 
   
   
@@ -59,13 +53,14 @@ skinPlayBtn.addEventListener('click', function() {
             alert('정답입니다');
 
             // setTimeout(function(){
+            //   skinImg.classList.add('hidden');
             //   skinQuizData = Math.floor(Math.random()*skinData.length);
             //   let skinQuizRoute = skinData[skinQuizData].splashPath;
             //   let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
             //   let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
             //   let skinImg = document.getElementById('skinImg');
             //   skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
-            // }, 1000);
+            // }, 2000);
 
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);
