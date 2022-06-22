@@ -4,11 +4,13 @@
 #main > div > div:nth-child(5) {
   position:absolute;
   user-select: none;
+
+  top:0vh;
   }
   
 #main > div > div:nth-child(5) > div {
-  width:60vw;
-  height:50vh;
+  width:50vw;
+  height:70vh;
   background-color: var(--bgc-189);
   position: absolute;
   left:25vw;
@@ -27,7 +29,7 @@
 }
 
 #main > div > div:nth-child(5) > div > div:nth-child(1) > h1{
-  width:90%;
+  width:88%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
@@ -64,11 +66,18 @@
   position:absolute;
 } 
 
-
+/* contact */
 #main > div > div:nth-child(5) > div > div:nth-child(2) {
   width:inherit;
-  height:45vh;
+  height:65vh;
 }
+
+
+
+
+
+
+
 
 /* 작업표시줄 */
 #contact-taskBar > img {

@@ -42,5 +42,3 @@ function moving (topbar,win,container) {
     }
   });
 }
-
-export default moving;

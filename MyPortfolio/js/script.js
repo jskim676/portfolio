@@ -11,17 +11,17 @@ const root = document.getElementById('root');
 btnConfirm.addEventListener('click', function() {
   helloWorld.classList.add('on');
   main.classList.remove('on');
-  fullscreen(root)
+  // fullscreen(root)
 })
 
 
 
-const fullscreen = element => {
-  if (element.requestFullscreen) return element.requestFullscreen()
-  if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
-  if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-  if (element.msRequestFullscreen) return element.msRequestFullscreen()
-}
+// const fullscreen = element => {
+//   if (element.requestFullscreen) return element.requestFullscreen()
+//   if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
+//   if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
+//   if (element.msRequestFullscreen) return element.msRequestFullscreen()
+// }
 
 
 
@@ -119,7 +119,6 @@ gameicon.addEventListener('wheel', (e) => {
     }
   }
 });
-
 
 
 // 게임 시간을 보여줌
@@ -327,9 +326,6 @@ function init () {
   setInterval(getTime,1000);
 }
 
-function init () {
-  setInterval(getTime,1000);
-}
 
 init();
 
@@ -376,7 +372,15 @@ function moving (topbar,win,container) {
   
       win.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
       win.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`;
+    }
+  });
 
+  scrolling.addEventListener('mousemove', (e) => {
+    if(isDragging) {
+      const diffY = e.clientY - originY;
+      const endOfYPoint = containerHeight - moveHeight;
+  
+      gameicon.style.top = `-${Math.floor(Math.min(Math.max(0, originTop+diffY), endOfYPoint)/scrollingTop*100)}%`;
     }
   });
 }

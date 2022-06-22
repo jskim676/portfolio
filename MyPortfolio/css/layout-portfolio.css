@@ -8,7 +8,7 @@
   
 #portfolio-window > div {
   width:60vw;
-  height:50vh;
+  height:52vh;
   background-color: var(--bgc-189);
   position: absolute;
   left:15vw;
@@ -81,7 +81,7 @@
 /* check */
 #portfolio-window > div > div:nth-child(3) {
   width:inherit;
-  height:10vh;
+  height:8vh;
 }
 
 #portfolio-window > div > div:nth-child(3) > div {
