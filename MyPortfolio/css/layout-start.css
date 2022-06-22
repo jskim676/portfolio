@@ -1,0 +1,52 @@
+
+
+/* start-window */  
+#start-window {
+  position:absolute;
+}
+
+#start-window > div {
+  width:20vw;
+  height:40vh;
+  background-color: var(--bgc-189);
+  position: absolute;
+  top:54vh;
+}
+
+/* name */
+#start-window > div > div:nth-child(1) {
+  width:3vw;
+  height:39.5vh;
+  background: linear-gradient(0deg, #0000FF 0%, #000080 100%);
+  position: relative;
+}
+
+#start-window > div > div:nth-child(1) > h1{
+  width:35vh;
+  height:3vw;
+  color:var(--bgc-255);
+  transform: rotate(-90deg);
+  transform-origin: 0 0 ;
+  position: absolute;
+  top:38vh;
+  left:0.5vw;
+  /* test */
+}
+
+
+#start-window > div > div:nth-child(2) {
+  width:17vw;
+  height:inherit;
+}
+
+#start-window > div > div:nth-child(2) > div {
+  width:inherit;
+  height:calc(40vh/7);
+  border:1px solid red;
+}
+
+#start-window > div > div:nth-child(2) > div > img {
+  width:2vw;
+  height:2vw;
+}
+

@@ -1,13 +1,13 @@
 
 /* game-window */  
-#main > div > div:nth-child(2) {
+#game-window {
   width:92vw;
   height:100vh;
   user-select: none;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) {
-  width:32.5vw;
+#game-window > div:nth-child(1) {
+  width:35.5vw;
   height:65vh;
   background-color: var(--bgc-189);
   position:absolute;
@@ -16,47 +16,47 @@
 }
 
 /* name */
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) {
+#game-window > div:nth-child(1) > div:nth-child(1) {
   width:99.5%;
   height:5vh;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > img {
+#game-window > div:nth-child(1) > div:nth-child(1) > img {
   width:40px;
   height:40px;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > h1{
+#game-window > div:nth-child(1) > div:nth-child(1) > h1{
   width:69%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div {
+#game-window > div:nth-child(1) > div:nth-child(1) > div {
   width:6vw;
   height:100%;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div {
+#game-window > div:nth-child(1) > div:nth-child(1) > div > div {
   width:1.8vw;
   height:1.8vw;
   background-color:var(--bgc-192);
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) > div {
+#game-window > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) > div {
   width:1vw;
   height:1vw;
   border-bottom: 2px solid var(--bgc-000);
 } 
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div {
+#game-window > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div {
   width:1vw;
   height:1vw;
   border:2px solid var(--bgc-000);
   border-top: 3px solid var(--bgc-000);
 } 
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(1) {
+#game-window > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(1) {
   width:1.2vw;
   height:0.25vh;
   background-color: var(--bgc-000);
@@ -66,7 +66,7 @@
   position:absolute;
 } 
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(2) {
+#game-window > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(3) > span:nth-child(2) {
   width:1.2vw;
   height:0.25vh;
   background-color: var(--bgc-000);
@@ -78,18 +78,18 @@
 } 
 
 /* totaltime */
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) {
+#game-window > div:nth-child(1) > div:nth-child(2) {
   width:99.5%;
   height:4vh;
   border:1px solid var(--bgc-129);
 }
 
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div {
+#game-window > div:nth-child(1) > div:nth-child(2) > div {
   margin-left:0.5vw;
 }
 
 /* gamelist */
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) {
+#game-window > div:nth-child(1) > div:nth-child(3) {
   width:99.5%;
   height:50vh;
   background-color: var(--bgc-255);
@@ -108,7 +108,7 @@
 }
 
 #gameicon > div {
-  width:8vw;
+  width:9vw;
   height:20vh;
   margin:1vw;
 }
@@ -175,7 +175,7 @@
 }
 
 /* gametime */
-#main > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) {
+#game-window > div:nth-child(1) > div:nth-child(4) {
   width:99.5%;
   height:4vh;
   border:1px solid var(--bgc-129);
@@ -187,7 +187,7 @@
 
 
 /* question */
-#main > div > div:nth-child(2) > div:nth-child(2)  {
+#game-window > div:nth-child(2)  {
   width:20vw;
   height:94.4vh;
   position:absolute;
@@ -195,14 +195,14 @@
   right:0;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(2)  > div {
+#game-window > div:nth-child(2)  > div {
   width:inherit;
   height:100%;
   position:absolute;
   bottom:0;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(2)  > div > div {
+#game-window > div:nth-child(2)  > div > div {
   width:inherit;
   height:10vh;
   border-radius: 10px;
@@ -211,11 +211,11 @@
   overflow: hidden;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(1) {
+#game-window > div:nth-child(2)  > div > div > p:nth-child(1) {
   margin:4vh 1.2vw;
 }
 
-#main > div > div:nth-child(2) > div:nth-child(2)  > div > div > p:nth-child(2) {
+#game-window > div:nth-child(2)  > div > div > p:nth-child(2) {
   line-height:3.5vh;
   margin:2vh 1.2vw;
 }

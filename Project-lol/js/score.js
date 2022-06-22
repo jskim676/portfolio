@@ -23,7 +23,7 @@ function score(team) {
 
 
 function gameTime(barValue, timeValue) {
-  let time = 120;
+  let time = 10;
   let min = "";
   let sec = "";
   
@@ -47,6 +47,7 @@ function gameTime(barValue, timeValue) {
       clearInterval(timer);
       timeValue.innerHTML = "시간 종료";
       alert('시간 종료');
+      backDropFilter.classList.add('hidden');
     }
   }, 1000);
 }

@@ -66,7 +66,7 @@ icons[0].addEventListener('dblclick', function() {
   });
   
   
-  changeWin.classList.add('on');
+  startWin.classList.add('on');
   isStatus = true
 });  
 
@@ -84,6 +84,7 @@ programName0.addEventListener('click', e=> {
 
 gameWinBtn[1].addEventListener('click', e=> {
   qs.classList.add('on');
+
 });
 
 // X 버튼
@@ -122,7 +123,7 @@ gameicon.addEventListener('wheel', (e) => {
 
 
 // 게임 시간을 보여줌
-let gametimeData = ["League of Legends 5,711 Hours", "Maplestory 5,000 Hours", "Mabinogi 3,200 Hours", "Dead by Daylight 1,500 Hours", "PUBG 1,250 Hours", "Apex Legends 600 Hours"
+let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 600 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", 
 ]
 
 for(let i=0; i<gametimeData.length; i++) {
@@ -137,9 +138,9 @@ for(let j=0; j<gameicon.children.length; j++) {
   gameicon.addEventListener('click', (event) => {
     let getDataset = event.target.dataset.gameicon;
     if(gameicon.children[j].dataset.gameicon === getDataset) {
-      gameicon.children[j].classList.add('dashBorder');
+      gameicon.children[j].classList.add('outLine');
     } else {
-      gameicon.children[j].classList.remove('dashBorder');
+      gameicon.children[j].classList.remove('outLine');
     }
   });
 }
@@ -173,7 +174,7 @@ const ccWinBtn = document.getElementById('curriculum-window-button').children[0]
 const programName1 = document.createElement('div');
 const programName1Icon = document.createElement('img');
 const programName1Text = document.createElement('p');
-
+const skill = Array.from(document.querySelectorAll('#skill > div > img'));
 
 icons[1].addEventListener('dblclick', function() {
   num++;
@@ -194,7 +195,7 @@ icons[1].addEventListener('dblclick', function() {
   });
 
   
-  changeWin.classList.add('on');
+  startWin.classList.add('on');
   isStatus = true;
 }); 
 
@@ -203,6 +204,7 @@ ccWinBtn.addEventListener('click',e=> {
   ccWin.classList.add('on');
   programName1.parentNode.removeChild(programName1);
 });
+
 
 // -------------- portfolio --------------
 const pfWin = document.getElementById('portfolio-window');
@@ -231,7 +233,7 @@ icons[2].addEventListener('dblclick', function() {
   });
 
   
-  changeWin.classList.add('on');
+  startWin.classList.add('on');
   isStatus = true;
 }); 
 
@@ -268,7 +270,7 @@ icons[3].addEventListener('dblclick', function() {
     ctWin.children[0].style.zIndex = num+1;
   });
 
-  changeWin.classList.add('on');
+  startWin.classList.add('on');
   isStatus = true;
 }); 
 
@@ -277,30 +279,37 @@ ctWinBtn.addEventListener('click',e=> {
   programName3.parentNode.removeChild(programName3);
 });
 
-// -------------- change --------------
-const changeWin = document.getElementById('change-window');
+// -------------- start --------------
+const startWin = document.getElementById('start-window');
 const start = document.getElementById('start');
 const startBtn = document.getElementById('start-button');
 
 let isStatus = true;
 startBtn.addEventListener('click',e=> {
   num++;
-  changeWin.children[0].style.zIndex = num;
+  startWin.children[0].style.zIndex = num;
 
   if(isStatus === true) {
-    changeWin.classList.remove('on');
+    startWin.classList.remove('on');
     isStatus = false;
   } else {
-    changeWin.classList.add('on');
+    startWin.classList.add('on');
     isStatus = true;
   }
 });
 
 main.children[0].addEventListener('click', e=> {
-  changeWin.classList.add('on');
+  startWin.classList.add('on');
   isStatus = true;
 });
 
+for(let k=0; k<skill.length; k++) {
+  skill[k].addEventListener('mouseover', function() {
+    num++;
+    startWin.classList.remove('on');
+    startWin.style.zIndex = num;
+  });
+}
 
 
 // -------------- clock --------------
@@ -326,9 +335,7 @@ function init () {
   setInterval(getTime,1000);
 }
 
-
 init();
-
 
 
 // -------------- move --------------

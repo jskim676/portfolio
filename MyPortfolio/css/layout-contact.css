@@ -1,16 +1,15 @@
 
 
 /* contact-window */  
-#main > div > div:nth-child(5) {
+#contact-window {
   position:absolute;
   user-select: none;
 
-  top:0vh;
   }
   
-#main > div > div:nth-child(5) > div {
-  width:50vw;
-  height:70vh;
+#contact-window > div {
+  width:48vw;
+  height:65vh;
   background-color: var(--bgc-189);
   position: absolute;
   left:25vw;
@@ -18,35 +17,35 @@
 }
 
 /* name */
-#main > div > div:nth-child(5) > div > div:nth-child(1) {
+#contact-window > div > div:nth-child(1) {
   width:99.5%;
   height:5vh;
 }
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > img {
+#contact-window > div > div:nth-child(1) > img {
   width:40px;
   height:40px;
 }
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > h1{
+#contact-window > div > div:nth-child(1) > h1{
   width:88%;
   color:var(--bgc-255);
   font-size: 2rem;
 }
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > div {
+#contact-window > div > div:nth-child(1) > div {
   width:2vw;
   height:100%;
 }
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > div > div {
+#contact-window > div > div:nth-child(1) > div > div {
   width:1.8vw;
   height:1.8vw;
   background-color:var(--bgc-192);
 }
 
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > div > div:nth-child(1) > span:nth-child(1) {
+#contact-window > div > div:nth-child(1) > div > div:nth-child(1) > span:nth-child(1) {
   width:1.2vw;
   height:0.25vh;
   background-color: var(--bgc-000);
@@ -56,7 +55,7 @@
   position:absolute;
 } 
 
-#main > div > div:nth-child(5) > div > div:nth-child(1) > div > div:nth-child(1) > span:nth-child(2) {
+#contact-window > div > div:nth-child(1) > div > div:nth-child(1) > span:nth-child(2) {
   width:1.2vw;
   height:0.25vh;
   background-color: var(--bgc-000);
@@ -66,17 +65,47 @@
   position:absolute;
 } 
 
-/* contact */
-#main > div > div:nth-child(5) > div > div:nth-child(2) {
+#contact-window > div > div:nth-child(2) {
   width:inherit;
   height:65vh;
 }
 
+/* profile */
+#profile {
+  width:70%;
+  height:40%;
+}
 
+#profile > div:nth-child(1) > img {
+  width:12vw;
+  height:12vw;
+  border-radius: 5px;
+}
 
+#profile > div:nth-child(2) {
+  line-height: 4vh;
+  margin-left:6vw;
+}
+#profile > div:nth-child(2) > h2 {
+  line-height: 5vh;
+}
 
+/* contact-address */
+#contact-address {
+  width:70%;
+  height:40%;
+}
 
+#contact-address > div:nth-child(1) > img {
+  width:8vw;
+  height:8vw;
+  margin-left:2vw;
+}
 
+#contact-address > div:nth-child(2) > p {
+  line-height: 4vh;
+  margin-left:8vw;
+}
 
 
 /* 작업표시줄 */

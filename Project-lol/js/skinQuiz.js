@@ -14,7 +14,6 @@ for(let j=0; j<skinAllData.length; j++) {
   }
 }
 
-
 let skinQuizData = Math.floor(Math.random()*skinData.length);
 let skinQuizRoute = skinData[skinQuizData].splashPath;
 let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
@@ -32,6 +31,7 @@ let playState = true;
 skinPlayBtn.addEventListener('click', function() {
   skinImg.classList.remove('hidden');
   gameTime(skinTimeBar, skinTimeValue);
+  
 },{once:true});
 
   
@@ -51,6 +51,8 @@ skinPlayBtn.addEventListener('click', function() {
           if(skinData[j].name === skinInputAnswer) {
             backDropFilter.classList.add('hidden');
             alert('정답입니다');
+
+
 
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);

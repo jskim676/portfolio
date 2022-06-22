@@ -25,7 +25,7 @@
 }
 
 /* flex-flexend-center */
-.flex-flexebd-center {
+.flex-flexend-center {
   display:flex;
   justify-content: flex-end;
   align-items: center;
@@ -153,6 +153,9 @@
   background: linear-gradient(90deg, #2F3A88 0%, #3384C8 100%);
 }
 
-.dashBorder {
-  border:1px dashed var(--bgc-051);
+.outLine {
+  outline-style: dashed;
+  outline-width: 2px;
+  outline-color: var(--bgc-051);
 }
+

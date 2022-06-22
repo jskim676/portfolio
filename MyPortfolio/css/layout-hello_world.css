@@ -1,6 +1,6 @@
 #hello-world > div {
-  width:30vw;
-  height:26vh;
+  width:25vw;
+  height:24vh;
   background-color: var(--bgc-189);
   position:absolute;
   z-index: 2;
@@ -10,7 +10,7 @@
 }
 
 #hello-world > div > div:nth-child(1) {
-  width:29.5vw;
+  width:99.5%;
   height:5vh;
 }
 
@@ -22,7 +22,7 @@
 
 #hello-world > div > div:nth-child(2) {
   width:inherit;
-  height:15vh;
+  height:14vh;
 }
 
 #hello-world > div > div:nth-child(2) > p {
