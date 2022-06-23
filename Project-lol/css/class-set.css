@@ -55,10 +55,13 @@
   margin:2% 1%;
 }
 
+.tarotBgc {
+  background-color: var(--tarot-bgc);
+}
+
 .consistOf {
   /* 팀에 속해있는 표시 */
 }
-
 
 .left {
   left:12vw;

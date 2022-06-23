@@ -186,18 +186,22 @@ window.addEventListener('wheel',e=> {
 
 
 // --------------- section-3 list---------------
-const cog = document.getElementById('cog');
+const skinCog = document.getElementById('skinCog');
+const ggCog = document.getElementById('ggCog');
 let cogData = true;
 
-cog.addEventListener('click',e=> {
-  if(cogData === true) {
-    cog.style.transform = "rotate(0.5turn)";
-    cog.style.transition = "1s";
-    cogData = false;
-  } else {
-    cog.style.transform = "rotate(0turn)";
-    cog.style.transition = "1s";
-    cogData = true;
-  }
-});
+function cog (target) {
+  target.addEventListener('click',e=> {
+    if(cogData === true) {
+      target.style.transform = "rotate(0.5turn)";
+      target.style.transition = "1s";
+      cogData = false;
+    } else {
+      target.style.transform = "rotate(0turn)";
+      target.style.transition = "1s";
+      cogData = true;
+    }
+  });
+}
 
+cog(skinCog); cog(ggCog);

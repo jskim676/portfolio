@@ -16,17 +16,22 @@ rerollBtn.addEventListener('click',function() {
   rerollValue--;
   if(rerollValue >= 0 ) {
     championChoice.classList.remove('hidden');
+    
     let lsData = [];
-    let idx = 0;
-    for(let j=0; j<championChoice.children.length; j++) {
+    while(lsData.length < 5) {
       idx = Math.floor(Math.random()*randomLoadScreenData.length);
-      if(lsData.indexOf(idx) === -1) {
-        lsData.push(randomLoadScreenData[idx]);
-      } else {
-        j--
+      if(lsData.indexOf(idx)<0) {
+        // lsData.push(randomLoadScreenData[idx]);
+        lsData.push(idx);
       }
-      let lowerCaseLsPath = lsData[j].toLowerCase();
+    }
+
+
+    for(let j=0; j<championChoice.children.length; j++) {
+
+      let lowerCaseLsPath = randomLoadScreenData[lsData[j]].toLowerCase();
       let lsIllust = lowerCaseLsPath.slice(lowerCaseLsPath.indexOf("assets/")+7, lowerCaseLsPath.length);
+
       championChoice.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + lsIllust;
       
       reroll.children[1].textContent = `현재 남은 리롤의 횟수는 ${rerollValue}번 입니다`;
