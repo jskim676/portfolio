@@ -12,8 +12,8 @@
 
 /* summoner */
 #summoner {
-  width:100%;
-  height:10%;
+  width:50%;
+  height:15%;
 }
 
 #summoner > img {
@@ -26,22 +26,15 @@
 
 #lanePosition {
   width:inherit;
-  height:20%;
+  height:10%;
 }
 
 #lanePosition > div {
   width:inherit;
-  height:50%;
+  height:100%;
 }
 
-#lanePosition > div:nth-child(1) > div {
-  width:2.5vw;
-  height:2.5vw;
-  border:1px solid var(--border-color);
-  border-radius: 50%;
-}
-
-#lanePosition > div:nth-child(2) > img {
+#lanePosition > div:nth-child(1) > img {
   width:2.5vw;
   height:2.5vw;
 }
@@ -59,10 +52,18 @@
 
 #reroll {
   width:inherit;
-  height:15%;
+  height:20%;
 }
 
 #reroll > button {
   width:8%;
-  height:35%;
+  height:25%;
+  cursor: pointer;
+}
+
+#reroll > p {
+  width:40%;
+  height:20%;
+  text-align: center;
+  color:var(--border-color);
 }

@@ -23,7 +23,7 @@ function score(team) {
 
 
 function gameTime(barValue, timeValue) {
-  let time = 10;
+  let time = 120;
   let min = "";
   let sec = "";
   

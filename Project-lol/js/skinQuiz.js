@@ -13,15 +13,30 @@ for(let j=0; j<skinAllData.length; j++) {
     skinData.push(Object.values(champions)[j]);
   }
 }
-
 let skinQuizData = Math.floor(Math.random()*skinData.length);
 let skinQuizRoute = skinData[skinQuizData].splashPath;
 let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
 let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
 // // uncenteredSplashPath
-
-
 skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
+
+// 다음 문제
+const nextSkin = () => {
+  let skinData = [];
+  for(let j=0; j<skinAllData.length; j++) {
+    if(Object.values(champions)[j].id%1000 !== 0) {
+      skinData.push(Object.values(champions)[j]);
+    }
+  }
+  let skinQuizData = Math.floor(Math.random()*skinData.length);
+  let skinQuizRoute = skinData[skinQuizData].splashPath;
+  let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
+  let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
+  // // uncenteredSplashPath
+  skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
+  backDropFilter.classList.remove('hidden');
+  return skinAnswer
+}
 
 
 
@@ -51,9 +66,7 @@ skinPlayBtn.addEventListener('click', function() {
           if(skinData[j].name === skinInputAnswer) {
             backDropFilter.classList.add('hidden');
             alert('정답입니다');
-
-
-
+            setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 2000);
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);
               skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
@@ -62,8 +75,11 @@ skinPlayBtn.addEventListener('click', function() {
               skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
             }
           }
+          if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
+            alert('게임 종료');
+            skinImg.classList.add('hidden');
+          }
         }
       }
     }
   }
-

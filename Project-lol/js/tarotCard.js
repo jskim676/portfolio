@@ -1,3 +1,4 @@
+  const sectionTarotCard = document.querySelector('#section-tarotCard > div')
   const tarotCard = document.getElementById('tarotCard');
 // 카드가 중앙에 오지 않음
 
@@ -10,8 +11,15 @@
     card[i].style.transform = `rotate(${(i-10)}deg)`;
   
     if(i<11) {
-      card[i].style.bottom = `${2*i/15}vh`;
+      card[i].style.bottom = `${2*i/25}vh`;
     } else {
-      card[i].style.bottom = `${(2*(card.length-1-i))/15}vh`;
+      card[i].style.bottom = `${(2*(card.length-1-i))/25}vh`;
     }
+
+    card[i].addEventListener('dblclick',function() {
+      
+    });
   };
+
+
+
