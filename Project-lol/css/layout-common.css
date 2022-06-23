@@ -9,7 +9,7 @@
   
   #root {
     width:var(--vw-100);
-    height:var(--vh-400);
+    height:var(--vh-320);
     background-color: var(--bgc-color);
     font-family: 'Montserrat', sans-serif;
     color: #eee;
