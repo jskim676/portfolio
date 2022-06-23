@@ -13,9 +13,12 @@
 
   
   let cardState = false;
+  const card = tarotCard.children;
+  let cardIndex = Math.floor(Math.random()*card.length);
+
+
   // 카드 움직임
   for(let i = 0; i < tarotCard.children.length-1; i++) {
-    const card = tarotCard.children;
     function position () {
       card[i].style.zIndex = i;
       card[i].style.left = `${i*1.6}vw`;
@@ -49,9 +52,8 @@
         sectionTarotCard.classList.add('tarotBgc');
         sectionTarotCard.style.transition = "1s";
         setTimeout(()=>{tarotResult.classList.remove('hidden')},700);
-        for(let j=0; j<tarotResult.children[0].children.length; j++) {
-          console.log(Math.floor(Math.random()*tarotResult.children[0].children.length));
-        }
+        tarotResult.children[0].children[cardIndex].style.opacity = 1;
+        // tarotResult.children[1].textContent = ;
       }
     });
   };

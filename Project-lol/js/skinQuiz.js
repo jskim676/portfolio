@@ -44,10 +44,13 @@ const nextSkin = () => {
 const skinPlayBtn = document.getElementById('skinPlayBtn');
 let playState = true;
 skinPlayBtn.addEventListener('click', function() {
-  skinImg.classList.remove('hidden');
-  gameTime(skinTimeBar, skinTimeValue);
-  
-},{once:true});
+  if(playState === true) {
+    skinImg.classList.remove('hidden');
+    skinTimeValue.innerHTML = "2 : 00";
+    gameTime(skinTimeBar, skinTimeValue);
+    playState = false;
+  }
+});
 
   
   
@@ -78,6 +81,7 @@ skinPlayBtn.addEventListener('click', function() {
           if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
             alert('게임 종료');
             skinImg.classList.add('hidden');
+            playState = true;
           }
         }
       }

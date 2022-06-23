@@ -19,10 +19,13 @@ squareBtn.addEventListener('click',function() {
 
 const ggPlayBtn = document.getElementById('ggPlayBtn');
 ggPlayBtn.addEventListener('click', function() {
-  squareIcon.classList.add('hidden');
-  gameTime(ggTimeBar, ggTimeValue);
+  if(playState === true) {
+    squareIcon.classList.add('hidden');
+    ggTimeValue.innerHTML = "2 : 00";
+    gameTime(ggTimeBar, ggTimeValue);
+  }
   hiddenData = true;
-},{once:true});
+});
 
 let squareNumber = Math.floor(Math.random()*squareKey.length);
 let squareData = squareKey[squareNumber].squarePortraitPath;
@@ -72,6 +75,12 @@ function ggPrintName () {
             ggBTeamValue.innerText = `${ggBTeamScore.children.length} / 9`;
           }
         }
+        if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
+          alert('게임 종료');
+          squareIcon.classList.add('hidden');
+          playState = true;
+        }
+        
       }
     }
   }
