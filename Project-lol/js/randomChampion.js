@@ -8,6 +8,7 @@ for(let i=0; i<skinAllData.length; i++) {
   }
 }
 
+// 마음에 들지않는 챔피언이 나왔다면 다시 기회를 얻을 수 있다.
 reroll.addEventListener('click',function() {
   championChoice.classList.remove('hidden');
   let lsData = [];
@@ -25,6 +26,84 @@ reroll.addEventListener('click',function() {
   }
 });
 
-// for(let j=0; j<championChoice.children.length; j++) {
+// 챔피언의 위치를 옮기며 조합을 구성할 수 있다.
+document.addEventListener('DOMContentLoaded', (event) => {
+  let dragChamp = null;
+  
+  function handleDragStart(e) {
+    this.style.opacity = '0.4';
+    dragChamp = this;
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('img', this.src);
+  }
 
-// }
+  function handleDragOver(e) {
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+    e.dataTransfer.dropEffect = 'move';
+    return false;
+  }
+
+  function handleDragEnter(e) {
+    this.classList.add('over');
+  }
+
+  function handleDragLeave(e) {
+    this.classList.remove('over');
+  }
+
+  function handleDrop(e) {
+    if (e.stopPropagation) {
+      e.stopPropagation(); // stops the browser from redirecting.
+    }
+    if (dragChamp != this) {
+      dragChamp.src = this.src;
+      this.src = e.dataTransfer.getData('img');
+    }
+    return false;
+  }
+
+  function handleDragEnd(e) {
+    this.style.opacity = '1';
+    champs.forEach(function (item) {
+      item.classList.remove('over');
+    });
+    player.forEach(function (item) {
+      item.classList.remove('over');
+    });
+    // afterPlayer.forEach(function (item) {
+    //   item.classList.remove('over');
+    // });
+  }
+
+  let champs = Array.from(championChoice.children);
+  champs.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart, false);
+    item.addEventListener('dragenter', handleDragEnter, false);
+    item.addEventListener('dragover', handleDragOver, false);
+    item.addEventListener('dragleave', handleDragLeave, false);
+    item.addEventListener('drop', handleDrop, false);
+    item.addEventListener('dragend', handleDragEnd, false);
+  });
+
+  let player = Array.from(summoner.children);
+  player.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart, false);
+    item.addEventListener('dragenter', handleDragEnter, false);
+    item.addEventListener('dragover', handleDragOver, false);
+    item.addEventListener('dragleave', handleDragLeave, false);
+    item.addEventListener('drop', handleDrop, false);
+    item.addEventListener('dragend', handleDragEnd, false);
+  });
+
+  // let afterPlayer = Array.from(document.querySelector('#lanePosition > div:nth-child(1) > img'));
+  // afterPlayer.forEach(function(item) {
+  //   item.addEventListener('dragstart', handleDragStart, false);
+  //   item.addEventListener('dragenter', handleDragEnter, false);
+  //   item.addEventListener('dragover', handleDragOver, false);
+  //   item.addEventListener('dragleave', handleDragLeave, false);
+  //   item.addEventListener('drop', handleDrop, false);
+  //   item.addEventListener('dragend', handleDragEnd, false);
+  // });
+});

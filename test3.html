@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .box {
+      border: 3px solid #666;
+      background-color: #ddd;
+      border-radius: .5em;
+      padding: 10px;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://cdn.pixabay.com/photo/2022/06/16/10/17/road-7265607_960_720.jpg" alt="" draggable="true" class="box">
+    <img src="https://cdn.pixabay.com/photo/2013/11/28/10/36/road-220058_960_720.jpg" alt="" draggable="true" class="box">
+    <img src="https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_960_720.jpg" alt="" draggable="true" class="box">
+    <!-- <div draggable="true" class="box">A</div>
+    <div draggable="true" class="box">B</div>
+    <div draggable="true" class="box">C</div> -->
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+
+  var dragSrcEl = null;
+  
+  function handleDragStart(e) {
+    this.style.opacity = '0.4';
+    
+    dragSrcEl = this;
+
+    e.dataTransfer.effectAllowed = 'move';
+    e.dataTransfer.setData('img', this.src);
+  }
+
+  function handleDragOver(e) {
+    if (e.preventDefault) {
+      e.preventDefault();
+    }
+
+    e.dataTransfer.dropEffect = 'move';
+    
+    return false;
+  }
+
+  function handleDragEnter(e) {
+    this.classList.add('over');
+  }
+
+  function handleDragLeave(e) {
+    this.classList.remove('over');
+  }
+
+  function handleDrop(e) {
+    if (e.stopPropagation) {
+      e.stopPropagation(); // stops the browser from redirecting.
+    }
+    
+    if (dragSrcEl != this) {
+      dragSrcEl.src = this.src;
+      this.src = e.dataTransfer.getData('img');
+    }
+    
+    return false;
+  }
+
+  function handleDragEnd(e) {
+    this.style.opacity = '1';
+    
+    items.forEach(function (item) {
+      item.classList.remove('over');
+    });
+  }
+  
+  
+  let items = document.querySelectorAll('.container .box');
+  items.forEach(function(item) {
+    item.addEventListener('dragstart', handleDragStart, false);
+    item.addEventListener('dragenter', handleDragEnter, false);
+    item.addEventListener('dragover', handleDragOver, false);
+    item.addEventListener('dragleave', handleDragLeave, false);
+    item.addEventListener('drop', handleDrop, false);
+    item.addEventListener('dragend', handleDragEnd, false);
+  });
+});
+  </script>
+</body>
+</html>
