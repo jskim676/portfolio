@@ -6,7 +6,7 @@ const color = ["rgb(83, 131, 232)", "rgb(223, 187, 102)", "rgb(180, 16, 16)", "r
 const textArray = ["OP.GG", "FOW.KR", "INVEN", "LOL.ITEO"];
 const typingDelay = 200;
 const erasingDelay = 100;
-const newTextDelay = 1000; // Delay between current and next text
+const newTextDelay = 800; // Delay between current and next text
 let textArrayIndex = 0;
 // 단어 선택 숫자
 let charIndex = 0;
@@ -102,6 +102,8 @@ const win = document.getElementById('window');
 const explain = document.getElementById('explain');
 const rightNav = document.getElementById('rightNav');
 
+
+// window 메뉴 부분
 for(let i=0; i<ul.children.length; i++) {
   ul.children[i].addEventListener('click', (event) => {
     let getDataset = event.target.dataset.menu;
@@ -111,11 +113,13 @@ for(let i=0; i<ul.children.length; i++) {
         ul.children[i].classList.add('select');
         indi.style.right = `${13*i}vw`;
         indiBox[i].style.opacity = 1;
+        indiBox[i].classList.add('indicate');
         explain.children[i].style.opacity = 1;
       } else {
         main.children[i+1].classList.add('on');
         ul.children[i].classList.remove('select');
         indiBox[i].style.opacity = 0.5;
+        indiBox[i].classList.remove('indicate');
         explain.children[i].style.opacity = 0;
       }
     }
@@ -127,6 +131,7 @@ for(let i=0; i<ul.children.length; i++) {
   });
 }
 
+// indicate 부분
 for(let j=0; j<indi.children[0].children.length; j++) {
   indi.children[0].children[j].addEventListener('click', (event) => {
     let getDataset = event.target.dataset.indi;
@@ -136,11 +141,13 @@ for(let j=0; j<indi.children[0].children.length; j++) {
         ul.children[j].classList.add('select');
         indi.style.right = `${13*j}vw`;
         indiBox[j].style.opacity = 1;
+        indiBox[j].classList.add('indicate');
         explain.children[j].style.opacity = 1;
       } else {
         main.children[j+1].classList.add('on');
         ul.children[j].classList.remove('select');
-        indiBox[j].style.opacity = 0.5;
+        indiBox[j].style.opacity = 0.2;
+        indiBox[j].classList.remove('indicate');
         explain.children[j].style.opacity = 0;
       }
     }
@@ -205,3 +212,4 @@ function cog (target) {
 }
 
 cog(skinCog); cog(ggCog);
+

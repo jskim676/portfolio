@@ -34,7 +34,7 @@
 #section-guessingGame > div > div:nth-child(1) > div:nth-child(1) > div > div {
   width:90%;
   height:20%;
-  background-color: var(--bgc-255);
+  background-color: var(--bar-color);
   border-radius: 30px;
   overflow: hidden;
 }

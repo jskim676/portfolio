@@ -2,7 +2,9 @@ const championsKeyURL = "http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_
 ajax.open('GET', championsKeyURL, false);
 ajax.send();
 const championsKey = JSON.parse(ajax.response);
-const list = championsKey.data;
+// const list = championsKey.data;
+
+// 챔피언 종류
 const championsList = Object.values(championsKey.data);
 const championsKeyValue = [];
 

@@ -48,7 +48,11 @@ skinPlayBtn.addEventListener('click', function() {
     skinImg.classList.remove('hidden');
     skinTimeValue.innerHTML = "2 : 00";
     gameTime(skinTimeBar, skinTimeValue);
-    playState = false;
+    playState = null;
+  } else if(playState === false) {
+    setTimeout(()=> { nextSkin() , skinAnswer = nextSkin(), gameTime(skinTimeBar, skinTimeValue);;}, 2000);
+    skinTimeValue.innerHTML = "2 : 00";
+    playState = null;
   }
 });
 
@@ -69,7 +73,7 @@ skinPlayBtn.addEventListener('click', function() {
           if(skinData[j].name === skinInputAnswer) {
             backDropFilter.classList.add('hidden');
             alert('정답입니다');
-            setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 2000);
+            setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 1500);
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);
               skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
@@ -81,7 +85,7 @@ skinPlayBtn.addEventListener('click', function() {
           if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
             alert('게임 종료');
             skinImg.classList.add('hidden');
-            playState = true;
+            playState = false;
           }
         }
       }

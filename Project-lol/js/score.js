@@ -47,8 +47,9 @@ function gameTime(barValue, timeValue) {
       clearInterval(timer);
       timeValue.innerHTML = "시간 종료";
       alert('시간 종료');
-      playState = true;
+      playState = false;
       backDropFilter.classList.add('hidden');
+      squareIcon.classList.remove('hidden');
     }
   }, 1000);
 }
