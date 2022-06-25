@@ -14,14 +14,19 @@ const iconlist = Array.from(summonericon);
 const iconValue = [];
 
 for(let i=0; i<summonericon.length; i++) {
-  iconValue.push(iconlist[i].iconPath);
+  if(iconlist[i].iconPath !== undefined) {
+    iconValue.push(iconlist[i].iconPath);
+  }
 }
 
 for(let j=0; j<summoner.children.length; j++) {
   let iconNumber = Math.floor(Math.random()*iconValue.length);
   let iconData = iconValue[iconNumber];
   let iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
-  console.log(iconIllust);
+  summoner.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
+  myIcon.children[0].src = summoner.children[0].src;
+  skinATeamMember.children[0].children[0].src = summoner.children[0].src;
+  ggATeamMember.children[0].children[0].src = summoner.children[0].src;
 }
 
 // function icon (target) {
