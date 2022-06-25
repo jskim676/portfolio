@@ -1,5 +1,5 @@
 const ajax = new XMLHttpRequest();
-const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/summoner-icons.json";
+const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons.json";
 ajax.open('GET', iconURL, false);
 ajax.send();
 const summonericon = JSON.parse(ajax.response);
@@ -10,20 +10,49 @@ const skinBTeamMember = document.getElementById('skinBTeamMember');
 const ggATeamMember = document.getElementById('ggATeamMember');
 const ggBTeamMember = document.getElementById('ggBTeamMember');
 
-function icon (target) {
-  for(let i=0; i<summoner.children.length; i++) {
-    const iconNumber = Math.floor(Math.random() * summonericon.length);
-    const iconData = summonericon[iconNumber].imagePath;
-    const iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
-    target.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
-    myIcon.children[0].src = summoner.children[0].src;
-    skinATeamMember.children[0].children[0].src = summoner.children[0].src;
-    ggATeamMember.children[0].children[0].src = summoner.children[0].src;
-  }
+const iconlist = Array.from(summonericon);
+const iconValue = [];
+
+for(let i=0; i<summonericon.length; i++) {
+  iconValue.push(iconlist[i].iconPath);
 }
 
-// icon(summoner);
-setTimeout(() => {icon(summoner)}, 1000);
+for(let j=0; j<summoner.children.length; j++) {
+  let iconNumber = Math.floor(Math.random()*iconValue.length);
+  let iconData = iconValue[iconNumber];
+  let iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
+  console.log(iconIllust);
+}
+
+// function icon (target) {
+//   for(let i=0; i<summoner.children.length; i++) {
+//     const iconNumber = Math.floor(Math.random() * summonericon.length);
+//     const iconData = summonericon[iconNumber].imagePath;
+//     const iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
+//     target.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
+//     myIcon.children[0].src = summoner.children[0].src;
+//     skinATeamMember.children[0].children[0].src = summoner.children[0].src;
+//     ggATeamMember.children[0].children[0].src = summoner.children[0].src;
+//   }
+// }
+
+// // icon(summoner);
+// setTimeout(() => {icon(summoner)}, 1000);
+
+
+
+
+// for(let j=0; j<iconlist.length; j++) {
+//   let iconData = summonericon[iconlist[j]].imagePath;
+//   console.log(iconlist[j]);
+//   console.log(iconData);
+//   let iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
+//   summoner.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
+//   myIcon.children[0].src = summoner.children[0].src;
+//   skinATeamMember.children[0].children[0].src = summoner.children[0].src;
+//   ggATeamMember.children[0].children[0].src = summoner.children[0].src;
+// }
+
 
 
 function teamSelection (team1, team2) {

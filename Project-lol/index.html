@@ -26,8 +26,8 @@
     <div id="section-2" class="flex-column-center-center">
       <div class="hidden">
         <h1>롤이라는 게임을 플레이 하는 데에 있어서 </h1>
-        <h1>전적, 통계 등 데이터를 얻기 위한 곳은 많지만</h1>
-        <h1>게이머들이 편하게 놀 수 있는 서비스는 없습니다</h1>
+        <h1>전적, 통계 등 데이터를 얻기 위한 곳은 많이 있습니다</h1>
+        <h1>게이머들이 편하게 놀 수 있는 서비스도 필요합니다</h1>
       </div>
       <div class="flex-spacearound-center hidden">
         <div class="flex-column-spacebetween-center">
@@ -48,14 +48,14 @@
     <!-- section-3 -->
     <div id="section-3" class="flex-column-spacearound-center">
       <div class="flex-column-center-flexstart hidden">
-        <h1>게임을 좋아하는 저로써는 내가 한번 만들어보면 어떨까?</h1>
+        <h1>게임을 좋아하는 저로써 내가 한번 만들어보자</h1>
         <h1>라는 생각으로 아이디어를 구상하여 제작해보았습니다</h1>
       </div>
       
       <!-- indicate -->
       <div id="indicate" class="flex-center-center hidden">
         <div class="flex-spacebetween-center">
-          <div class="flex-center-center" data-indi="0">
+          <div class="indicate flex-center-center" data-indi="0">
             <p data-indi="0">Dashboard</p>
           </div>
           <div class="flex-center-center" data-indi="1">
@@ -88,10 +88,11 @@
         <div id="window" class=""> 
           <header class="flex-flexend-center">
             <div class="flex-flexstart-center">
-              <div id="myIcon">
+              <div id="myIcon" class="hidden">
                 <img src="" alt="myIcon">
               </div>
-              <p>~ 님 안녕하세요</p>
+              <p id="idAppear"></p>
+              <p id="greeting"></p>
             </div>
           </header>
           <main class="flex">
@@ -128,17 +129,51 @@
                   <div class="flex-center-center">
                     <div class="flex-column-spacearound-center">
                       <h3>Forum</h3>
-                      <div></div>
+                      <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
                     </div>
                   </div>
                   <div class="flex-column-center-center">
                     <div class="flex-center-center">
-                      <div class="flex-column-spacearound-center">
+                      <div id="loginScreen" class="flex-column-spacearound-center">
                         <h3>Login</h3>
-                        <div></div>
-                        <div></div>
-                        <div id="loginBtn" class="flex-center-center"></div>
+                        <form action="" method="get" class="flex-column-spaceevenly-center" onsubmit="return false">
+                          <input type="text" name="id" id="idInputAnswer" onkeypress="if(window.event.keyCode === 13) {value=null}" autocomplete="off" placeholder="ID">
+                          <input type="password" name="pw" id="pwInputAnswer" onkeypress="if(window.event.keyCode === 13) {pwPrintName(), value=null}" autocomplete="off" placeholder="PW">
+                          <button id="loginBtn" class="flex-center-center"></button>
+                        </form>
                       </div>
+                      <div id="changeLoginScreen" class="flex-column-spaceevenly-center hidden">
+                        <div class="flex-column-spacearound-center">
+                          <img src="" alt="">
+                          <p></p>
+                        </div>
+                        <div class="flex-column-spacearound-flexstart">
+                          <p>Ranked Solo</p>
+                          <div class="flex-spacearound-center">
+                            <img id="soloRank" src="" alt="">
+                            <div>
+                              <p>Diamond 4</p>
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex-column-spacearound-flexstart">
+                          <p>Ranked Flex</p>
+                          <div class="flex-spacearound-center">
+                            <img id="teamRank" src="" alt="">
+                            <div>
+                              <p>Diamond 4</p>
+                              <p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
                     <div class="flex-center-center">
                       <div class="flex-column-spacearound-center">
@@ -250,7 +285,7 @@
                       <div id="skinAppearAnswer" class="flex-flexend-flexend"></div>
                     </div>
                     <div class="flex-center-center">
-                      <input id="skinInputAnswer" onkeypress="if(window.event.keyCode === 13) {skinPrintName() , value=null}" placeholder="정답을 입력해보세요"/>
+                      <input id="skinInputAnswer" onkeypress="if(window.event.keyCode === 13) {skinPrintName() , value=null}" placeholder="정답을 입력해보세요">
                     </div>
                   </div>
                 </div>
@@ -347,7 +382,7 @@
                       </div>
                     </div>
                     <div class="flex-center-center">
-                      <input id="ggInputAnswer" onkeypress="if(window.event.keyCode === 13) {ggPrintName(), value=null}" placeholder="질문을 하여 챔피언의 힌트를 얻고 맞춰보세요"/>
+                      <input id="ggInputAnswer" onkeypress="if(window.event.keyCode === 13) {ggPrintName(), value=null}" placeholder="질문을 하여 챔피언의 힌트를 얻고 맞춰보세요">
                     </div>
                   </div>
                 </div>
@@ -376,16 +411,27 @@
                   </div>
                 </div>
                 <!-- championChoice -->
-                <div id="championChoice" class="flex-spacearound-center hidden">
-                  <img src="" alt="" class="" draggable="true" >
-                  <img src="" alt="" class="" draggable="true" >
-                  <img src="" alt="" class="" draggable="true" >
-                  <img src="" alt="" class="" draggable="true" >
-                  <img src="" alt="" class="" draggable="true" >
+                <div id="championChoice" class="flex-spacearound-center">
+                  <div>
+                    <img src="" alt="" class="hidden" draggable="true" >
+                  </div>
+                  <div>
+                    <img src="" alt="" class="hidden" draggable="true" >
+                  </div>
+                  <div>
+                    <img src="" alt="" class="hidden" draggable="true" >
+                  </div>
+                  <div>
+                    <img src="" alt="" class="hidden" draggable="true" >
+                  </div>
+                  <div>
+                    <img src="" alt="" class="hidden" draggable="true" >
+                  </div>
                 </div>
                 <!-- reroll -->
                 <div id="reroll" class="flex-column-spaceevenly-center">
                   <button></button>
+                  <p></p>
                   <p></p>
                 </div>
               </div>
@@ -534,6 +580,7 @@
     <script src="./js/guessingGame.js"></script>
     <script src="./js/score.js"></script>
     <script src="./js/tarotCard.js"></script>
+    <script src="./js/dashboard.js"></script>
   </div>
 </body>
 </html>

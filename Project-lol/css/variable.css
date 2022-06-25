@@ -9,9 +9,10 @@
   --vh-320:320vh;
 
   --bgc-color:#161618;
-  --bgc-header:#777777;
-  --bgc-nav:#CECECE;
-  --bgc-section:#EDEDED;
+  --bgc-header:#282828;
+  --bgc-nav:#3D3D3D;
+  --bgc-main:#484848;
+  --bgc-section:#484848;
   --bgc-item:#C4C4C4;
   --bgc-255:#FFFFFF;
 
@@ -20,8 +21,12 @@
   --inven-color:#B41010;
   --loliteo-color:#CDD1FF;
 
-  --border-color:#333333;
+  /* --border-color:#333333; */
+  --border-color:#bbbbbb;
+  
 
+  --time-color:#aaaaaa;
+  --bar-color:#696969;
   --redteam:#FC6264;
   --blueteam:#62A9F9;
 

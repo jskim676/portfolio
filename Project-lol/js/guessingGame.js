@@ -23,6 +23,11 @@ ggPlayBtn.addEventListener('click', function() {
     squareIcon.classList.add('hidden');
     ggTimeValue.innerHTML = "2 : 00";
     gameTime(ggTimeBar, ggTimeValue);
+    playState = null;
+  } else if(playState === false) {
+    setTimeout(()=> { nextGg() , skinAnswer = nextGg(), gameTime(ggTimeBar, ggTimeValue);}, 2000);
+    skinTimeValue.innerHTML = "2 : 00";
+    playState = null;
   }
   hiddenData = true;
 });
@@ -78,7 +83,7 @@ function ggPrintName () {
         if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
           alert('게임 종료');
           squareIcon.classList.add('hidden');
-          playState = true;
+          playState = false;
         }
         
       }

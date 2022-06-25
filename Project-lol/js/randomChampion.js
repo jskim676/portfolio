@@ -1,4 +1,4 @@
-const championChoice = document.getElementById('championChoice');
+const championChoice = document.querySelectorAll('#championChoice > div > img')
 const lanePosition = document.getElementById('lanePosition');
 const randomLoadScreenData = [];
 const reroll = document.getElementById('reroll');
@@ -15,7 +15,6 @@ let rerollValue = 4;
 rerollBtn.addEventListener('click',function() {
   rerollValue--;
   if(rerollValue >= 0 ) {
-    championChoice.classList.remove('hidden');
     
     let lsData = [];
     while(lsData.length < 5) {
@@ -25,16 +24,15 @@ rerollBtn.addEventListener('click',function() {
         lsData.push(idx);
       }
     }
+      for(let j=0; j<championChoice.length; j++) {
+        championChoice[j].classList.remove('hidden');
+        
+        let lowerCaseLsPath = randomLoadScreenData[lsData[j]].toLowerCase();
+        let lsIllust = lowerCaseLsPath.slice(lowerCaseLsPath.indexOf("assets/")+7, lowerCaseLsPath.length);
 
-
-    for(let j=0; j<championChoice.children.length; j++) {
-
-      let lowerCaseLsPath = randomLoadScreenData[lsData[j]].toLowerCase();
-      let lsIllust = lowerCaseLsPath.slice(lowerCaseLsPath.indexOf("assets/")+7, lowerCaseLsPath.length);
-
-      championChoice.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + lsIllust;
+        championChoice[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + lsIllust;
       
-      reroll.children[1].textContent = `현재 남은 리롤의 횟수는 ${rerollValue}번 입니다`;
+        reroll.children[1].textContent = `현재 남은 리롤의 횟수는 ${rerollValue}번 입니다`;
     }
   }
 });
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function handleDrop(e) {
     if (e.stopPropagation) {
-      e.stopPropagation(); // stops the browser from redirecting.
+      e.stopPropagation();
     }
     if (dragChamp != this) {
       dragChamp.src = this.src;
@@ -83,12 +81,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     champs.forEach(function (item) {
       item.classList.remove('over');
     });
-    // player.forEach(function (item) {
-    //   item.classList.remove('over');
-    // });
   }
 
-  let champs = Array.from(championChoice.children);
+  let champs = Array.from(championChoice);
   champs.forEach(function(item) {
     item.addEventListener('dragstart', handleDragStart, false);
     item.addEventListener('dragenter', handleDragEnter, false);

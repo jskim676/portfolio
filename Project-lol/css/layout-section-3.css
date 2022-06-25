@@ -28,9 +28,9 @@
 #indicate > div > div {
   width:12vw;
   height:5vh;
-  border:2px solid var(--bgc-item);
+  background-color: var(--bgc-main);
   border-radius: 30px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 #indicate > div > div:nth-child(1) {
@@ -60,10 +60,10 @@
 
 /* window */
 #window {
-  width:60vw;
+  width:62vw;
   height:inherit;
   border-radius: 20px;
-  background-color:var(--bgc-section);
+  background-color:var(--bgc-main);
 }
 
 #window > header {
@@ -95,9 +95,10 @@
 
 
 #window > header > div > p {
-  margin-left:10%;
+  margin-left:5%;
   font-size: 1.2rem;
   color:var(--border-color);
+  transition:1s;
 }
 
 #window > main {
