@@ -213,3 +213,16 @@ function cog (target) {
 
 cog(skinCog); cog(ggCog);
 
+
+
+const quickSkin = document.getElementById('quickSkin');
+const quickGg = document.getElementById('quickGg');
+
+
+function skinQuickMatch () {
+  document.getElementById('skinQuizBtn').click();
+}
+
+function ggQuickMatch () {
+  document.getElementById('guessingGameBtn').click();
+}

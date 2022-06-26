@@ -53,9 +53,6 @@ const nextGg = () => {
 
 
 
-
-
-
 function ggPrintName () {
   for(let j=0; j<squareKey.length; j++) {
     if(squareKey[j].id === squareAnswer) {
@@ -67,6 +64,8 @@ function ggPrintName () {
         ggAppearAnswer.appendChild(answerBox);
         answerBox.classList.add('answerBox');
         answerBox.innerText = ggInputAnswer;
+        if(ggATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
+        if(ggBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
         if(squareKey[j].name === ggInputAnswer) {
           squareIcon.classList.remove('hidden');
           alert('정답입니다');

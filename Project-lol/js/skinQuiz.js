@@ -1,4 +1,4 @@
-// 
+//챔피언의 일러스트 중 기본 스킨을 제외한 나머지 스킨을 배열안에 넣어 불러오는 형식 
 const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json`;
 ajax.open('GET', skinURL, false);
 ajax.send();
@@ -20,7 +20,8 @@ let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, 
 // // uncenteredSplashPath
 skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 
-// 다음 문제
+
+// 스킨의 다음 문제를 가져올때
 const nextSkin = () => {
   let skinData = [];
   for(let j=0; j<skinAllData.length; j++) {
@@ -32,7 +33,6 @@ const nextSkin = () => {
   let skinQuizRoute = skinData[skinQuizData].splashPath;
   let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
   let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
-  // // uncenteredSplashPath
   skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
   backDropFilter.classList.remove('hidden');
   return skinAnswer
@@ -50,13 +50,11 @@ skinPlayBtn.addEventListener('click', function() {
     gameTime(skinTimeBar, skinTimeValue);
     playState = null;
   } else if(playState === false) {
-    setTimeout(()=> { nextSkin() , skinAnswer = nextSkin(), gameTime(skinTimeBar, skinTimeValue);;}, 2000);
+    setTimeout(()=> { nextSkin() , skinAnswer = nextSkin(), gameTime(skinTimeBar, skinTimeValue)}, 2000);
     skinTimeValue.innerHTML = "2 : 00";
     playState = null;
   }
 });
-
-  
   
   // 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
   function skinPrintName () {
@@ -70,6 +68,9 @@ skinPlayBtn.addEventListener('click', function() {
           skinAppearAnswer.appendChild(answerBox);
           answerBox.classList.add('answerBox');
           answerBox.innerText = skinInputAnswer;
+          if(skinATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
+          if(skinBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
+
           if(skinData[j].name === skinInputAnswer) {
             backDropFilter.classList.add('hidden');
             alert('정답입니다');
@@ -77,7 +78,7 @@ skinPlayBtn.addEventListener('click', function() {
             if(skinATeamMember.classList.contains('consistOf')) {
               score(skinATeamScore);
               skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
-            } else if (skinATeamMember.classList.contains('consistOf')){
+            } else if (skinBTeamMember.classList.contains('consistOf')){
               score(skinBTeamScore);
               skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
             }

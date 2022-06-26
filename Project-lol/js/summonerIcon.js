@@ -19,6 +19,7 @@ for(let i=0; i<summonericon.length; i++) {
   }
 }
 
+// 소환사 아이콘을 불러와 배치시킨다.
 for(let j=0; j<summoner.children.length; j++) {
   let iconNumber = Math.floor(Math.random()*iconValue.length);
   let iconData = iconValue[iconNumber];
@@ -29,37 +30,7 @@ for(let j=0; j<summoner.children.length; j++) {
   ggATeamMember.children[0].children[0].src = summoner.children[0].src;
 }
 
-// function icon (target) {
-//   for(let i=0; i<summoner.children.length; i++) {
-//     const iconNumber = Math.floor(Math.random() * summonericon.length);
-//     const iconData = summonericon[iconNumber].imagePath;
-//     const iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
-//     target.children[i].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
-//     myIcon.children[0].src = summoner.children[0].src;
-//     skinATeamMember.children[0].children[0].src = summoner.children[0].src;
-//     ggATeamMember.children[0].children[0].src = summoner.children[0].src;
-//   }
-// }
-
-// // icon(summoner);
-// setTimeout(() => {icon(summoner)}, 1000);
-
-
-
-
-// for(let j=0; j<iconlist.length; j++) {
-//   let iconData = summonericon[iconlist[j]].imagePath;
-//   console.log(iconlist[j]);
-//   console.log(iconData);
-//   let iconIllust = iconData.slice(iconData.indexOf("v1/")+3, iconData.length);
-//   summoner.children[j].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + iconIllust;
-//   myIcon.children[0].src = summoner.children[0].src;
-//   skinATeamMember.children[0].children[0].src = summoner.children[0].src;
-//   ggATeamMember.children[0].children[0].src = summoner.children[0].src;
-// }
-
-
-
+// 팀을 선택할 시에 소환사 아이콘이 이동되며 그 팀에 속해지는 걸로 된다.
 function teamSelection (team1, team2) {
   team1.addEventListener('click',(event)=> {
     team1.classList.add('consistOf');

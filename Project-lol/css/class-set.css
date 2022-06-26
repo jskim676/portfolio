@@ -80,13 +80,23 @@
 .answerBox {
   height:4vh;
   border-radius: 30px;
-  border:1px solid var(--border-color);
   display:flex;
   justify-content: center;
   align-items: center;
   padding:15px;
   margin:2% 1%;
 }
+
+.redteam {
+  border:1px solid var(--redteam);
+  color: var(--redteam);
+}
+
+.blueteam {
+  border:1px solid var(--blueteam);
+  color: var(--blueteam);
+}
+
 
 .tarotBgc {
   background-color: var(--tarot-bgc);
@@ -133,6 +143,19 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+}
+
+/* flex-flexstart-flexstart */
+.flex-flexstart-flexstart {
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+.flex-column-flexstart-flexstart {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 /* flex-center-center */

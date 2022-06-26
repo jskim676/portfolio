@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <img src="" alt="">
+  <script>
+    const ajax = new XMLHttpRequest();
+    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json";
+    ajax.open('GET', URL, false);
+    ajax.send();
+    const champions = JSON.parse(ajax.response);
+    const skinAllData = Object.values(champions);
+
+    // console.log(skinAllData);
+
+    let skinData = [];
+    for(let j=0; j<skinAllData.length; j++) {
+      if(Object.values(champions)[j].id%1000 === 0) {
+        skinData.push(Object.values(champions)[j]);
+      }
+    }
+
+    console.log(skinData);
+
+
+
+
+  </script>
+</body>
+</html>

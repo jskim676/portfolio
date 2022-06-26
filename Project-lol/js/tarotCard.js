@@ -10,7 +10,6 @@
   let month = ('0' + (day.getMonth() + 1)).slice(-2);
   let date = ('0' + day.getDate()).slice(-2);
   today.textContent = `${year + '-' + month + '-' + date}`;
-
   
   let cardState = false;
   const card = tarotCard.children;
@@ -53,7 +52,6 @@
         sectionTarotCard.style.transition = "1s";
         setTimeout(()=>{tarotResult.classList.remove('hidden')},700);
         tarotResult.children[0].children[cardIndex].style.opacity = 1;
-        // tarotResult.children[1].textContent = ;
       }
     });
   };

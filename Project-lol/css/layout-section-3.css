@@ -134,6 +134,11 @@
   color:var(--border-color);
 }
 
+#window > main > nav > ul > li > i {
+  margin-left:5%; 
+  color:var(--border-color);
+}
+
 #window > main > nav > ul > li > img {
   width:1vw;
   height:1vw;

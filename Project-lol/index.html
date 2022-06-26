@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LOL.ITEO</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
   <div id="root"> 
@@ -76,10 +77,10 @@
       <!-- explain -->
       <div id="explain" class="flex-center-center hidden">
         <h3>메인 화면으로써 로그인을 할 수 있으며, 다른 유저들이 쓴 글을 볼 수 있는 게시판과 미니게임 빠른 참여를 할 수 있다.</h3>
-        <h3>유저들끼리 개인전 혹은 팀전으로 롤 스킨을 많이 맞추어 승리하는 미니게임</h3>
+        <h3>유저들끼리 롤 스킨을 많이 맞추고 점수를 획득하여 승리하는 미니게임</h3>
         <h3>문제를 내는 사람에게 질문을 하여 힌트를 얻고 정답이 무엇인지 맞추는 미니게임</h3>
-        <h3>각자의 포지션을 정하고 랜덤으로 받은 챔피언으로 조합을 구성 </h3>
-        <h3>롤이라는 주제로 만든 재미로 보는 오늘의 타로 카드</h3>
+        <h3>각자의 포지션을 정하고 랜덤으로 받은 챔피언으로 서로 변경하며 조합을 구성</h3>
+        <h3>카드를 고른 뒤 오늘의 운세를 롤이라는 주제로 볼 수 있는 타로 카드</h3>
       </div>
       
       <!-- window -->
@@ -99,23 +100,23 @@
             <nav class="">
               <ul>
                 <li id="dashboardBtn" class="flex-flexstart-center select" data-menu="0">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="0">
+                  <i class="fa-regular fa-clipboard fa-lg" data-menu="0"></i>
                   <p data-menu="0">Dashboard</p>
                 </li>
                 <li id="skinQuizBtn" class="flex-flexstart-center" data-menu="1">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="1">
+                  <i class="fa-solid fa-images fa-lg" data-menu="1"></i>
                   <p data-menu="1">Skin Quiz</p>
                 </li>
                 <li id="guessingGameBtn" class="flex-flexstart-center" data-menu="2">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="2">
+                  <i class="fa-solid fa-question fa-lg" data-menu="2"></i>
                   <p data-menu="2">Guessing Game</p>
                 </li>
                 <li id="randomChampionBtn" class="flex-flexstart-center" data-menu="3">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="3">
+                  <i class="fa-solid fa-image-portrait fa-lg" data-menu="3"></i>
                   <p data-menu="3">Random Champion</p>
                 </li>
                 <li id="tarotCardBtn" class="flex-flexstart-center" data-menu="4">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="" data-menu="4">
+                  <i class="fa-solid fa-star-and-crescent fa-lg" data-menu="4"></i>
                   <p data-menu="4">Tarot Card</p>
                 </li>
               </ul>
@@ -144,7 +145,9 @@
                         <form action="" method="get" class="flex-column-spaceevenly-center" onsubmit="return false">
                           <input type="text" name="id" id="idInputAnswer" onkeypress="if(window.event.keyCode === 13) {value=null}" autocomplete="off" placeholder="ID">
                           <input type="password" name="pw" id="pwInputAnswer" onkeypress="if(window.event.keyCode === 13) {pwPrintName(), value=null}" autocomplete="off" placeholder="PW">
-                          <button id="loginBtn" class="flex-center-center"></button>
+                          <button id="loginBtn" class="flex-center-center">
+                            <i class="fa-solid fa-arrow-right fa-lg"></i>
+                          </button>
                         </form>
                       </div>
                       <div id="changeLoginScreen" class="flex-column-spaceevenly-center hidden">
@@ -179,17 +182,23 @@
                       <div class="flex-column-spacearound-center">
                         <div class="flex-spacebetween-center">
                           <div class="flex-flexstart-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="">
+                            <i class="fa-solid fa-images fa-lg"></i>
                             <p>Skin Quiz</p>
                           </div>
-                          <div></div>
+                          <div id="quickSkin" class="flex-spaceevenly-center" onclick="skinQuickMatch()">
+                            <p>빠른 입장</p>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                          </div>
                         </div>
                         <div class="flex-spacebetween-center">
                           <div class="flex-flexstart-center">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/1200px-Noun_Project_question_mark_icon_1101884_cc.svg.png" alt="">
+                            <i class="fa-solid fa-question fa-lg"></i>
                             <p>Guessing Game</p>
                           </div>
-                          <div></div>
+                          <div id="quickGg" class="flex-spaceevenly-center" onclick="ggQuickMatch()">
+                            <p>빠른 입장</p>
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -362,7 +371,7 @@
                       <img id="ggCog" src="https://i.ibb.co/j3GfZy1/cog.png" alt="ggCog">
                     </div>
                     <div class="flex-center-center">
-                      <button id="ggPlayBtn" class="flex-center-center">Play</button>
+                      <div id="ggPlayBtn" class="flex-center-center">Play</div>
                     </div>
                   </div>
                 </div>
@@ -378,7 +387,7 @@
                           <!-- squareIcon -->
                           <img id="squareIcon" src="" alt="squareIcon" class="flex hidden">
                         </div>
-                        <button id="squareBtn"></button>
+                        <div id="squareBtn" class="flex-center-center">챔피언 확인</div>
                       </div>
                     </div>
                     <div class="flex-center-center">
@@ -497,7 +506,7 @@
                     </p>
                   </div>
                 </div>
-                <button id="tarotBtn"></button>
+                <button id="tarotBtn">운세 확인</button>
               </div>
             </section>
 
