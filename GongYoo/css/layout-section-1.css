@@ -1,0 +1,29 @@
+#section-1 {
+  width: var(--vw-100);
+  height: var(--vh-300);
+}
+
+#section-1 > div:nth-child(1) {
+  width: var(--vw-100);
+  height: var(--vh-100);
+}
+
+#section-1 > div:nth-child(1) > img {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  z-index: -1;
+}
+
+#section-1 > div:nth-child(1) > div {
+  width: 65%;
+  height: 30%;
+  position: fixed;
+}
+
+#section-1 > div:nth-child(1) > div > h1 {
+  color: var(--imgText-color);
+  font-size: 200px;
+  margin-right: 5vw;
+}
+/*# sourceMappingURL=layout-section-1.css.map */
