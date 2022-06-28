@@ -16,7 +16,7 @@ body {
 
 #root {
   width: var(--vw-100);
-  height: var(--vh-700);
+  height: var(--vh-850);
   color: var(--text-color);
 }
 /*# sourceMappingURL=layout-common.css.map */

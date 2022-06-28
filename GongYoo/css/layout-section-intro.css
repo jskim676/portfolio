@@ -1,0 +1,10 @@
+#intro {
+  width: inherit;
+  height: var(--vh-100);
+}
+
+#intro > img {
+  width: inherit;
+  height: var(--vh-100);
+}
+/*# sourceMappingURL=layout-section-intro.css.map */

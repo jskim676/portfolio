@@ -7,7 +7,7 @@
 }
 
 #game-window > div:nth-child(1) {
-  width:35.5vw;
+  width:41.5vw;
   height:65vh;
   background-color: var(--bgc-189);
   position:absolute;
@@ -108,7 +108,7 @@
 }
 
 #gameicon > div {
-  width:9vw;
+  width:11vw;
   height:20vh;
   margin:1vw;
 }
