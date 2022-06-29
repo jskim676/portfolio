@@ -28,18 +28,21 @@
       height:25%;
     }
     
-    & > div:nth-child(2) {
+    & > img {
+      // width:auto;
+      // height:90%;
+      width:25%;
+      height:auto;
+
+
+      position:absolute;
+      left:35%;
+      bottom:0;
+    }
+
+    & > div:nth-child(3) {
       width:20%;
       height:35%;
     }
-  }
-
-  & > img {
-    width:auto;
-    height:90%;
-    
-    position:absolute;
-    left:35%;
-    bottom:0;
   }
 }

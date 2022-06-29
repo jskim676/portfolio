@@ -29,16 +29,16 @@
   height: 25%;
 }
 
-#section-1 > div:nth-child(2) > div:nth-child(2) {
-  width: 20%;
-  height: 35%;
-}
-
-#section-1 > img {
-  width: auto;
-  height: 90%;
+#section-1 > div:nth-child(2) > img {
+  width: 25%;
+  height: auto;
   position: absolute;
   left: 35%;
   bottom: 0;
+}
+
+#section-1 > div:nth-child(2) > div:nth-child(3) {
+  width: 20%;
+  height: 35%;
 }
 /*# sourceMappingURL=layout-section-1.css.map */
