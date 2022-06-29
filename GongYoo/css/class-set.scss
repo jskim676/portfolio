@@ -173,6 +173,19 @@
   align-items: center;
 }
 
+/* flex-spacebetween-flexstart */
+.flex-spacebetween-flexstart {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.flex-column-spacebetween-flexstart {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
 
 /* flex-spacearound-center */
 .flex-spacearound-center {

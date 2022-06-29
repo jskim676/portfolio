@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,MAAM,CAAC;EACL,KAAK,EAAC,OAAO;EACb,MAAM,EAAC,aAAa;CAMrB;;AARD,AAIE,MAJI,GAIA,GAAG,CAAC;EACN,KAAK,EAAC,OAAO;EACb,MAAM,EAAC,aAAa;CACrB",
+    "sources": [
+        "layout-section-intro.scss"
+    ],
+    "names": [],
+    "file": "layout-section-intro.css"
+}
