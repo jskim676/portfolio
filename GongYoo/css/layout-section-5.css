@@ -1,1 +1,34 @@
-/* No CSS *//*# sourceMappingURL=layout-section-5.css.map */
+#section-5 {
+  width: var(--vw-100);
+  height: var(--vh-200);
+  border: 1px solid red;
+}
+
+#section-5 > div:nth-child(1) {
+  width: inherit;
+  height: 12.5%;
+}
+
+#section-5 > div:nth-child(1) > div:nth-child(1) {
+  width: 50%;
+  height: 60%;
+}
+
+#section-5 > div:nth-child(1) > div:nth-child(1) > h1:nth-child(1) {
+  font-size: 150px;
+  font-weight: 700;
+}
+
+#section-5 > div:nth-child(1) > div:nth-child(1) > h1:nth-child(2) {
+  color: var(--title-color);
+  text-shadow: -1px 0 var(--text-color), 0 1px var(--text-color), 1px 0 var(--text-color), 0 -1px var(--text-color);
+  font-size: 150px;
+  font-weight: 700;
+}
+
+#section-5 > div:nth-child(2) {
+  width: inherit;
+  height: 87.5%;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=layout-section-5.css.map */

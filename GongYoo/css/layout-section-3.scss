@@ -39,18 +39,23 @@
     & > h2:nth-child(3) {
       font-size: 100px;
       font-weight: 700;
+      opacity: 0.1;
     }
   }
 
+  // img
   & > div:nth-child(3) {
     width:inherit;
     height:55%;
-    border:1px solid blue;
+    border:1px solid red;
 
-    & > div {
+    // film list
+    & > div:nth-child(1) {
       width:75%;
       height:60%;
       border:1px solid black;
+      // overflow: hidden;
+
       position: relative;
 
       & > div {
@@ -58,10 +63,33 @@
         height:100%;
         position:absolute;
 
-        & > div {
+        // movie
+        & > img {
           width:10%;
           height:inherit;
-          border:1px solid blue;
+          
+        }
+      }
+    }
+
+    // drama list
+    & > div:nth-child(2) {
+      width:75%;
+      height:60%;
+      border:1px solid black;
+      // overflow: hidden;
+
+      position: relative;
+
+      & > div {
+        width:182%;
+        height:100%;
+        position:absolute;
+
+        // movie
+        & > img {
+          width:10%;
+          height:inherit;
           
         }
       }

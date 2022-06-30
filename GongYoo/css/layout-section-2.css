@@ -6,13 +6,12 @@
 #section-2 > div:nth-child(1) {
   width: 40%;
   height: inherit;
-  border: 1px solid red;
 }
 
 #section-2 > div:nth-child(1) > img {
-  width: 70%;
+  width: 60%;
   height: 50%;
-  border: 1px solid black;
+  border-radius: 300px 300px 0 0;
 }
 
 #section-2 > div:nth-child(1) > div > h1:nth-child(1) {
@@ -30,18 +29,17 @@
 #section-2 > div:nth-child(2) {
   width: 60%;
   height: inherit;
-  border: 1px solid red;
 }
 
 #section-2 > div:nth-child(2) > ul {
   width: 90%;
   height: 60%;
-  border: 1px solid red;
 }
 
 #section-2 > div:nth-child(2) > ul > li {
   width: inherit;
-  height: 10%;
-  border: 1px solid black;
+  height: 8%;
+  background-color: var(--story-color);
+  padding-left: 1%;
 }
 /*# sourceMappingURL=layout-section-2.css.map */
