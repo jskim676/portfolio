@@ -27,7 +27,7 @@
 }
 
 #section-5 > div:nth-child(2) {
-  width: inherit;
+  width: 90%;
   height: 87.5%;
   border: 1px solid red;
 }

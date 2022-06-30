@@ -43,56 +43,118 @@
     }
   }
 
-  // img
+  // film
   & > div:nth-child(3) {
     width:inherit;
     height:55%;
-    border:1px solid red;
 
-    // film list
     & > div:nth-child(1) {
-      width:75%;
-      height:60%;
-      border:1px solid black;
-      // overflow: hidden;
+      width:100%;
+      height:100%;
+      
+      // film list
+      & > div:nth-child(1) {
+        width:75%;
+        height:70%;
+        border:1px solid black;
+        // overflow: hidden;
+  
+        position: relative;
+  
+        & > div {
+          width:182%;
+          height:100%;
+          position:absolute;
+  
+          // film
+          & > div {
+            width:10%;
+            height:inherit;
+            
+            & > div {
+              width:10%;  
+              height:100%;
+              position: absolute;
 
-      position: relative;
+              & > h3{
+                color:var(--title-color);
+              }
 
-      & > div {
-        width:182%;
-        height:100%;
-        position:absolute;
+              & > h3:nth-child(1) {
+                margin-right:60%;
+              }
 
-        // movie
-        & > img {
-          width:10%;
-          height:inherit;
-          
+              & > h3:nth-child(2) {
+                padding: 5% 0;
+                border:solid var(--title-color); border-width: 1px 0;
+              }
+            }
+
+            & > img {
+              width:100%;
+              height:100%;
+            }
+          }
         }
       }
     }
+  }
 
-    // drama list
-    & > div:nth-child(2) {
-      width:75%;
-      height:60%;
-      border:1px solid black;
-      // overflow: hidden;
+  // drama
+  & > div:nth-child(4) {
+    width:inherit;
+    height:55%;
 
-      position: relative;
+    & > div:nth-child(1) {
+      width:100%;
+      height:100%;
+      
+      // film list
+      & > div:nth-child(1) {
+        width:75%;
+        height:70%;
+        border:1px solid black;
+        // overflow: hidden;
+  
+        position: relative;
+  
+        & > div {
+          width:127.5%;
+          height:100%;
+          position:absolute;
+  
+          // drama
+          & > div {
+            width:14%;
+            height:inherit;
+            
+            & > div {
+              width:14%;  
+              height:100%;
+              position: absolute;
 
-      & > div {
-        width:182%;
-        height:100%;
-        position:absolute;
+              & > h3{
+                color:var(--title-color);
+              }
 
-        // movie
-        & > img {
-          width:10%;
-          height:inherit;
-          
+              & > h3:nth-child(1) {
+                margin-right:60%;
+              }
+
+              & > h3:nth-child(2) {
+                padding: 5% 0;
+                border:solid var(--title-color); border-width: 1px 0;
+              }
+            }
+
+            & > img {
+              width:100%;
+              height:100%;
+            }
+          }
         }
       }
     }
   }
 }
+

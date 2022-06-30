@@ -9,7 +9,7 @@
 }
 
 #section-2 > div:nth-child(1) > img {
-  width: 60%;
+  width: 55%;
   height: 50%;
   border-radius: 300px 300px 0 0;
 }
@@ -33,7 +33,7 @@
 
 #section-2 > div:nth-child(2) > ul {
   width: 90%;
-  height: 60%;
+  height: 50%;
 }
 
 #section-2 > div:nth-child(2) > ul > li {
