@@ -9,28 +9,21 @@ const root = document.getElementById('root');
 
 
 btnConfirm.addEventListener('click', function() {
-  helloWorld.classList.add('on');
-  main.classList.remove('on');
-  // fullscreen(root)
+  helloWorld.classList.add('hidden');
+  main.classList.remove('hidden');
 })
-
-
-
-// const fullscreen = element => {
-//   if (element.requestFullscreen) return element.requestFullscreen()
-//   if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen()
-//   if (element.mozRequestFullScreen) return element.mozRequestFullScreen()
-//   if (element.msRequestFullscreen) return element.msRequestFullscreen()
-// }
-
-
 
 // --------------game --------------
 const gameWin = document.getElementById('game-window');
+const fullGameWin = document.getElementById('game-fullWindow');
 const gameWinBtn = Array.from(document.getElementById('game-window-button').children);
+const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
 const icons = document.getElementById('icon').children;
 const gameicons = Array.from(document.getElementById('gameicon').children);
+const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
 const gametime = document.getElementById('gametime');
+const fullGametime = document.getElementById('fullGametime');
+
 const program = document.getElementById('program');
 
 
@@ -48,8 +41,8 @@ icons[0].addEventListener('dblclick', function() {
   gameWin.children[0].style.zIndex = num+1;
   // qs.children[0].style.zIndex = num;
   
-  gameWin.classList.remove('on');
-  qs.classList.remove('on');
+  gameWin.classList.remove('hidden');
+  qs.classList.remove('hidden');
   qsmark.classList.remove('hidden');
   
   program.appendChild(programName0);
@@ -66,37 +59,80 @@ icons[0].addEventListener('dblclick', function() {
   });
   
   
-  startWin.classList.add('on');
+  startWin.classList.add('hidden');
   isStatus = true
 });  
 
+
+let fullmode = false;
 // 최소화 버튼
 gameWinBtn[0].addEventListener('click', e=> {
-  gameWin.classList.add('on');
-  qs.classList.add('on');
+  gameWin.classList.add('hidden');
+  qs.classList.add('hidden');
 });
 
-// 작업표시줄 쪽 프로그램 클릭시 최소화 해제
-programName0.addEventListener('click', e=> {
-  gameWin.classList.remove('on');
-  qs.classList.remove('on');
-});
-
+// 최대화 버튼
 gameWinBtn[1].addEventListener('click', e=> {
-  qs.classList.add('on');
-
+  gameWin.classList.add('hidden');
+  fullGameWin.classList.remove('hidden');
+  num++;
+  fullGameWin.children[0].style.zIndex = num+1;
+  fullmode = true;
 });
 
 // X 버튼
 gameWinBtn[2].addEventListener('click', e=>{
-  gameWin.classList.add('on');
-  qs.classList.add('on');
+  gameWin.classList.add('hidden');
+  qs.classList.add('hidden');
   qsmark.classList.add('hidden');
   programName0.parentNode.removeChild(programName0);
 });
 
 
+// 전체화면 최소화 버튼
+fullGameWinBtn[0].addEventListener('click', e=> {
+  fullGameWin.classList.add('hidden');
+  qs.classList.add('hidden');
+});
+
+// 전체화면 최대화 버튼
+fullGameWinBtn[1].addEventListener('click', e=> {
+  gameWin.classList.remove('hidden');
+  fullGameWin.classList.add('hidden');
+  fullmode = false;
+});
+
+// 전체화면 X 버튼
+fullGameWinBtn[2].addEventListener('click', e=>{
+  fullGameWin.classList.add('hidden');
+  qs.classList.add('hidden');
+  qsmark.classList.add('hidden');
+  programName0.parentNode.removeChild(programName0);
+});
+
+// 작업표시줄 쪽 프로그램 클릭시 최소화 해제
+programName0.addEventListener('click', e=> {
+  if(fullmode === false) {
+    gameWin.classList.remove('hidden');
+    qs.classList.remove('hidden');
+  } else {
+    fullGameWin.classList.remove('hidden');
+    qs.classList.remove('hidden');
+  }
+});
+
+// 윈도우 바 더블 클릭시 최대화
+document.querySelector('.smallTopBar').addEventListener('dblclick', function() {
+  gameWin.classList.add('hidden');
+  fullGameWin.classList.remove('hidden');
+  num++;
+  fullGameWin.children[0].style.zIndex = num+1;
+  fullmode = true;
+});
+
+
 //스크롤 
+const scrollBar = document.getElementById('scrollBar');
 const scrolling = document.getElementById('scroll');
 const scrollParent = scrolling.parentNode;
 
@@ -179,7 +215,7 @@ const skill = Array.from(document.querySelectorAll('#skill > div > img'));
 icons[1].addEventListener('dblclick', function() {
   num++;
   ccWin.children[0].style.zIndex = num;
-  ccWin.classList.remove('on');
+  ccWin.classList.remove('hidden');
   
   program.appendChild(programName1);
   programName1.classList.add('window-style');
@@ -195,13 +231,13 @@ icons[1].addEventListener('dblclick', function() {
   });
 
   
-  startWin.classList.add('on');
+  startWin.classList.add('hidden');
   isStatus = true;
 }); 
 
 ccWinBtn.addEventListener('click',e=> {
   
-  ccWin.classList.add('on');
+  ccWin.classList.add('hidden');
   programName1.parentNode.removeChild(programName1);
 });
 
@@ -217,7 +253,7 @@ const programName2Text = document.createElement('p');
 icons[2].addEventListener('dblclick', function() {
   num++;
   pfWin.children[0].style.zIndex = num;
-  pfWin.classList.remove('on');
+  pfWin.classList.remove('hidden');
   
   program.appendChild(programName2);
   programName2.classList.add('window-style');
@@ -233,13 +269,13 @@ icons[2].addEventListener('dblclick', function() {
   });
 
   
-  startWin.classList.add('on');
+  startWin.classList.add('hidden');
   isStatus = true;
 }); 
 
 pfWinBtn.addEventListener('click',e=> {
   
-  pfWin.classList.add('on');
+  pfWin.classList.add('hidden');
   programName2.parentNode.removeChild(programName2);
 });
 
@@ -255,7 +291,7 @@ const programName3Text = document.createElement('p');
 icons[3].addEventListener('dblclick', function() {
   num++;
   ctWin.children[0].style.zIndex = num;
-  ctWin.classList.remove('on');
+  ctWin.classList.remove('hidden');
   
   program.appendChild(programName3);
   programName3.classList.add('window-style');
@@ -270,12 +306,12 @@ icons[3].addEventListener('dblclick', function() {
     ctWin.children[0].style.zIndex = num+1;
   });
 
-  startWin.classList.add('on');
+  startWin.classList.add('hidden');
   isStatus = true;
 }); 
 
 ctWinBtn.addEventListener('click',e=> {
-  ctWin.classList.add('on');
+  ctWin.classList.add('hidden');
   programName3.parentNode.removeChild(programName3);
 });
 
@@ -290,23 +326,23 @@ startBtn.addEventListener('click',e=> {
   startWin.children[0].style.zIndex = num;
 
   if(isStatus === true) {
-    startWin.classList.remove('on');
+    startWin.classList.remove('hidden');
     isStatus = false;
   } else {
-    startWin.classList.add('on');
+    startWin.classList.add('hidden');
     isStatus = true;
   }
 });
 
 main.children[0].addEventListener('click', e=> {
-  startWin.classList.add('on');
+  startWin.classList.add('hidden');
   isStatus = true;
 });
 
 for(let k=0; k<skill.length; k++) {
   skill[k].addEventListener('mouseover', function() {
     num++;
-    startWin.classList.remove('on');
+    startWin.classList.remove('hidden');
     startWin.style.zIndex = num;
   });
 }
@@ -394,7 +430,7 @@ function moving (topbar,win,container) {
 
 moving(move[0],move[0].parentNode,root);
 moving(move[1],move[1].parentNode,root);
-moving(move[2],move[2].parentNode,root);
 moving(move[3],move[3].parentNode,root);
 moving(move[4],move[4].parentNode,root);
+moving(move[5],move[5].parentNode,root);
 moving(scrolling, scrolling, scrollParent);

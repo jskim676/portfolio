@@ -1,14 +1,14 @@
 
 /* game-window */  
 #game-window {
-  width:92vw;
-  height:100vh;
+  width:92%;
+  height:100%;
   user-select: none;
 }
 
 #game-window > div:nth-child(1) {
-  width:41.5vw;
-  height:65vh;
+  width:42%;
+  height:65%;
   background-color: var(--bgc-189);
   position:absolute;
   left:10vw;
@@ -18,12 +18,13 @@
 /* name */
 #game-window > div:nth-child(1) > div:nth-child(1) {
   width:99.5%;
-  height:5vh;
+  height:8%;
 }
 
 #game-window > div:nth-child(1) > div:nth-child(1) > img {
   width:40px;
   height:40px;
+  -webkit-user-drag:none;
 }
 
 #game-window > div:nth-child(1) > div:nth-child(1) > h1{
@@ -33,7 +34,7 @@
 }
 
 #game-window > div:nth-child(1) > div:nth-child(1) > div {
-  width:6vw;
+  width:15%;
   height:100%;
 }
 
@@ -80,7 +81,7 @@
 /* totaltime */
 #game-window > div:nth-child(1) > div:nth-child(2) {
   width:99.5%;
-  height:4vh;
+  height:6.2%;
   border:1px solid var(--bgc-129);
 }
 
@@ -91,7 +92,7 @@
 /* gamelist */
 #game-window > div:nth-child(1) > div:nth-child(3) {
   width:99.5%;
-  height:50vh;
+  height:78%;
   background-color: var(--bgc-255);
   border-top:1px solid var(--bgc-000);
   border-left:1px solid var(--bgc-000);
@@ -116,6 +117,7 @@
 #gameicon > div > img {
   width:8vw;
   height:8vw;
+  -webkit-user-drag:none;
 }
 
 #gameicon > div > p {
@@ -123,7 +125,7 @@
   text-align: center;
 }
 
-#scrollbar {
+#scrollBar {
   width:2vw;
   height:50vh;
   background-color: var(--bgc-224);
@@ -131,13 +133,13 @@
   position:relative;
 }
 
-#scrollbar > div:nth-child(1) {
+#scrollBar > div:nth-child(1) {
   width:1.8vw;
   height:1.8vw;
   background-color:var(--bgc-192);
 }
 
-#scrollbar > div:nth-child(1) > div {
+#scrollBar > div:nth-child(1) > div {
   width: 0px;
   height: 0px;
   border-bottom: 0.4vw solid var(--bgc-000);
@@ -145,14 +147,14 @@
   border-right: 0.4vw solid transparent;
 }
 
-#scrollbar > div:nth-child(2) {
+#scrollBar > div:nth-child(2) {
   width:1.8vw;
   height:45.5vh;
   
   position:relative;
 }
 
-#scrollbar > div:nth-child(2) > div {
+#scrollBar > div:nth-child(2) > div {
   width:1.8vw;
   height:20vh;
   background-color:var(--bgc-192);  
@@ -160,13 +162,13 @@
   position:absolute;
 }
 
-#scrollbar > div:nth-child(3) {
+#scrollBar > div:nth-child(3) {
   width:1.8vw;
   height:1.8vw;
   background-color:var(--bgc-192);
 }
 
-#scrollbar > div:nth-child(3) > div {
+#scrollBar > div:nth-child(3) > div {
   width: 0px;
   height: 0px;
   border-top: 0.4vw solid var(--bgc-000);
@@ -177,7 +179,7 @@
 /* gametime */
 #game-window > div:nth-child(1) > div:nth-child(4) {
   width:99.5%;
-  height:4vh;
+  height:6.2%;
   border:1px solid var(--bgc-129);
 }
 
@@ -225,6 +227,7 @@
   width:1.5vw;
   height:1.5vw;
   margin-left:0.5vw;
+  -webkit-user-drag:none;
 }
 
 #game-taskBar > p {

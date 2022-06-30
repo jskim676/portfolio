@@ -1,10 +1,13 @@
 .on {
-  /* display:none; */
-  visibility: hidden;
+  display:none;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+.smallTopBar {
+
 }
 
 .flex {

@@ -12,7 +12,7 @@
   background-color: var(--bgc-189);
   position: absolute;
   left:25vw;
-  top:25vh;
+  top:10vh;
 }
 
 /* name */
@@ -24,6 +24,7 @@
 #contact-window > div > div:nth-child(1) > img {
   width:40px;
   height:40px;
+  -webkit-user-drag: none;
 }
 
 #contact-window > div > div:nth-child(1) > h1{
@@ -79,6 +80,7 @@
   width:12vw;
   height:12vw;
   border-radius: 5px;
+  -webkit-user-drag: none;
 }
 
 #profile > div:nth-child(2) {
@@ -99,6 +101,7 @@
   width:8vw;
   height:8vw;
   margin-left:2vw;
+  -webkit-user-drag: none;
 }
 
 #contact-address > div:nth-child(2) > p {
@@ -112,6 +115,7 @@
   width:1.5vw;
   height:1.5vw;
   margin-left:0.5vw;
+  -webkit-user-drag: none;
 }
 
 #contact-taskBar > p {

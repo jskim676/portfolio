@@ -10,7 +10,7 @@
   background-color: var(--bgc-189);
   position: absolute;
   left:20vw;
-  top:10vh;
+  top:13vh;
 }
 
 /* name */
@@ -22,6 +22,7 @@
 #curriculum-window > div > div:nth-child(1) > img {
   width:40px;
   height:40px;
+  -webkit-user-drag:none;
 }
 
 #curriculum-window > div > div:nth-child(1) > h1{
@@ -106,23 +107,27 @@
 
 /* skill */
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > img {
-  width:10vw;
-  height:10vw;
+  width:8vw;
+  height:8vw;
+  -webkit-user-drag:none;
 }
 
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > img:nth-child(4) {
   width:auto;
-  height:8vw;
+  height:6vw;
+  -webkit-user-drag:none;
 }
 
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > img {
-  width:10vw;
-  height:10vw;
+  width:8vw;
+  height:8vw;
+  -webkit-user-drag:none;
 }
 
-#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > img:nth-child(3) {
+#curriculum-window > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > img:nth-child(1) {
   width:auto;
-  height:8vw;
+  height:6vw;
+  -webkit-user-drag:none;
 }
 
 
@@ -131,6 +136,7 @@
   width:1.5vw;
   height:1.5vw;
   margin-left:0.5vw;
+  -webkit-user-drag:none;
 }
 
 #curriculum-taskBar > p {
