@@ -27,17 +27,17 @@
     margin-left:33vw;
 
     & > h2:nth-child(1) {
-      font-size: 100px;
+      font-size: 75px;
       font-weight: 700;
     }
 
     & > h2:nth-child(2) {
-      font-size: 100px;
+      font-size: 75px;
       font-weight: 700;
     }
     
     & > h2:nth-child(3) {
-      font-size: 100px;
+      font-size: 75px;
       font-weight: 700;
       opacity: 0.1;
     }
@@ -48,16 +48,21 @@
     width:inherit;
     height:55%;
 
-    & > div:nth-child(1) {
-      width:100%;
+    // 화살표 색깔
+    & > div > i {
+      color:var(--text-color);
+    }
+
+    & > div:nth-child(2) {
+      width:80%;
       height:100%;
       
       // film list
       & > div:nth-child(1) {
-        width:75%;
+        width:90%;
         height:70%;
         border:1px solid black;
-        // overflow: hidden;
+        overflow: hidden;
   
         position: relative;
   
@@ -114,7 +119,7 @@
         width:75%;
         height:70%;
         border:1px solid black;
-        // overflow: hidden;
+        overflow: hidden;
   
         position: relative;
   

@@ -150,6 +150,16 @@
   }
 }
 
+.leftBtn {
+  width: 50px;
+  height: 50px;
+}
+
+.rightBtn {
+  width: 50px;
+  height: 50px;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;

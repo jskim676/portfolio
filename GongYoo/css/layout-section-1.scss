@@ -8,6 +8,25 @@
     width:90%;
     height:50%;
     border-bottom:3px solid black;
+
+    
+    & > div {
+      width:75%;
+      height:50%;
+      opacity: 0;
+
+      & > h1:nth-child(1) {
+        font-size: 150px;
+        font-weight: 700;
+      }
+  
+      & > h1:nth-child(2) {
+        color:var(--title-color);
+        text-shadow: -1px 0 var(--text-color), 0 1px var(--text-color), 1px 0 var(--text-color), 0 -1px var(--text-color);
+        font-size: 150px;
+        font-weight: 700;
+      }
+    }
   }
   
   & > div:nth-child(2) {

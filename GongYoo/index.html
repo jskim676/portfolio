@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gong Yoo</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
   <div id="root">
     <section id="intro" class="flex-center-center">
-      <div class="flex-spacebetween-center">
-        <h1>01</h1>
+      <div id="introTitle" class="flex-center-center">
         <div class="flex-spacebetween-center">
           <h1>공</h1>
           <h1>유</h1>
@@ -20,7 +20,12 @@
       <img src="./img/Gong_Yoo/intro_Gong_Yoo.png" alt="">
     </section>
     <section id="section-1" class="flex-column-center-center">
-      <div></div>
+      <div id="sectionOneTitle" class="flex-center-flexend">
+        <div class="flex-spacebetween-center">
+          <h1>01</h1>
+          <h1>공 유</h1>
+        </div>
+      </div>
       <div class="flex-spaceevenly-center">
         <div class="flex-column-spacebetween-flexstart">
           <h3>공 지 철</h3>
@@ -70,17 +75,20 @@
         <h1>03</h1>
         <h1>필모그래피</h1>
       </div>
-      <div class="flex-spacearound-center">
-        <h2>영화</h2>
-        <h2>l</h2>
-        <h2>드라마</h2>
+      <div id="filmographySelect" class="flex-spacearound-center">
+        <h2 data-select="0">영화</h2>
+        <h2 data-select="1">l</h2>
+        <h2 data-select="2">드라마</h2>
       </div>
       <!-- film -->
-      <div id="film" class="">
+      <div id="film" class="flex-center-center animation-Y">
+        <div class="leftBtn flex-center-center">
+          <i class="fa-solid fa-angle-left fa-2x"></i>
+        </div>
         <div class="flex-center-center">
-          <!-- film list -->
           <div class="flex-flexstart-center">
-            <div class="flex-spacebetween-center">
+            <!-- film list -->
+            <div id="filmList" class="flex-spacebetween-center">
               <div>
                 <div class="flex-column-spacearound-center">
                   <h3>1 ㅡ</h3>
@@ -140,14 +148,17 @@
             </div>
           </div>
         </div>
+        <div class="rightBtn flex-center-center">
+          <i class="fa-solid fa-angle-right fa-2x"></i>
+        </div>
       </div>
 
       <!-- drama -->
-      <div id="drama" class="on">
+      <div id="drama" class="animation-Y on">
         <div class="flex-center-center">
-          <!-- drama list -->
           <div class="flex-flexstart-center">
-            <div class="flex-spacebetween-center">
+            <!-- drama list -->
+            <div id="dramaList" class="flex-spacebetween-center">
               <div>
                 <div class="flex-column-spacearound-center">
                   <h3>1 ㅡ</h3>
@@ -232,6 +243,6 @@
       <div></div>
     </section>
   </div>
-  <script src="./js/script.js"></script>
+  <script src="./js/script.js" type="module" defer></script>
 </body>
 </html>
