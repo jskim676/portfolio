@@ -1,3 +1,5 @@
+import getTime from "./clock.js";
+
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
 const main = document.getElementById('main');
@@ -132,7 +134,6 @@ document.querySelector('.smallTopBar').addEventListener('dblclick', function() {
 
 
 //스크롤 
-const scrollBar = document.getElementById('scrollBar');
 const scrolling = document.getElementById('scroll');
 const scrollParent = scrolling.parentNode;
 
@@ -317,7 +318,6 @@ ctWinBtn.addEventListener('click',e=> {
 
 // -------------- start --------------
 const startWin = document.getElementById('start-window');
-const start = document.getElementById('start');
 const startBtn = document.getElementById('start-button');
 
 let isStatus = true;
@@ -349,29 +349,8 @@ for(let k=0; k<skill.length; k++) {
 
 
 // -------------- clock --------------
-const clock = document.querySelector('#clock > div > p');
+getTime();
 
-function getTime() {
-  const time = new Date();
-  const hour = time.getHours();
-  const minute = time.getMinutes();
-
-  let ampm = hour > 12 ? "오후" : "오전";
-
-  if(hour>12) {
-    clock.textContent = `${ampm} ${hour-12} : ${minute < 10 ? `0${minute}` : minute}`;
-  } else if (hour === 12) {
-    clock.textContent = `${ampm} ${hour} : ${minute < 10 ? `0${minute}` : minute}`;
-  } else {
-    clock.textContent = `${ampm} ${hour<10 ? `0${hour}`: hour} : ${minute < 10 ? `0${minute}` : minute}`;
-  }
-}
-
-function init () {
-  setInterval(getTime,1000);
-}
-
-init();
 
 
 // -------------- move --------------

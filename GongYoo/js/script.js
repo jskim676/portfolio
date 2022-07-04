@@ -19,3 +19,19 @@ window.addEventListener('wheel',e=> {
 filmographyTitle();
 slide();
 
+const storyList = document.querySelector('#section-2 > div:nth-child(2) > ul');
+
+// storyList.addEventListener('click', e=> {
+//   let getDataset = e.target.dataset.story;
+//   console.log(getDataset);
+//   for(let i=0; i<storyList.children.length; i++) {
+//     if(storyList.children[i].dataset.story === getDataset) {
+//       storyList.children[i].style.height = "50%";
+//     } else if (storyList.children[i].dataset.story === undefined) {
+//       storyList.children[i].style.opacity = 1;
+//       console.log('test');
+//     } else {
+//       storyList.children[i].style.opacity = 0;
+//     }
+//   }
+// });
