@@ -1,7 +1,6 @@
 #section-4 {
   width: var(--vw-100);
   height: var(--vh-150);
-  border: 1px solid red;
 }
 
 #section-4 > div:nth-child(1) {
@@ -36,7 +35,6 @@
 #section-4 > div:nth-child(2) {
   width: inherit;
   height: 100%;
-  border: 1px solid blue;
 }
 
 #section-4 > div:nth-child(2) > div {

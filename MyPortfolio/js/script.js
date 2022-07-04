@@ -1,6 +1,16 @@
 import getTime from "./clock.js";
-import heightIncrease from "./heightIncrease.js";
-// import moving from "./moving.js";
+import qsIncrease from "./qsIncrease.js";
+import moving from "./moving.js";
+
+//스크롤 
+export const scrolling = document.getElementById('scroll')
+
+export let scrollingTop = scrolling.parentNode.getBoundingClientRect().height - scrolling.getBoundingClientRect().height
+
+const scrollParent = scrolling.parentNode;
+
+export let num = 1;
+
 
 const programName = {
   Name0 : document.createElement('div'),
@@ -14,7 +24,7 @@ const programName = {
   Name2 : document.createElement('div'),
   Name2Icon : document.createElement('img'),
   Name2Text : document.createElement('p'),
-
+  
   Name3 : document.createElement('div'),
   Name3Icon : document.createElement('img'),
   Name3Text : document.createElement('p'),
@@ -42,12 +52,9 @@ const fullGameWin = document.getElementById('game-fullWindow');
 const gameWinBtn = Array.from(document.getElementById('game-window-button').children);
 const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
 const icons = document.getElementById('icon').children;
-const gameicons = Array.from(document.getElementById('gameicon').children);
-const gametime = document.getElementById('gametime');
 
 const program = document.getElementById('program');
 
-let num = 1;
 
 // game icon
 icons[0].addEventListener('dblclick', function() {
@@ -134,24 +141,34 @@ programName.Name0.addEventListener('click', e=> {
   }
 });
 
-// 윈도우 바 더블 클릭시 최대화
+// 윈도우 상단바 더블 클릭시 최대화
 document.querySelector('.smallTopBar').addEventListener('dblclick', function() {
   gameWin.classList.add('hidden');
   fullGameWin.classList.remove('hidden');
   num++;
-  fullGameWin.children[0].style.zIndex = num+1;
+  fullGameWin.children[0].style.zIndex = num;
   fullmode = true;
 });
 
+fullGameWin.children[0].children[0].addEventListener('dblclick', function() {
+  gameWin.classList.remove('hidden');
+  fullGameWin.classList.add('hidden');
+  num++;
+  fullGameWin.children[0].style.zIndex = num;
+  fullmode = false;
+});
 
-//스크롤 
-const scrolling = document.getElementById('scroll');
-const scrollParent = scrolling.parentNode;
-
-let scrollingTop = scrolling.parentNode.getBoundingClientRect().height - scrolling.getBoundingClientRect().height;
 
 // -------------- gamelist 스크롤--------------
 const gameicon = document.getElementById('gameicon');
+const gameicons = Array.from(document.getElementById('gameicon').children);
+
+const fullGameicon = document.getElementById('fullGameicon');
+const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
+
+const gametime = document.getElementById('gametime');
+const fullGametime = document.getElementById('fullGametime');
+
 let number = 0;
 gameicon.addEventListener('wheel', (e) => { 
   if(e.deltaY===100) {
@@ -170,33 +187,62 @@ gameicon.addEventListener('wheel', (e) => {
 });
 
 
-// 게임 시간을 보여줌
-let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
-]
+// // 게임 시간을 보여줌
+// let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
+// ]
 
-for(let i=0; i<gametimeData.length; i++) {
-  gameicons[i].addEventListener('click', function () {
-    gametime.textContent = gametimeData[i];
-  });
-}
+// for(let i=0; i<gametimeData.length; i++) {
+//   gameicons[i].addEventListener('click', function () {
+//     gametime.textContent = gametimeData[i];
+//   });
+// }
 
-// 게임을 클릭시 테두리가 생김
-// dataset 값을 대문자로 쓰면 인식하지 못한다
-for(let j=0; j<gameicon.children.length; j++) {
-  gameicon.addEventListener('click', (event) => {
-    let getDataset = event.target.dataset.gameicon;
-    if(gameicon.children[j].dataset.gameicon === getDataset) {
-      gameicon.children[j].classList.add('outLine');
-    } else {
-      gameicon.children[j].classList.remove('outLine');
-    }
-  });
-}
+// for(let i=0; i<gametimeData.length; i++) {
+//   fullGameicons[i].addEventListener('click', function () {
+//     fullGametime.textContent = gametimeData[i];
+//   });
+// }
+
+
+
+
+// function gameInfo () {
+//   const gameTime = (icons , time) => {
+//     let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
+//     ]
+    
+//     for(let i=0; i<gametimeData.length; i++) {
+//       icons[i].addEventListener('click', function () {
+//         time.textContent = gametimeData[i];
+//       });
+//     }
+//   }
+//   gameTime(gameicons,gametime); gameTime(fullGameicons, fullGametime);
+  
+  
+//   // 게임을 클릭시 테두리가 생김
+//   // dataset 값을 대문자로 쓰면 인식하지 못한다
+//   const iconOutline = (icon) => {
+//     for(let j=0; j<icon.children.length; j++) {
+//       icon.addEventListener('click', (event) => {
+//         let getDataset = event.target.dataset.gameicon;
+//         if(icon.children[j].dataset.gameicon === getDataset) {
+//           icon.children[j].classList.add('outLine');
+//         } else {
+//           icon.children[j].classList.remove('outLine');
+//         }
+//       });
+//     }
+//   }
+//   iconOutline(gameicon); iconOutline(fullGameicon);
+// }
+
 
 
 // 질문 늘어나는 효과
-heightIncrease(qs.children[0].children[0]);
-heightIncrease(qs.children[0].children[1]);
+qsIncrease(qs.children[0].children[0]);
+qsIncrease(qs.children[0].children[1]);
+
 
 // -------------- curriculum --------------
 const ccWin = document.getElementById('curriculum-window');
@@ -331,57 +377,11 @@ for(let k=0; k<skill.length; k++) {
 getTime();
 
 // -------------- move --------------
-function moving (topbar,win,container) {
-  const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
-  const {width:moveWidth, height:moveHeight} = win.getBoundingClientRect();
-  
-  let isDragging = null;
-  let originLeft = null;
-  let originTop = null;
-  let originX = null;
-  let originY = null;
-  
-  topbar.addEventListener('mousedown', (e) =>{
-    isDragging = true;
-    originX = e.clientX;
-    originY = e.clientY;
-    originLeft = win.offsetLeft;
-    originTop = win.offsetTop;
-  });
-  
-  win.addEventListener('mousedown', function() {
+
+for(let l=0; l<move.length; l++) {
+  move[l].addEventListener('mouseup',function() {
     num++;
-    win.style.zIndex = num;
-  });
-
-  document.addEventListener('mouseup', (e) => {
-    isDragging = false;
-  });
-  
-  // 창을 드래그 할때 원래 위치했던 좌표해서 움직여진 좌표의 차이값을 원래 위치했던 left 값에 더한다.
-  // 화면 밖으로 나가지않게 범위를 지정하였다.
-  document.addEventListener('mousemove', (e)=> {
-    if(isDragging) {
-      const diffX = e.clientX - originX;
-      const diffY = e.clientY - originY;
-  
-      // 박스가 나갈수 없게 범위 지정
-      const endOfXPoint = containerWidth - moveWidth;
-      const endOfYPoint = containerHeight - moveHeight;
-  
-      win.style.left = `${Math.min(Math.max(0, originLeft+diffX), endOfXPoint)}px`;
-      win.style.top = `${Math.min(Math.max(0, originTop+diffY), endOfYPoint)}px`;
-    }
-  });
-
-  scrolling.addEventListener('mousemove', (e) => {
-    if(isDragging) {
-      const diffY = e.clientY - originY;
-      const endOfYPoint = containerHeight - moveHeight;
-  
-      gameicon.style.top = `-${Math.floor(Math.min(Math.max(0, originTop+diffY), endOfYPoint)/scrollingTop*100)}%`;
-    }
-  });
+  })
 }
 
 moving(move[0],move[0].parentNode,root);

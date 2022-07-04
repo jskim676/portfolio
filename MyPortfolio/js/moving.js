@@ -1,3 +1,5 @@
+import { scrolling,scrollingTop , num } from "./script.js";
+
 function moving (topbar,win,container) {
   const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
   const {width:moveWidth, height:moveHeight} = win.getBoundingClientRect();
@@ -17,10 +19,10 @@ function moving (topbar,win,container) {
   });
   
   win.addEventListener('mousedown', function() {
-    num++;
+    num;
     win.style.zIndex = num;
   });
-
+  
   document.addEventListener('mouseup', (e) => {
     isDragging = false;
   });
@@ -41,14 +43,16 @@ function moving (topbar,win,container) {
     }
   });
 
-  // scrolling.addEventListener('mousemove', (e) => {
-  //   if(isDragging) {
-  //     const diffY = e.clientY - originY;
-  //     const endOfYPoint = containerHeight - moveHeight;
-  
-  //     gameicon.style.top = `-${Math.floor(Math.min(Math.max(0, originTop+diffY), endOfYPoint)/scrollingTop*100)}%`;
-  //   }
-  // });
+  if(topbar === scrolling) {
+    topbar.addEventListener('mousemove', (e) => {
+      if(isDragging) {
+        const diffY = e.clientY - originY;
+        const endOfYPoint = containerHeight - moveHeight;
+    
+        gameicon.style.top = `-${Math.floor(Math.min(Math.max(0, originTop+diffY), endOfYPoint)/scrollingTop*100)}%`;
+      }
+    });
+  }
 }
 
-// export default moving
+export default moving

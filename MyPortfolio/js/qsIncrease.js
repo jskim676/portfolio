@@ -1,4 +1,4 @@
-function heightIncrease (target) {
+function qsIncrease (target) {
   let slideStatus = true;
   target.addEventListener('click', e=> {
     if(slideStatus === true) {
@@ -12,4 +12,4 @@ function heightIncrease (target) {
   });
 }
 
-export default heightIncrease
+export default qsIncrease
