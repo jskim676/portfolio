@@ -1,6 +1,7 @@
 import getTime from "./clock.js";
 import qsIncrease from "./qsIncrease.js";
 import moving from "./moving.js";
+import gameInfo from "./gameInfo.js";
 
 //스크롤 
 export const scrolling = document.getElementById('scroll')
@@ -237,7 +238,7 @@ gameicon.addEventListener('wheel', (e) => {
 //   iconOutline(gameicon); iconOutline(fullGameicon);
 // }
 
-
+gameInfo();
 
 // 질문 늘어나는 효과
 qsIncrease(qs.children[0].children[0]);

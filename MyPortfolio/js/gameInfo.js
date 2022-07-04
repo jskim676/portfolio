@@ -28,3 +28,5 @@ function gameInfo () {
   }
   iconOutline(gameicon); iconOutline(fullGameicon);
 }
+
+export default gameInfo
