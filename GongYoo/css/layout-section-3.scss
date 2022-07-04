@@ -48,24 +48,27 @@
     width:inherit;
     height:55%;
 
-    // 화살표 색깔
-    & > div > i {
-      color:var(--text-color);
-    }
-
-    & > div:nth-child(2) {
-      width:80%;
+    & > div:nth-child(1) {
+      width:100%;
       height:100%;
+
+      & > div {
+        width:10%;
+      }
+        
+      // 화살표 색깔
+      & > div > i {
+        color:var(--text-color);
+      }
       
-      // film list
-      & > div:nth-child(1) {
+      & > div:nth-child(2) {
         width:90%;
         height:70%;
-        border:1px solid black;
         overflow: hidden;
-  
+        
         position: relative;
-  
+        
+        // film list
         & > div {
           width:182%;
           height:100%;
@@ -113,16 +116,24 @@
     & > div:nth-child(1) {
       width:100%;
       height:100%;
+
+      & > div {
+        width:10%;
+      }
+        
+      // 화살표 색깔
+      & > div > i {
+        color:var(--text-color);
+      }
       
-      // film list
-      & > div:nth-child(1) {
+      & > div:nth-child(2) {
         width:75%;
         height:70%;
-        border:1px solid black;
         overflow: hidden;
-  
+        
         position: relative;
-  
+        
+        // drama list
         & > div {
           width:127.5%;
           height:100%;

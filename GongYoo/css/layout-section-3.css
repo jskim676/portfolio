@@ -48,55 +48,58 @@
   height: 55%;
 }
 
-#section-3 > div:nth-child(3) > div > i {
-  color: var(--text-color);
-}
-
-#section-3 > div:nth-child(3) > div:nth-child(2) {
-  width: 80%;
+#section-3 > div:nth-child(3) > div:nth-child(1) {
+  width: 100%;
   height: 100%;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div {
+  width: 10%;
+}
+
+#section-3 > div:nth-child(3) > div:nth-child(1) > div > i {
+  color: var(--text-color);
+}
+
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
   width: 90%;
   height: 70%;
-  border: 1px solid black;
   overflow: hidden;
   position: relative;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div {
   width: 182%;
   height: 100%;
   position: absolute;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div {
   width: 10%;
   height: inherit;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div > div {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div {
   width: 10%;
   height: 100%;
   position: absolute;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div > div > h3 {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3 {
   color: var(--title-color);
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div > div > h3:nth-child(1) {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3:nth-child(1) {
   margin-right: 60%;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div > div > h3:nth-child(2) {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3:nth-child(2) {
   padding: 5% 0;
   border: solid var(--title-color);
   border-width: 1px 0;
 }
 
-#section-3 > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div > div > img {
+#section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > img {
   width: 100%;
   height: 100%;
 }
@@ -111,46 +114,53 @@
   height: 100%;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div {
+  width: 10%;
+}
+
+#section-3 > div:nth-child(4) > div:nth-child(1) > div > i {
+  color: var(--text-color);
+}
+
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) {
   width: 75%;
   height: 70%;
-  border: 1px solid black;
   overflow: hidden;
   position: relative;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div {
   width: 127.5%;
   height: 100%;
   position: absolute;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div {
   width: 14%;
   height: inherit;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div > div {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div > div {
   width: 14%;
   height: 100%;
   position: absolute;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div > div > h3 {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3 {
   color: var(--title-color);
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div > div > h3:nth-child(1) {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3:nth-child(1) {
   margin-right: 60%;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div > div > h3:nth-child(2) {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div > div > h3:nth-child(2) {
   padding: 5% 0;
   border: solid var(--title-color);
   border-width: 1px 0;
 }
 
-#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div > img {
+#section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div > img {
   width: 100%;
   height: 100%;
 }

@@ -17,7 +17,7 @@ function filmographyTitle () {
     });
   }
 
-  select (filmographySelect.children[0], filmographySelect.children[2],0, film, drama, 0);
+  select (filmographySelect.children[0], filmographySelect.children[2], 0, film, drama, 0);
   select (filmographySelect.children[2], filmographySelect.children[0], 180, drama, film, 1);
 
   let rotate = 0;
