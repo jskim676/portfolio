@@ -4,12 +4,12 @@
 }
 
 #section-2 > div:nth-child(1) {
-  width: 40%;
+  width: 45%;
   height: inherit;
 }
 
 #section-2 > div:nth-child(1) > img {
-  width: 55%;
+  width: 50%;
   height: 50%;
   border-radius: 300px 300px 0 0;
 }
@@ -27,7 +27,7 @@
 }
 
 #section-2 > div:nth-child(2) {
-  width: 60%;
+  width: 55%;
   height: inherit;
 }
 
@@ -37,9 +37,9 @@
 }
 
 #section-2 > div:nth-child(2) > ul > li {
-  width: inherit;
+  width: 80%;
   height: 8%;
   background-color: var(--story-color);
-  padding-left: 1%;
+  padding: 1%;
 }
 /*# sourceMappingURL=layout-section-2.css.map */

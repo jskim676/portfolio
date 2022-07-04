@@ -1,4 +1,25 @@
 import getTime from "./clock.js";
+import heightIncrease from "./heightIncrease.js";
+// import moving from "./moving.js";
+
+const programName = {
+  Name0 : document.createElement('div'),
+  Name0Icon : document.createElement('img'),
+  Name0Text : document.createElement('p'),
+  
+  Name1 : document.createElement('div'),
+  Name1Icon : document.createElement('img'),
+  Name1Text : document.createElement('p'),
+
+  Name2 : document.createElement('div'),
+  Name2Icon : document.createElement('img'),
+  Name2Text : document.createElement('p'),
+
+  Name3 : document.createElement('div'),
+  Name3Icon : document.createElement('img'),
+  Name3Text : document.createElement('p'),
+}
+
 
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
@@ -22,17 +43,9 @@ const gameWinBtn = Array.from(document.getElementById('game-window-button').chil
 const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
 const icons = document.getElementById('icon').children;
 const gameicons = Array.from(document.getElementById('gameicon').children);
-const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
 const gametime = document.getElementById('gametime');
-const fullGametime = document.getElementById('fullGametime');
 
 const program = document.getElementById('program');
-
-
-
-const programName0 = document.createElement('div');
-const programName0Icon = document.createElement('img');
-const programName0Text = document.createElement('p');
 
 let num = 1;
 
@@ -41,25 +54,23 @@ icons[0].addEventListener('dblclick', function() {
   // zIndex 값 설정
   num++;
   gameWin.children[0].style.zIndex = num+1;
-  // qs.children[0].style.zIndex = num;
   
   gameWin.classList.remove('hidden');
   qs.classList.remove('hidden');
   qsmark.classList.remove('hidden');
   
-  program.appendChild(programName0);
-  programName0.classList.add('window-style');
-  programName0.setAttribute('id','game-taskBar')
-  programName0.appendChild(programName0Icon);
-  programName0Icon.setAttribute("src", "./img/win98_icon/game_icon.svg");
-  programName0.appendChild(programName0Text);
-  programName0Text.textContent = "Game";
+  program.appendChild(programName.Name0);
+  programName.Name0.classList.add('window-style');
+  programName.Name0.setAttribute('id','game-taskBar')
+  programName.Name0.appendChild(programName.Name0Icon);
+  programName.Name0Icon.setAttribute("src", "./img/win98_icon/game_icon.svg");
+  programName.Name0.appendChild(programName.Name0Text);
+  programName.Name0Text.textContent = "Game";
 
-  programName0.addEventListener('click', function() {
+  programName.Name0.addEventListener('click', function() {
     num++;
     gameWin.children[0].style.zIndex = num+1;
   });
-  
   
   startWin.classList.add('hidden');
   isStatus = true
@@ -87,7 +98,7 @@ gameWinBtn[2].addEventListener('click', e=>{
   gameWin.classList.add('hidden');
   qs.classList.add('hidden');
   qsmark.classList.add('hidden');
-  programName0.parentNode.removeChild(programName0);
+  programName.Name0.parentNode.removeChild(programName.Name0);
 });
 
 
@@ -109,11 +120,11 @@ fullGameWinBtn[2].addEventListener('click', e=>{
   fullGameWin.classList.add('hidden');
   qs.classList.add('hidden');
   qsmark.classList.add('hidden');
-  programName0.parentNode.removeChild(programName0);
+  programName.Name0.parentNode.removeChild(programName.Name0);
 });
 
 // 작업표시줄 쪽 프로그램 클릭시 최소화 해제
-programName0.addEventListener('click', e=> {
+programName.Name0.addEventListener('click', e=> {
   if(fullmode === false) {
     gameWin.classList.remove('hidden');
     qs.classList.remove('hidden');
@@ -184,33 +195,12 @@ for(let j=0; j<gameicon.children.length; j++) {
 
 
 // 질문 늘어나는 효과
-const qs1 = qs.children[0].children[0];
-const qs2 = qs.children[0].children[1];
-
-function slide (target) {
-  let slideStatus = true;
-  target.addEventListener('click', e=> {
-      if(slideStatus === true) {
-        target.style.height = "45vh";
-        target.style.transition = "0.5s";
-        slideStatus = false;
-      } else {
-        target.style.height = "10vh";
-        slideStatus = true;
-      }
-      qs.style.transition = "0.1s";
-    });
-}
-
-slide(qs1);
-slide(qs2);
+heightIncrease(qs.children[0].children[0]);
+heightIncrease(qs.children[0].children[1]);
 
 // -------------- curriculum --------------
 const ccWin = document.getElementById('curriculum-window');
 const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
-const programName1 = document.createElement('div');
-const programName1Icon = document.createElement('img');
-const programName1Text = document.createElement('p');
 const skill = Array.from(document.querySelectorAll('#skill > div > img'));
 
 icons[1].addEventListener('dblclick', function() {
@@ -218,15 +208,15 @@ icons[1].addEventListener('dblclick', function() {
   ccWin.children[0].style.zIndex = num;
   ccWin.classList.remove('hidden');
   
-  program.appendChild(programName1);
-  programName1.classList.add('window-style');
-  programName1.setAttribute('id','curriculum-taskBar')
-  programName1.appendChild(programName1Icon);
-  programName1Icon.setAttribute("src", "./img/win98_icon/curriculum_icon.svg");
-  programName1.appendChild(programName1Text);
-  programName1Text.textContent = "Curriculum";
+  program.appendChild(programName.Name1);
+  programName.Name1.classList.add('window-style');
+  programName.Name1.setAttribute('id','curriculum-taskBar')
+  programName.Name1.appendChild(programName.Name1Icon);
+  programName.Name1Icon.setAttribute("src", "./img/win98_icon/curriculum_icon.svg");
+  programName.Name1.appendChild(programName.Name1Text);
+  programName.Name1Text.textContent = "Curriculum";
 
-  programName1.addEventListener('click', function() {
+  programName.Name1.addEventListener('click', function() {
     num++;
     ccWin.children[0].style.zIndex = num+1;
   });
@@ -237,72 +227,61 @@ icons[1].addEventListener('dblclick', function() {
 }); 
 
 ccWinBtn.addEventListener('click',e=> {
-  
   ccWin.classList.add('hidden');
-  programName1.parentNode.removeChild(programName1);
+  programName.Name1.parentNode.removeChild(programName.Name1);
 });
 
 
 // -------------- portfolio --------------
 const pfWin = document.getElementById('portfolio-window');
 const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
-const programName2 = document.createElement('div');
-const programName2Icon = document.createElement('img');
-const programName2Text = document.createElement('p');
-
 
 icons[2].addEventListener('dblclick', function() {
   num++;
   pfWin.children[0].style.zIndex = num;
   pfWin.classList.remove('hidden');
   
-  program.appendChild(programName2);
-  programName2.classList.add('window-style');
-  programName2.setAttribute('id','portfolio-taskBar')
-  programName2.appendChild(programName2Icon);
-  programName2Icon.setAttribute("src", "./img/win98_icon/portfolio_icon.svg");
-  programName2.appendChild(programName2Text);
-  programName2Text.textContent = "Portfolio";
+  program.appendChild(programName.Name2);
+  programName.Name2.classList.add('window-style');
+  programName.Name2.setAttribute('id','portfolio-taskBar')
+  programName.Name2.appendChild(programName.Name2Icon);
+  programName.Name2Icon.setAttribute("src", "./img/win98_icon/portfolio_icon.svg");
+  programName.Name2.appendChild(programName.Name2Text);
+  programName.Name2Text.textContent = "Portfolio";
 
-  programName2.addEventListener('click', function() {
+  programName.Name2.addEventListener('click', function() {
     num++;
     pfWin.children[0].style.zIndex = num+1;
   });
 
-  
   startWin.classList.add('hidden');
   isStatus = true;
 }); 
 
 pfWinBtn.addEventListener('click',e=> {
-  
   pfWin.classList.add('hidden');
-  programName2.parentNode.removeChild(programName2);
+  programName.Name2.parentNode.removeChild(programName.Name2);
 });
 
 
 // -------------- contact --------------
 const ctWin = document.getElementById('contact-window');
 const ctWinBtn = document.getElementById('contact-window-button').children[0];
-const programName3 = document.createElement('div');
-const programName3Icon = document.createElement('img');
-const programName3Text = document.createElement('p');
-
 
 icons[3].addEventListener('dblclick', function() {
   num++;
   ctWin.children[0].style.zIndex = num;
   ctWin.classList.remove('hidden');
   
-  program.appendChild(programName3);
-  programName3.classList.add('window-style');
-  programName3.setAttribute('id','contact-taskBar')
-  programName3.appendChild(programName3Icon);
-  programName3Icon.setAttribute("src", "./img/win98_icon/contact_icon.svg");
-  programName3.appendChild(programName3Text);
-  programName3Text.textContent = "Contact";
+  program.appendChild(programName.Name3);
+  programName.Name3.classList.add('window-style');
+  programName.Name3.setAttribute('id','contact-taskBar')
+  programName.Name3.appendChild(programName.Name3Icon);
+  programName.Name3Icon.setAttribute("src", "./img/win98_icon/contact_icon.svg");
+  programName.Name3.appendChild(programName.Name3Text);
+  programName.Name3Text.textContent = "Contact";
 
-  programName3.addEventListener('click', function() {
+  programName.Name3.addEventListener('click', function() {
     num++;
     ctWin.children[0].style.zIndex = num+1;
   });
@@ -313,7 +292,7 @@ icons[3].addEventListener('dblclick', function() {
 
 ctWinBtn.addEventListener('click',e=> {
   ctWin.classList.add('hidden');
-  programName3.parentNode.removeChild(programName3);
+  programName.Name3.parentNode.removeChild(programName.Name3);
 });
 
 // -------------- start --------------
@@ -350,8 +329,6 @@ for(let k=0; k<skill.length; k++) {
 
 // -------------- clock --------------
 getTime();
-
-
 
 // -------------- move --------------
 function moving (topbar,win,container) {

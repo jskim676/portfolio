@@ -1,37 +1,29 @@
 import filmographyTitle from "./filmography.js";
 import slide from "./slide.js";
+import wheel from "./wheel.js";
 
 const introTitle = document.getElementById('introTitle');
-const sectionOneTitle = document.getElementById('sectionOneTitle');
+
 const {height : sectionHeight} = introTitle.parentNode.getBoundingClientRect(); 
 
-window.addEventListener('wheel',e=> {
-  let winY = window.pageYOffset;
-  if(winY > sectionHeight/2) {
-    sectionOneTitle.children[0].style.opacity = 1;
-    sectionOneTitle.children[0].classList.add('animation-YFast');
-  } else {
-    sectionOneTitle.children[0].style.opacity = 0;
-    sectionOneTitle.children[0].classList.remove('animation-YFast');
-  }
-});
+const sectionTitle = {
+  one : document.getElementById('sectionOneTitle'),
+  two: document.getElementById('sectionTwoTitle'),
+  three : document.getElementById('sectionThreeTitle'),
+  four : document.getElementById('sectionFourTitle'),
+  five : document.getElementById('sectionFiveTitle'),
+  // const sectionOneTitle = document.getElementById('sectionOneTitle');
+  // const sectionTwoTitle = document.getElementById('sectionTwoTitle');
+  // const sectionThreeTitle = document.getElementById('sectionThreeTitle');
+  // const sectionFourTitle = document.getElementById('sectionFourTitle');
+  // const sectionFiveTitle = document.getElementById('sectionFiveTitle');
+}
+
+
+wheel(sectionTitle.one, sectionHeight/2, `animation-YFast`); wheel(sectionTitle.two, sectionHeight*3/2, `animation-XFast`);
+wheel(sectionTitle.three, sectionHeight*5/2, `animation-YFast`); wheel(sectionTitle.four, sectionHeight*7/2, `animation-XFast`);
+wheel(sectionTitle.five, sectionHeight*9/2, `animation-YFast`);
 
 filmographyTitle();
 slide();
 
-const storyList = document.querySelector('#section-2 > div:nth-child(2) > ul');
-
-// storyList.addEventListener('click', e=> {
-//   let getDataset = e.target.dataset.story;
-//   console.log(getDataset);
-//   for(let i=0; i<storyList.children.length; i++) {
-//     if(storyList.children[i].dataset.story === getDataset) {
-//       storyList.children[i].style.height = "50%";
-//     } else if (storyList.children[i].dataset.story === undefined) {
-//       storyList.children[i].style.opacity = 1;
-//       console.log('test');
-//     } else {
-//       storyList.children[i].style.opacity = 0;
-//     }
-//   }
-// });
