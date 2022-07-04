@@ -14,6 +14,8 @@ export let num = 1;
 
 
 const programName = {
+  program : document.getElementById('program'),
+
   Name0 : document.createElement('div'),
   Name0Icon : document.createElement('img'),
   Name0Text : document.createElement('p'),
@@ -54,7 +56,8 @@ const gameWinBtn = Array.from(document.getElementById('game-window-button').chil
 const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
 const icons = document.getElementById('icon').children;
 
-const program = document.getElementById('program');
+const startWin = document.getElementById('start-window');
+const startBtn = document.getElementById('start-button');
 
 
 // game icon
@@ -67,7 +70,7 @@ icons[0].addEventListener('dblclick', function() {
   qs.classList.remove('hidden');
   qsmark.classList.remove('hidden');
   
-  program.appendChild(programName.Name0);
+  programName.program.appendChild(programName.Name0);
   programName.Name0.classList.add('window-style');
   programName.Name0.setAttribute('id','game-taskBar')
   programName.Name0.appendChild(programName.Name0Icon);
@@ -161,82 +164,12 @@ fullGameWin.children[0].children[0].addEventListener('dblclick', function() {
 
 
 // -------------- gamelist 스크롤--------------
-const gameicon = document.getElementById('gameicon');
-const gameicons = Array.from(document.getElementById('gameicon').children);
-
-const fullGameicon = document.getElementById('fullGameicon');
-const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
-
-const gametime = document.getElementById('gametime');
-const fullGametime = document.getElementById('fullGametime');
-
-let number = 0;
-gameicon.addEventListener('wheel', (e) => { 
-  if(e.deltaY===100) {
-    if(number<10) {
-      number++;
-      gameicon.style.top = `-${number}0%`;
-      scrolling.style.top = `${scrollingTop /10 * number}px`;
-    }
-  } else {
-    if(number>0) {
-      number--;
-      gameicon.style.top = `-${number}0%`;
-      scrolling.style.top = `${scrollingTop /10 * number}px`;
-    }
-  }
-});
-
-
-// // 게임 시간을 보여줌
-// let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
-// ]
-
-// for(let i=0; i<gametimeData.length; i++) {
-//   gameicons[i].addEventListener('click', function () {
-//     gametime.textContent = gametimeData[i];
-//   });
-// }
-
-// for(let i=0; i<gametimeData.length; i++) {
-//   fullGameicons[i].addEventListener('click', function () {
-//     fullGametime.textContent = gametimeData[i];
-//   });
-// }
-
-
-
-
-// function gameInfo () {
-//   const gameTime = (icons , time) => {
-//     let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
-//     ]
-    
-//     for(let i=0; i<gametimeData.length; i++) {
-//       icons[i].addEventListener('click', function () {
-//         time.textContent = gametimeData[i];
-//       });
-//     }
-//   }
-//   gameTime(gameicons,gametime); gameTime(fullGameicons, fullGametime);
-  
-  
-//   // 게임을 클릭시 테두리가 생김
-//   // dataset 값을 대문자로 쓰면 인식하지 못한다
-//   const iconOutline = (icon) => {
-//     for(let j=0; j<icon.children.length; j++) {
-//       icon.addEventListener('click', (event) => {
-//         let getDataset = event.target.dataset.gameicon;
-//         if(icon.children[j].dataset.gameicon === getDataset) {
-//           icon.children[j].classList.add('outLine');
-//         } else {
-//           icon.children[j].classList.remove('outLine');
-//         }
-//       });
-//     }
-//   }
-//   iconOutline(gameicon); iconOutline(fullGameicon);
-// }
+export const gameicon = document.getElementById('gameicon');
+export const gameicons = Array.from(document.getElementById('gameicon').children);
+export const fullGameicon = document.getElementById('fullGameicon');
+export const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
+export const gametime = document.getElementById('gametime');
+export const fullGametime = document.getElementById('fullGametime');
 
 gameInfo();
 
@@ -255,7 +188,7 @@ icons[1].addEventListener('dblclick', function() {
   ccWin.children[0].style.zIndex = num;
   ccWin.classList.remove('hidden');
   
-  program.appendChild(programName.Name1);
+  programName.program.appendChild(programName.Name1);
   programName.Name1.classList.add('window-style');
   programName.Name1.setAttribute('id','curriculum-taskBar')
   programName.Name1.appendChild(programName.Name1Icon);
@@ -288,7 +221,7 @@ icons[2].addEventListener('dblclick', function() {
   pfWin.children[0].style.zIndex = num;
   pfWin.classList.remove('hidden');
   
-  program.appendChild(programName.Name2);
+  programName.program.appendChild(programName.Name2);
   programName.Name2.classList.add('window-style');
   programName.Name2.setAttribute('id','portfolio-taskBar')
   programName.Name2.appendChild(programName.Name2Icon);
@@ -320,7 +253,7 @@ icons[3].addEventListener('dblclick', function() {
   ctWin.children[0].style.zIndex = num;
   ctWin.classList.remove('hidden');
   
-  program.appendChild(programName.Name3);
+  programName.program.appendChild(programName.Name3);
   programName.Name3.classList.add('window-style');
   programName.Name3.setAttribute('id','contact-taskBar')
   programName.Name3.appendChild(programName.Name3Icon);
@@ -343,8 +276,6 @@ ctWinBtn.addEventListener('click',e=> {
 });
 
 // -------------- start --------------
-const startWin = document.getElementById('start-window');
-const startBtn = document.getElementById('start-button');
 
 let isStatus = true;
 startBtn.addEventListener('click',e=> {
@@ -380,7 +311,7 @@ getTime();
 // -------------- move --------------
 
 for(let l=0; l<move.length; l++) {
-  move[l].addEventListener('mouseup',function() {
+  move[l].addEventListener('mouseover',function() {
     num++;
   })
 }

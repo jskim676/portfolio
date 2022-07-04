@@ -1,8 +1,13 @@
+import { gameicon, gameicons, fullGameicon, fullGameicons, gametime, fullGametime , scrolling, scrollingTop} from "./script.js";
+
 function gameInfo () {
   const gameTime = (icons , time) => {
+
+    // 게임 시간 데이터
     let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
     ]
     
+    // 게임 시간을 하단바에 표시해줌
     for(let i=0; i<gametimeData.length; i++) {
       icons[i].addEventListener('click', function () {
         time.textContent = gametimeData[i];
@@ -27,6 +32,24 @@ function gameInfo () {
     }
   }
   iconOutline(gameicon); iconOutline(fullGameicon);
+
+  // 게임 목록을 스크롤할 경우 스크롤 바가 움직이며 반대의 경우도 적용
+  let number = 0;
+  gameicon.addEventListener('wheel', (e) => { 
+    if(e.deltaY===100) {
+      if(number<10) {
+        number++;
+        gameicon.style.top = `-${number}0%`;
+        scrolling.style.top = `${scrollingTop /10 * number}px`;
+      }
+    } else {
+      if(number>0) {
+        number--;
+        gameicon.style.top = `-${number}0%`;
+        scrolling.style.top = `${scrollingTop /10 * number}px`;
+      }
+    }
+  });
 }
 
 export default gameInfo

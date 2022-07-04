@@ -1,4 +1,6 @@
 function qsIncrease (target) {
+
+  // 질문 박스의 길이를 늘려서 내용을 볼 수 있게함
   let slideStatus = true;
   target.addEventListener('click', e=> {
     if(slideStatus === true) {
