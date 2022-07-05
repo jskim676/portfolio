@@ -17,12 +17,22 @@ squareBtn.addEventListener('click',function() {
   }
 });
 
-// const ccQuestion = document.createElement('div');
-// ccQuestion.setAttribute('id','ccQuestion');
 
 const ggPlayBtn = document.getElementById('ggPlayBtn');
+
+function qusetionBox () {
+  const ggQuestion = document.createElement('div');
+  ggAppearAnswer.appendChild(ggQuestion);
+  ggQuestion.setAttribute('class','question');
+  ggQuestion.innerHTML = "1. 이 챔피언은 CC기가 없습니다"
+}
+
+
 ggPlayBtn.addEventListener('click', function() {
   if(playState === true) {
+
+    setTimeout(()=>{qusetionBox()},1000);
+
     squareIcon.classList.add('hidden');
     ggTimeValue.innerHTML = "2 : 00";
     gameTime(ggTimeBar, ggTimeValue);
@@ -54,6 +64,7 @@ const nextGg = () => {
   return squareAnswer
 }
 
+const ggAppearAnswer = document.getElementById('ggAppearAnswer');
 
 
 function ggPrintName () {
@@ -61,7 +72,6 @@ function ggPrintName () {
     if(squareKey[j].id === squareAnswer) {
       console.log(squareKey[j].name);
       const ggInputAnswer = document.getElementById('ggInputAnswer').value;
-      const ggAppearAnswer = document.getElementById('ggAppearAnswer');
       if(ggAppearAnswer.children.length >= 0) {
         const answerBox = document.createElement('div');
         ggAppearAnswer.appendChild(answerBox);

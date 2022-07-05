@@ -9,18 +9,25 @@
 <body>
   <div id="root"></div>
   <script>
+    // const ajax = new XMLHttpRequest();
+    // console.log(ajax);
+    // const URL = "https://ddragon.leagueoflegends.com/cdn/12.6.1/data/ko_KR/champion.json";
+    //   ajax.open('GET', URL, false);
+    //   ajax.send();
+    //   const champions = JSON.parse(ajax.response);
+
+    //   console.log(champions);
+
     const ajax = new XMLHttpRequest();
-    console.log(ajax);
-    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champions/1.json";
-      ajax.open('GET', URL, false);
-      ajax.send();
-      const champions = JSON.parse(ajax.response);
-
-      console.log(champions);
+    const skinURL = `https://ddragon.leagueoflegends.com/cdn/12.6.1/data/ko_KR/champion.json`;
+    ajax.open('GET', skinURL, false);
+    ajax.send();
+    const champions = JSON.parse(ajax.response);
 
 
-    
-      
+    console.log(champions); 
+  
+  
 
       /*
       객체들로 이루어진 챔피언 목록에서 랜덤한 챔피언의 이름을 변수로 가져와서
