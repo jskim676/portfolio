@@ -30,7 +30,6 @@ function qusetionBox () {
 
 ggPlayBtn.addEventListener('click', function() {
   if(playState === true) {
-
     setTimeout(()=>{qusetionBox()},1000);
 
     squareIcon.classList.add('hidden');

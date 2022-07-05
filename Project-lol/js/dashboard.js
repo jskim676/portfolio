@@ -1,5 +1,3 @@
-const idAppear = document.getElementById('idAppear');
-const greeting = document.getElementById('greeting');
 const idInputAnswer = document.getElementById('idInputAnswer');
 const pwInputAnswer = document.getElementById('pwInputAnswer');
 const loginScreen = document.getElementById('loginScreen');
@@ -12,6 +10,8 @@ loginBtn.addEventListener('click', function() {
 });
 
 function pwPrintName () {
+  const idAppear = document.getElementById('idAppear');
+  const greeting = document.getElementById('greeting');
   let userName = idInputAnswer.value;
   if(idInputAnswer.value !== "" & pwInputAnswer.value !== "") {
     idAppear.textContent = userName;

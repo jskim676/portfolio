@@ -16,7 +16,6 @@ function gameInfo () {
   }
   gameTime(gameicons,gametime); gameTime(fullGameicons, fullGametime);
   
-  
   // 게임을 클릭시 테두리가 생김
   // dataset 값을 대문자로 쓰면 인식하지 못한다
   const iconOutline = (icon) => {
@@ -37,16 +36,16 @@ function gameInfo () {
   let number = 0;
   gameicon.addEventListener('wheel', (e) => { 
     if(e.deltaY===100) {
-      if(number<10) {
+      if(number<5) {
         number++;
-        gameicon.style.top = `-${number}0%`;
-        scrolling.style.top = `${scrollingTop /10 * number}px`;
+        gameicon.style.top = `-${number*2}0%`;
+        scrolling.style.top = `${scrollingTop /5 * number}px`;
       }
     } else {
       if(number>0) {
         number--;
-        gameicon.style.top = `-${number}0%`;
-        scrolling.style.top = `${scrollingTop /10 * number}px`;
+        gameicon.style.top = `-${number*2}0%`;
+        scrolling.style.top = `${scrollingTop /5 * number}px`;
       }
     }
   });

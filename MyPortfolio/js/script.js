@@ -1,5 +1,5 @@
 import getTime from "./clock.js";
-import qsIncrease from "./qsIncrease.js";
+import questionIncrease from "./questionIncrease.js";
 import moving from "./moving.js";
 import gameInfo from "./gameInfo.js";
 
@@ -174,8 +174,8 @@ export const fullGametime = document.getElementById('fullGametime');
 gameInfo();
 
 // 질문 늘어나는 효과
-qsIncrease(qs.children[0].children[0]);
-qsIncrease(qs.children[0].children[1]);
+questionIncrease(qs.children[0].children[0]);
+questionIncrease(qs.children[0].children[1]);
 
 
 // -------------- curriculum --------------
