@@ -2,7 +2,7 @@ const championChoice = document.querySelectorAll('#championChoice > div > img')
 const lanePosition = document.getElementById('lanePosition');
 const randomLoadScreenData = [];
 const reroll = document.getElementById('reroll');
-const rerollBtn = document.querySelector('#reroll > button');
+const rerollBtn = document.querySelector('#reroll > div');
 
 for(let i=0; i<skinAllData.length; i++) {
   if(skinAllData[i].id%1000 === 0) {
@@ -12,10 +12,13 @@ for(let i=0; i<skinAllData.length; i++) {
 
 // 마음에 들지않는 챔피언이 나왔다면 다시 기회를 얻을 수 있다.
 let rerollValue = 4;
+let turnValue = 0;
 rerollBtn.addEventListener('click',function() {
   rerollValue--;
   if(rerollValue >= 0 ) {
-    
+    turnValue++;
+    rerollBtn.children[0].style.transform = `rotate(${turnValue}turn)`;
+    rerollBtn.children[0].style.transition= "0.5s";
     let lsData = [];
     while(lsData.length < 5) {
       idx = Math.floor(Math.random()*randomLoadScreenData.length);

@@ -42,9 +42,13 @@ teamRank.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-d
 
 let srWinRate = soloRank.nextElementSibling.children[1].textContent;
 let trWinRate = teamRank.nextElementSibling.children[1].textContent;
-let totalGame = Math.floor(Math.random()*(150-100)+100);
+let totalGame = 0;
 let winRate = Math.floor(Math.random()*(100-50)+45);
 
-// srWinRate = '100전 ${winRate}승 ${100-winRate}패';
-soloRank.nextElementSibling.children[1].textContent = `${Math.floor(100*winRate/totalGame)}% ${totalGame}전 ${winRate}승 ${totalGame-winRate}패`;
+// srWinRate = '${totalGame}전 ${winRate}승 ${totalGame-winRate}패';
+function rankGame (target) {
+  totalGame = Math.floor(Math.random()*(150-100)+100);
+  target.nextElementSibling.children[1].textContent = `${Math.floor(100*winRate/totalGame)}% ${totalGame}전 ${winRate}승 ${totalGame-winRate}패`;
+}
 
+rankGame(soloRank); rankGame(teamRank);

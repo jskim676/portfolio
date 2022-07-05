@@ -9,10 +9,11 @@ const backDropFilter = document.getElementById('backDropFilter');
 
 let skinData = [];
 for(let j=0; j<skinAllData.length; j++) {
-  if(Object.values(champions)[j].id%1000 !== 0) {
+  if(Object.values(champions)[j].isBase !== true) {
     skinData.push(Object.values(champions)[j]);
   }
 }
+
 let skinQuizData = Math.floor(Math.random()*skinData.length);
 let skinQuizRoute = skinData[skinQuizData].splashPath;
 let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);

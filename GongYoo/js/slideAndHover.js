@@ -26,27 +26,27 @@ function slideAndHover() {
   slide(filmList, filmLeftBtn, filmRightBtn, 15 , 3); 
   slide(dramaList, dramaLeftBtn, dramaRightBtn, 21.5 , 1);
 
-  const hover = () => {
-    for(let i=0; i<filmList.children.length; i++) {
-      filmList.children[i].addEventListener('mouseover', e => {
-        let getDataset = e.target.dataset.film;
-        for(let i=0; i<filmList.children.length; i++) {
-          if(filmList.children[i].children[0].dataset.film === getDataset) {
-            filmList.children[i].children[0].children[1].classList.remove('hidden');
-            filmList.children[i].children[0].children[1].classList.add('animationYFast');
-            filmList.children[i].children[0].children[2].classList.remove('hidden');
-            filmList.children[i].children[0].children[2].classList.add('animationYFast');
+  const hover = (list) => {
+    for(let i=0; i<list.length; i++) {
+      list[i].addEventListener('mouseover', e => {
+        let getDataset = e.target.dataset.list;
+        for(let i=0; i<list.length; i++) {
+          if(list[i].children[0].dataset.list === getDataset) {
+            list[i].children[0].children[1].classList.remove('hidden');
+            list[i].children[0].children[1].classList.add('animationYFast');
+            list[i].children[0].children[2].classList.remove('hidden');
+            list[i].children[0].children[2].classList.add('animationYFast');
           } else {
-            filmList.children[i].children[0].children[1].classList.add('hidden');
-            filmList.children[i].children[0].children[1].classList.remove('animationYFast');
-            filmList.children[i].children[0].children[2].classList.add('hidden');
-            filmList.children[i].children[0].children[2].classList.remove('animationYFast');
+            list[i].children[0].children[1].classList.add('hidden');
+            list[i].children[0].children[1].classList.remove('animationYFast');
+            list[i].children[0].children[2].classList.add('hidden');
+            list[i].children[0].children[2].classList.remove('animationYFast');
           }
         }
       });
     }
   }
-  hover();
+  hover(filmList.children); hover(dramaList.children);
 }
 
 export default slideAndHover

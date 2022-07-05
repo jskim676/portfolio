@@ -185,7 +185,7 @@
                             <i class="fa-solid fa-images fa-lg"></i>
                             <p>Skin Quiz</p>
                           </div>
-                          <div id="quickSkin" class="flex-spaceevenly-center" onclick="skinQuickMatch()">
+                          <div class="flex-spaceevenly-center" onclick="document.getElementById('skinQuizBtn').click()">
                             <p>빠른 입장</p>
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                           </div>
@@ -195,7 +195,7 @@
                             <i class="fa-solid fa-question fa-lg"></i>
                             <p>Guessing Game</p>
                           </div>
-                          <div id="quickGg" class="flex-spaceevenly-center" onclick="ggQuickMatch()">
+                          <div class="flex-spaceevenly-center" onclick="document.getElementById('guessingGameBtn').click()">
                             <p>빠른 입장</p>
                             <i class="fa-solid fa-arrow-right-to-bracket"></i>
                           </div>
@@ -273,8 +273,8 @@
                   </div>
                   <!-- cog, play -->
                   <div>
-                    <div class="flex-flexend-center">
-                      <img id="skinCog" src="https://i.ibb.co/j3GfZy1/cog.png" alt="skinCog">
+                    <div class="flex-center-center">
+                      <i id="skinCog" class="fa-solid fa-gear fa-2x"></i>
                     </div>
                     <div class="flex-center-center">
                       <div id="skinPlayBtn" class="flex-center-center">Play</div>
@@ -367,8 +367,8 @@
                   </div>
                   <!-- cog, play -->
                   <div>
-                    <div class="flex-flexend-center">
-                      <img id="ggCog" src="https://i.ibb.co/j3GfZy1/cog.png" alt="ggCog">
+                    <div class="flex-center-center">
+                      <i id="ggCog" class="fa-solid fa-gear fa-2x"></i>
                     </div>
                     <div class="flex-center-center">
                       <div id="ggPlayBtn" class="flex-center-center">Play</div>
@@ -379,8 +379,8 @@
                 <div class="flex-center-center">
                   <div class="flex-column-spacearound-center">
                     <div class="flex">
-                      <div class="flex-flexend-flexend">
-                        <div id="ggAppearAnswer" class="flex-flexend-flexend"></div>
+                      <div class="flex-flexstart-flexstart">
+                        <div id="ggAppearAnswer" class="flex-flexstart-flexstart"></div>
                       </div>
                       <div class="flex-column-spacearound-center">
                         <div>
@@ -439,7 +439,9 @@
                 </div>
                 <!-- reroll -->
                 <div id="reroll" class="flex-column-spaceevenly-center">
-                  <button></button>
+                  <div class="flex-center-center">
+                    <i class="fa-solid fa-rotate-right fa-xs"></i>
+                  </div>
                   <p></p>
                   <p></p>
                 </div>
@@ -512,76 +514,50 @@
 
             <!-- rightNav -->
             <nav id="rightNav" class="animationXFast on">
-              <!-- <div id="skinQuizSetting" class="flex-column-spacearound-flexstart">
-                <h3>게임 설정</h3>
-                난이도
-                <div class="flex-column-spacearound-flexstart">
-                  <p>난이도 :</p>
-                  <div class="flex-spacearound-center">
-                    <div>Easy</div>
-                    <div>Normal</div>
-                    <div>Hard</div>
-                  </div>
-                </div>
-                게임 방식
-                <div class="flex-column-spacearound-flexstart">
-                  <p>게임 방식 :</p>
-                  <div class="flex-spacearound-center">
-                    <div>개인전</div>
-                    <div>팀전</div>
-                  </div>
-                </div>
-                인원 제한
-                <div class="flex-column-spacearound-flexstart">
-                  <p>인원 제한 :</p>
-                  <div class="flex-column-spacearound-center">
-                    <div>
-                      <div></div>
-                    </div>
+              <div class="flex-center-center hidden">
+                <div id="skinQuizSetting" class="flex-column-spacearound-flexstart">
+                  <h3>게임 설정</h3>
+                  <!-- 난이도 -->
+                  <div class="flex-column-spacearound-flexstart">
+                    <p>난이도 :</p>
                     <div class="flex-spacearound-center">
-                      <p>2</p>
-                      <p>3</p>
-                      <p>4</p>
-                      <p>5</p>
-                      <p>6</p>
-                      <p>7</p>
-                      <p>8</p>
-                      <p>9</p>
-                      <p>10</p>
+                      <div>Easy</div>
+                      <div>Normal</div>
+                      <div>Hard</div>
                     </div>
                   </div>
-                </div>
-                승리 조건
-                <div class="flex-column-spacearound-flexstart">
-                  <p>승리 조건 :</p>
-                  <div class="flex-spacearound-center">
-                    <div>3</div>
-                    <div>5</div>
-                    <div>7</div>
-                    <div>9</div>
+                  <!-- 승리 조건 -->
+                  <div class="flex-column-spacearound-flexstart">
+                    <p>승리 조건 :</p>
+                    <div class="flex-spacearound-center">
+                      <div>3</div>
+                      <div>5</div>
+                      <div>7</div>
+                      <div>9</div>
+                    </div>
                   </div>
-                </div>
-                시간 제한
-                <div class="flex-column-spacearound-flexstart">
-                  <p>시간 제한 :</p>
-                  <div class="flex-spacearound-center">
-                    <div>0:30</div>
-                    <div>1:00</div>
-                    <div>1:30</div>
-                    <div>2:00</div>
+                  <!-- 시간 제한 -->
+                  <div class="flex-column-spacearound-flexstart">
+                    <p>시간 제한 :</p>
+                    <div class="flex-spacearound-center">
+                      <div>0:30</div>
+                      <div>1:00</div>
+                      <div>1:30</div>
+                      <div>2:00</div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div id="guessingGameSetting" class="flex-column-spacearound-center">
 
-              </div> -->
+              </div>
             </nav>
           </main>
         </div>
       </div>
     </div>
     
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js" type="module" defer></script>
     <script src="./js/summonerIcon.js"></script>
     <script src="./js/skinQuiz.js"></script>
     <script src="./js/randomChampion.js"></script>

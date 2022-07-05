@@ -17,6 +17,9 @@ squareBtn.addEventListener('click',function() {
   }
 });
 
+// const ccQuestion = document.createElement('div');
+// ccQuestion.setAttribute('id','ccQuestion');
+
 const ggPlayBtn = document.getElementById('ggPlayBtn');
 ggPlayBtn.addEventListener('click', function() {
   if(playState === true) {

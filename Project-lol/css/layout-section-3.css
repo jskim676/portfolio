@@ -6,7 +6,7 @@
 }
 
 #section-3 > div:nth-child(1) {
-  margin-right:12vw;
+  margin-right:25vw;
   line-height: 8vh;
 }
 
@@ -110,6 +110,7 @@
   width:20%;
   height:100%;
   background-color:var(--bgc-nav);
+  overflow: hidden;
 }
 
 #window > main > nav:nth-child(1) {

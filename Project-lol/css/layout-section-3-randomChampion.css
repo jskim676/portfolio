@@ -63,10 +63,14 @@
   height:20%;
 }
 
-#reroll > button {
+#reroll > div {
   width:8%;
   height:25%;
   cursor: pointer;
+  background-color: var(--bgc-main);
+  border:1px solid var(--border-color);
+  border-radius: 5px;
+  /* color:var(--bgc-color); */
 }
 
 #reroll > p {

@@ -1,4 +1,4 @@
-function wheel (target, height, animation) {
+function scrolling (target, height, animation) {
   window.addEventListener('wheel',e=> {
     let winY = window.pageYOffset;
     if(winY > height) {
@@ -11,4 +11,4 @@ function wheel (target, height, animation) {
   });
 }
 
-export default wheel
+export default scrolling
