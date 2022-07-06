@@ -7,26 +7,31 @@
   <title>Document</title>
 </head>
 <body>
+  <button id="te">click</button>
   <img src="" alt="">
   <script>
     const ajax = new XMLHttpRequest();
-    const URL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json";
-    ajax.open('GET', URL, false);
+    const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons.json";
+    ajax.open('GET', iconURL, true);
     ajax.send();
-    const champions = JSON.parse(ajax.response);
-    const skinAllData = Object.values(champions);
+    window.addEventListener('load', function() {
+      const test = ajax.response;
+      console.log(test);
+    })
+    console.log(ajax.response);
+    // const te = document.getElementById('te');
+    // te.addEventListener('click', function() {
+    //   const test = ajax.response;
+    //   console.log(test);
+    // })
 
-    // console.log(skinAllData);
+    // 어디에 담아서
+    // 객체 , 배열 
 
-    let skinData = [];
-    for(let j=0; j<skinAllData.length; j++) {
-      if(Object.values(champions)[j].id%1000 === 0) {
-        skinData.push(Object.values(champions)[j]);
-      }
-    }
+    // for in() 
+    // try , catch, finally
 
-    console.log(skinData);
-
+    // exception
 
 
 

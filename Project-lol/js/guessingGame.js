@@ -1,7 +1,8 @@
+const ggAjax = new XMLHttpRequest();
 const squareURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/champion-summary.json";
-ajax.open('GET', squareURL, false);
-ajax.send();
-const squareKey = JSON.parse(ajax.response).slice(1);
+ggAjax.open('GET', squareURL, false);
+ggAjax.send();
+const squareKey = JSON.parse(ggAjax.response).slice(1);
 const squareIcon = document.getElementById('squareIcon');
 const squareBtn = document.getElementById('squareBtn');
 

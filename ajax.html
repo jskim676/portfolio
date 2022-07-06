@@ -19,7 +19,7 @@
     //   console.log(champions);
 
     const ajax = new XMLHttpRequest();
-    const skinURL = `https://ddragon.leagueoflegends.com/cdn/12.6.1/data/ko_KR/champion.json`;
+    const skinURL = `https://kr.api.riotgames.com/lol/platform/v3/champion-rotations`;
     ajax.open('GET', skinURL, false);
     ajax.send();
     const champions = JSON.parse(ajax.response);

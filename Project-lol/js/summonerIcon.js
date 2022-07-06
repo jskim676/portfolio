@@ -1,8 +1,9 @@
-const ajax = new XMLHttpRequest();
+const iconAjax = new XMLHttpRequest();
 const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons.json";
-ajax.open('GET', iconURL, false);
-ajax.send();
-const summonericon = JSON.parse(ajax.response);
+iconAjax.open('GET', iconURL, false);
+iconAjax.send();
+
+const summonericon = JSON.parse(iconAjax.response);
 const myIcon = document.getElementById('myIcon');
 const summoner = document.getElementById('summoner');
 const skinATeamMember = document.getElementById('skinATeamMember');

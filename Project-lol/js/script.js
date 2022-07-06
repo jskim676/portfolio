@@ -70,14 +70,14 @@ cog(skinCog); cog(ggCog);
           for(let i = 0; i<ul.children.length; i++) {
             if(ul.children[i].dataset.menu === getDataset) {
               main.children[i+1].classList.remove('on');
-              ul.children[i].classList.add('select');
+              ul.children[i].classList.add('menuSelect');
               indi.style.right = `${13*i}vw`;
               indiBox[i].style.opacity = 1;
               indiBox[i].classList.add('indicate');
               explain.children[i].style.opacity = 1;
             } else {
               main.children[i+1].classList.add('on');
-              ul.children[i].classList.remove('select');
+              ul.children[i].classList.remove('menuSelect');
               indiBox[i].style.opacity = 0.5;
               indiBox[i].classList.remove('indicate');
               explain.children[i].style.opacity = 0;

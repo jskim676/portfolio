@@ -1,8 +1,9 @@
 //챔피언의 일러스트 중 기본 스킨을 제외한 나머지 스킨을 배열안에 넣어 불러오는 형식 
+const skinAjax = new XMLHttpRequest();
 const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json`;
-ajax.open('GET', skinURL, false);
-ajax.send();
-const champions = JSON.parse(ajax.response);
+skinAjax.open('GET', skinURL, false);
+skinAjax.send();
+const champions = JSON.parse(skinAjax.response);
 const skinAllData = Object.values(champions);
 let skinImg = document.getElementById('skinImg');
 const backDropFilter = document.getElementById('backDropFilter');
@@ -26,7 +27,7 @@ skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be
 const nextSkin = () => {
   let skinData = [];
   for(let j=0; j<skinAllData.length; j++) {
-    if(Object.values(champions)[j].id%1000 !== 0) {
+    if(Object.values(champions)[j].isBase !== true) {
       skinData.push(Object.values(champions)[j]);
     }
   }
