@@ -9,37 +9,35 @@
 <body>
   <div id="root"></div>
   <script>
-    // const ajax = new XMLHttpRequest();
-    // console.log(ajax);
-    // const URL = "https://ddragon.leagueoflegends.com/cdn/12.6.1/data/ko_KR/champion.json";
-    //   ajax.open('GET', URL, false);
-    //   ajax.send();
-    //   const champions = JSON.parse(ajax.response);
-
-    //   console.log(champions);
-
     const ajax = new XMLHttpRequest();
-    const skinURL = `https://kr.api.riotgames.com/lol/platform/v3/champion-rotations`;
-    ajax.open('GET', skinURL, false);
+    const championURL = "https://ddragon.leagueoflegends.com/cdn/12.6.1/data/ko_KR/champion.json";
+    ajax.open('GET', championURL, true);
     ajax.send();
-    const champions = JSON.parse(ajax.response);
 
-
-    console.log(champions); 
-  
-  
-
-      /*
-      객체들로 이루어진 챔피언 목록에서 랜덤한 챔피언의 이름을 변수로 가져와서
-      챔피언 목록에 변수를 대입
-      */ 
-      
-
-
-
-
-
-
+    const cc = ["공중", "기절", "공포", "slow", "제압", "속박"];
+    
+    const time = setTimeout(()=>{
+      const champions = Object.values(JSON.parse(ajax.response).data);
+      console.log(champions);
+      let random = Math.floor(Math.random()*champions.length);
+      let ranChampion = champions[random].id;
+      console.log(ranChampion);
+      const skinURL = `http://ddragon.leagueoflegends.com/cdn/12.12.1/data/ko_KR/champion/${ranChampion}.json`;
+      ajax.open('GET', skinURL, false);
+      ajax.send();
+      const info = JSON.parse(ajax.response).data;
+      const skills = info[ranChampion].spells;
+      const passive = info[ranChampion].passive;
+      console.log(passive.description);
+      // console.log(cc.filter(x=>passive.description.includes(x)));
+      for(let i=0; i<skills.length; i++) {
+        console.log(skills[i]);
+        const toolTip = skills[i].tooltip;
+        console.log(toolTip);
+        // console.log(cc.filter(x=>toolTip.includes(x)));
+        // console.log(cc.filter(x=>skills[i].description.includes(x)));
+      }
+    },500);
 
   </script>
 </body>

@@ -14,6 +14,7 @@
     const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons.json";
     ajax.open('GET', iconURL, true);
     ajax.send();
+
     window.addEventListener('load', function() {
       const test = ajax.response;
       console.log(test);
@@ -32,6 +33,18 @@
     // try , catch, finally
 
     // exception
+
+for(let i=0; i<ul.children.length; i++) {
+    ul.children[i].addEventListener('click', (event) => {
+    let getDataset = event.target.dataset.menu;
+    if(ul.children[i].dataset.menu === getDataset) {
+
+    } else {
+
+    }
+
+  });
+}
 
 
 

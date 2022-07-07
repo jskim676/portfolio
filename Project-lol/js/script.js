@@ -30,33 +30,21 @@ scrolling(sectionHeight/4, s2h1Text); scrolling(sectionHeight/1.5, img); scrolli
 // --------------- section-3 list---------------
 const skinCog = document.getElementById('skinCog');
 const ggCog = document.getElementById('ggCog');
-const skinQuizSetting = document.getElementById('skinQuizSetting');
-const ggQuizSetting = document.getElementById('ggQuizSetting');
+const gameSetting = document.getElementById('gameSetting');
 
-let cogData = true;
 
 function cog (target) {
   target.addEventListener('click',e=> {
-    if(cogData === true) {
+    if(gameSetting.parentNode.classList.contains('hidden')) {
       target.style.transform = "rotate(0.5turn)";
       target.style.transition = "1s";
-      cogData = false;
-      if(target === skinCog) {
-        skinQuizSetting.parentNode.classList.remove('hidden');
-        skinQuizSetting.parentNode.classList.add('animation-YFast');
-      } else if(target === ggCog) {
-        // ggQuizSetting.classList.remove('hidden');
-      }
+      gameSetting.parentNode.classList.remove('hidden');
+      gameSetting.parentNode.classList.add('animation-YFast');
     } else {
       target.style.transform = "rotate(0turn)";
       target.style.transition = "1s";
-      cogData = true;
-      if(target === skinCog) {
-        skinQuizSetting.parentNode.classList.add('hidden');
-        skinQuizSetting.parentNode.classList.remove('animation-YFast');
-      } else if(target === ggCog) {
-        // ggQuizSetting.classList.add('hidden');
-      }
+      gameSetting.parentNode.classList.add('hidden');
+      gameSetting.parentNode.classList.remove('animation-YFast');
     }
   });
 }
@@ -85,7 +73,7 @@ cog(skinCog); cog(ggCog);
           }
           if(ul.children[i].dataset.menu === "1"||ul.children[i].dataset.menu === "2") {
               rightNav.classList.remove('on');
-              skinQuizSetting.parentNode.classList.add('hidden');
+              gameSetting.parentNode.classList.add('hidden');
               // ggQuizSetting.classList.add('hidden');
             } else {
                 rightNav.classList.add('on');
@@ -115,7 +103,7 @@ cog(skinCog); cog(ggCog);
           }
           if(indi.children[0].children[j].dataset.indi === "1"||indi.children[0].children[j].dataset.indi === "2") {
               rightNav.classList.remove('on');
-              skinQuizSetting.parentNode.classList.add('hidden');
+              gameSetting.parentNode.classList.add('hidden');
               // ggQuizSetting.classList.add('hidden');
             } else {
                 rightNav.classList.add('on');

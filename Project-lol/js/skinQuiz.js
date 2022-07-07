@@ -10,8 +10,8 @@ const backDropFilter = document.getElementById('backDropFilter');
 
 let skinData = [];
 for(let j=0; j<skinAllData.length; j++) {
-  if(Object.values(champions)[j].isBase !== true) {
-    skinData.push(Object.values(champions)[j]);
+  if(skinAllData[j].isBase !== true) {
+    skinData.push(skinAllData[j]);
   }
 }
 
@@ -19,7 +19,6 @@ let skinQuizData = Math.floor(Math.random()*skinData.length);
 let skinQuizRoute = skinData[skinQuizData].splashPath;
 let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
 let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
-// // uncenteredSplashPath
 skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
 
 
@@ -27,8 +26,8 @@ skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be
 const nextSkin = () => {
   let skinData = [];
   for(let j=0; j<skinAllData.length; j++) {
-    if(Object.values(champions)[j].isBase !== true) {
-      skinData.push(Object.values(champions)[j]);
+    if(skinAllData[j].isBase !== true) {
+      skinData.push(skinAllData[j]);
     }
   }
   let skinQuizData = Math.floor(Math.random()*skinData.length);
@@ -58,39 +57,41 @@ skinPlayBtn.addEventListener('click', function() {
   }
 });
   
-  // 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
-  function skinPrintName () {
-    for(let j=0; j<skinData.length; j++) {
-      if(skinData[j].id === skinAnswer) {
-        console.log(skinData[j].name);
-        const skinInputAnswer = document.getElementById('skinInputAnswer').value;
-        const skinAppearAnswer = document.getElementById('skinAppearAnswer');
-        if(skinAppearAnswer.children.length >= 0) {
-          const answerBox = document.createElement('div');
-          skinAppearAnswer.appendChild(answerBox);
-          answerBox.classList.add('answerBox');
-          answerBox.innerText = skinInputAnswer;
-          if(skinATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
-          if(skinBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
+// 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
+function skinPrintName () {
+  for(let j=0; j<skinData.length; j++) {
+    if(skinData[j].id === skinAnswer) {
+      console.log(skinData[j].name);
+      const skinInputAnswer = document.getElementById('skinInputAnswer').value;
+      const skinAppearAnswer = document.getElementById('skinAppearAnswer');
+      if(skinAppearAnswer.children.length >= 0) {
+        const answerBox = document.createElement('div');
+        skinAppearAnswer.appendChild(answerBox);
+        answerBox.classList.add('answerBox');
+        answerBox.innerText = skinInputAnswer;
+        if(skinATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
+        if(skinBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
 
-          if(skinData[j].name === skinInputAnswer) {
-            backDropFilter.classList.add('hidden');
-            alert('정답입니다');
-            setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 1500);
-            if(skinATeamMember.classList.contains('consistOf')) {
-              score(skinATeamScore);
-              skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
-            } else if (skinBTeamMember.classList.contains('consistOf')){
-              score(skinBTeamScore);
-              skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
-            }
+        if(skinData[j].name === skinInputAnswer) {
+          backDropFilter.classList.add('hidden');
+          alert('정답입니다');
+          setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 1500);
+          if(skinATeamMember.classList.contains('consistOf')) {
+            score(skinATeamScore);
+            skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
+          } else if (skinBTeamMember.classList.contains('consistOf')){
+            score(skinBTeamScore);
+            skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
           }
-          if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
-            alert('게임 종료');
-            skinImg.classList.add('hidden');
-            playState = false;
-          }
+        }
+        if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
+          alert('게임 종료');
+          skinImg.classList.add('hidden');
+          playState = false;
         }
       }
     }
   }
+}
+
+//  게임 설정 

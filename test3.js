@@ -1,20 +1,16 @@
-function one () {
-  console.log('this is one function');
-  two ();
-}
+// let ahjin = [1,2];
 
-function two () {
-  console.log('this is two function');
-  three ();
-}
+// let reverse = ahjin.reverse();
+// console.log(reverse);
 
-function three () {
-  console.log('this is three function');
-  four ();
-}
+// let ele = ahjin.shift();
+// console.log(ele);
+// ahjin.push(ele);
+// console.log(ahjin);
 
-function four () {
-  console.log('this is four function');
-}
-
-one ();
+let temp;
+let ahjin = [1,2];
+temp = ahjin[1];
+ahjin[1] = ahjin[0];
+ahjin[0] = temp;
+console.log(ahjin);

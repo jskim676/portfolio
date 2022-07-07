@@ -64,6 +64,7 @@ const nextGg = () => {
   return squareAnswer
 }
 
+
 const ggAppearAnswer = document.getElementById('ggAppearAnswer');
 
 
