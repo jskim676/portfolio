@@ -21,18 +21,9 @@ squareBtn.addEventListener('click',function() {
 
 const ggPlayBtn = document.getElementById('ggPlayBtn');
 
-function qusetionBox () {
-  const ggQuestion = document.createElement('div');
-  ggAppearAnswer.appendChild(ggQuestion);
-  ggQuestion.setAttribute('class','question');
-  ggQuestion.innerHTML = "1. 이 챔피언은 CC기가 없습니다"
-}
-
 
 ggPlayBtn.addEventListener('click', function() {
   if(playState === true) {
-    setTimeout(()=>{qusetionBox()},1000);
-
     squareIcon.classList.add('hidden');
     ggTimeValue.innerHTML = "2 : 00";
     gameTime(ggTimeBar, ggTimeValue);
@@ -45,62 +36,53 @@ ggPlayBtn.addEventListener('click', function() {
   hiddenData = true;
 });
 
-let squareNumber = Math.floor(Math.random()*squareKey.length);
-let squareData = squareKey[squareNumber].squarePortraitPath;
-let squareIllust = squareData.slice(squareData.indexOf("assets/")+7,squareData.length);
-let squareAnswer = parseInt(squareData.slice(squareData.lastIndexOf("/")+1, squareData.length-4));
-squareIcon.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + squareIllust;
-
-// 다음 문제
+// 챔피언 문제 출제
 const nextGg = () => {
-  let squareNumber = Math.floor(Math.random()*squareKey.length);
-  let squareData = squareKey[squareNumber].squarePortraitPath;
+  let squareData = squareKey[Math.floor(Math.random()*squareKey.length)].squarePortraitPath;
   let squareIllust = squareData.slice(squareData.indexOf("assets/")+7,squareData.length);
   let squareAnswer = parseInt(squareData.slice(squareData.lastIndexOf("/")+1, squareData.length-4));
   squareIcon.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/" + squareIllust;
   squareIcon.classList.add('hidden');
   hiddenData = true;
-
+  
   return squareAnswer
 }
 
+let squareAnswer = nextGg();
 
-const ggAppearAnswer = document.getElementById('ggAppearAnswer');
-
-
+// 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
 function ggPrintName () {
   for(let j=0; j<squareKey.length; j++) {
     if(squareKey[j].id === squareAnswer) {
       console.log(squareKey[j].name);
       const ggInputAnswer = document.getElementById('ggInputAnswer').value;
+      const ggAppearAnswer = document.getElementById('ggAppearAnswer');
       if(ggAppearAnswer.children.length >= 0) {
         const answerBox = document.createElement('div');
         ggAppearAnswer.appendChild(answerBox);
         answerBox.classList.add('answerBox');
         answerBox.innerText = ggInputAnswer;
-        if(ggATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
-        if(ggBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
+        if(teamMember.ggA.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
+        if(teamMember.ggB.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
         if(squareKey[j].name === ggInputAnswer) {
           squareIcon.classList.remove('hidden');
           alert('정답입니다');
           setTimeout(()=> { nextGg() , squareAnswer = nextGg();}, 2000);
 
-          if(ggATeamMember.classList.contains('consistOf')) {
-            score(ggATeamScore);
-            ggATeamValue.innerText = `${ggATeamScore.children.length} / 9`;
-          } else if (ggBTeamMember.classList.contains('consistOf')){
-            score(ggBTeamScore);
-            ggBTeamValue.innerText = `${ggBTeamScore.children.length} / 9`;
+          if(teamMember.ggA.classList.contains('consistOf')) {
+            score(teamScore.ggA);
+            ggATeamValue.innerText = `${teamScore.ggA.children.length} / 5`;
+          } else if (teamMember.ggB.classList.contains('consistOf')){
+            score(teamScore.ggB);
+            ggBTeamValue.innerText = `${teamScore.ggB.children.length} / 5`;
           }
         }
-        if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
+        if(teamScore.ggA.children.length === 5 || teamScore.ggB.children.length === 5 ){
           alert('게임 종료');
           squareIcon.classList.add('hidden');
           playState = false;
         }
-        
       }
     }
   }
 }
-

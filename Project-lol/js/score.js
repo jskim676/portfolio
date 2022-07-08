@@ -1,9 +1,5 @@
-const skinATeamScore = document.getElementById('skinATeamScore');
-const skinBTeamScore = document.getElementById('skinBTeamScore');
 const skinATeamValue = document.getElementById('skinATeamValue');
 const skinBTeamValue = document.getElementById('skinBTeamValue');
-const ggATeamScore = document.getElementById('ggATeamScore');
-const ggBTeamScore = document.getElementById('ggBTeamScore');
 const ggATeamValue = document.getElementById('ggATeamValue');
 const ggBTeamValue = document.getElementById('ggBTeamValue');
 
@@ -12,15 +8,20 @@ const skinTimeBar = document.getElementById('skinTimeBar');
 const ggTimeValue = document.getElementById('ggTimeValue');
 const ggTimeBar = document.getElementById('ggTimeBar');
 
+const teamScore = {
+  skinA : document.getElementById('skinATeamScore'),
+  skinB : document.getElementById('skinBTeamScore'),
+  ggA : document.getElementById('ggATeamScore'),
+  ggB : document.getElementById('ggBTeamScore'),
+}
+
 function score(team) {
   const scoreBar = document.createElement('div');
 
-  if(team.children.length<9) {
+  if(team.children.length<5) {
     team.appendChild(scoreBar);
   }
 }
-
-
 
 function gameTime(barValue, timeValue) {
   let time = 120;
@@ -54,3 +55,5 @@ function gameTime(barValue, timeValue) {
   }, 1000);
 }
 
+
+// export {score , gameTime};

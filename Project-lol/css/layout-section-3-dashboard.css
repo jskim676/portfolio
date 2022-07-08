@@ -50,6 +50,16 @@
   border-bottom:1px solid var(--bgc-color);
 }
 
+#section-dashboard > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > div {
+  width:25%;
+  height:70%;
+  background-color: var(--bgc-nav);
+}
+
+#section-dashboard > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div > p {
+  margin-left:5%;
+}
+
 #section-dashboard > div > div:nth-child(2) > div:nth-child(2) {
   width:45%;
   height:100%;

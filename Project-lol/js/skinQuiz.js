@@ -1,3 +1,10 @@
+const teamMember = {
+  skinA : document.getElementById('skinATeamMember'),
+  skinB : document.getElementById('skinBTeamMember'),
+  ggA : document.getElementById('ggATeamMember'),
+  ggB : document.getElementById('ggBTeamMember'),
+}
+
 //챔피언의 일러스트 중 기본 스킨을 제외한 나머지 스킨을 배열안에 넣어 불러오는 형식 
 const skinAjax = new XMLHttpRequest();
 const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json`;
@@ -8,21 +15,7 @@ const skinAllData = Object.values(champions);
 let skinImg = document.getElementById('skinImg');
 const backDropFilter = document.getElementById('backDropFilter');
 
-let skinData = [];
-for(let j=0; j<skinAllData.length; j++) {
-  if(skinAllData[j].isBase !== true) {
-    skinData.push(skinAllData[j]);
-  }
-}
-
-let skinQuizData = Math.floor(Math.random()*skinData.length);
-let skinQuizRoute = skinData[skinQuizData].splashPath;
-let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
-let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
-skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
-
-
-// 스킨의 다음 문제를 가져올때
+// 스킨 문제 출제
 const nextSkin = () => {
   let skinData = [];
   for(let j=0; j<skinAllData.length; j++) {
@@ -30,15 +23,17 @@ const nextSkin = () => {
       skinData.push(skinAllData[j]);
     }
   }
-  let skinQuizData = Math.floor(Math.random()*skinData.length);
-  let skinQuizRoute = skinData[skinQuizData].splashPath;
+  let skinQuizRoute = skinData[Math.floor(Math.random()*skinData.length)].splashPath;
   let skinIllust = skinQuizRoute.slice(skinQuizRoute.indexOf("v1/")+3, skinQuizRoute.length);
   let skinAnswer = parseInt(skinQuizRoute.slice(skinQuizRoute.lastIndexOf("/")+1, skinQuizRoute.length-4));
   skinImg.children[0].src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/" + skinIllust;
   backDropFilter.classList.remove('hidden');
-  return skinAnswer
+
+  return [skinData , skinAnswer];
 }
 
+let skinData = nextSkin()[0];
+let skinAnswer = nextSkin()[1];
 
 
 // 시작 버튼 클릭시 스킨 이미지가 나타남
@@ -69,22 +64,22 @@ function skinPrintName () {
         skinAppearAnswer.appendChild(answerBox);
         answerBox.classList.add('answerBox');
         answerBox.innerText = skinInputAnswer;
-        if(skinATeamMember.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
-        if(skinBTeamMember.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
+        if(teamMember.skinA.classList.contains('consistOf')) {answerBox.classList.add('redteam')}
+        if(teamMember.skinB.classList.contains('consistOf')) {answerBox.classList.add('blueteam')}
 
         if(skinData[j].name === skinInputAnswer) {
           backDropFilter.classList.add('hidden');
           alert('정답입니다');
-          setTimeout(()=> { nextSkin() , skinAnswer = nextSkin();}, 1500);
-          if(skinATeamMember.classList.contains('consistOf')) {
-            score(skinATeamScore);
-            skinATeamValue.innerText = `${skinATeamScore.children.length} / 9`;
-          } else if (skinBTeamMember.classList.contains('consistOf')){
-            score(skinBTeamScore);
-            skinBTeamValue.innerText = `${skinBTeamScore.children.length} / 9`;
+          setTimeout(()=> { nextSkin() , skinAnswer = nextSkin()[1];}, 1500);
+          if(teamMember.skinA.classList.contains('consistOf')) {
+            score(teamScore.skinA);
+            skinATeamValue.innerText = `${teamScore.skinA.children.length} / 5`;
+          } else if (teamMember.skinB.classList.contains('consistOf')){
+            score(teamScore.skinB);
+            skinBTeamValue.innerText = `${teamScore.skinB.children.length} / 5`;
           }
         }
-        if(skinATeamScore.children.length === 9 || skinBTeamScore.children.length === 9 ){
+        if(teamScore.skinA.children.length === 5 || teamScore.skinB.children.length === 5 ){
           alert('게임 종료');
           skinImg.classList.add('hidden');
           playState = false;
@@ -93,5 +88,3 @@ function skinPrintName () {
     }
   }
 }
-
-//  게임 설정 

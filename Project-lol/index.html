@@ -76,11 +76,21 @@
 
       <!-- explain -->
       <div id="explain" class="flex-center-center hidden">
-        <h3>메인 화면으로써 로그인을 할 수 있으며, 다른 유저들이 쓴 글을 볼 수 있는 게시판과 미니게임 빠른 참여를 할 수 있다.</h3>
-        <h3>유저들끼리 롤 스킨을 많이 맞추고 점수를 획득하여 승리하는 미니게임</h3>
-        <h3>문제를 내는 사람에게 질문을 하여 힌트를 얻고 정답이 무엇인지 맞히는 미니게임</h3>
-        <h3>각자의 포지션을 정하고 무작위로 받은 챔피언으로 서로 변경하며 조합을 구성</h3>
-        <h3>카드를 고른 뒤 오늘의 운세를 롤이라는 주제로 볼 수 있는 타로 카드</h3>
+        <div>
+          <h3>메인 화면으로써 로그인을 할 수 있으며, 다른 유저들이 쓴 글을 볼 수 있는 게시판과 미니게임 빠른 참여를 할 수 있다.</h3>
+        </div>
+        <div>
+          <h3>유저들끼리 롤 스킨을 많이 맞추고 점수를 획득하여 승리하는 미니게임</h3>
+        </div>
+        <div>
+          <h3>문제를 내는 사람에게 질문을 하여 힌트를 얻고 정답이 무엇인지 맞히는 미니게임</h3>
+        </div>
+        <div>
+          <h3>각자의 포지션을 정하고 무작위로 받은 챔피언으로 서로 변경하며 조합을 구성</h3>
+        </div>
+        <div>
+          <h3>카드를 고른 뒤 오늘의 운세를 롤이라는 주제로 볼 수 있는 타로 카드</h3>
+        </div>
       </div>
       
       <!-- window -->
@@ -123,7 +133,7 @@
             </nav>
             
             <!-- section-dashboard -->
-            <section id="section-dashboard" class="animationXFast">
+            <section id="section-dashboard" class="fadeIn">
               <div class="flex-column-center-center">
                 <h2 class="flex-center-center">LOL.ITEO</h2>
                 <div class="flex">
@@ -131,10 +141,22 @@
                     <div class="flex-column-spacearound-center">
                       <h3>Forum</h3>
                       <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                        <div class="flex-flexstart-center">
+                          <div></div>
+                          <p>Lorem ipsum</p>
+                        </div>
+                        <div class="flex-flexstart-center">
+                          <div></div>
+                          <p>Lorem ipsum</p>
+                        </div>
+                        <div class="flex-flexstart-center">
+                          <div></div>
+                          <p>Lorem ipsum</p>
+                        </div>
+                        <div class="flex-flexstart-center">
+                          <div></div>
+                          <p>Lorem ipsum</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -208,7 +230,7 @@
             </section>
 
             <!-- skin quiz -->
-            <section id="section-skinQuiz" class="animationXFast on">
+            <section id="section-skinQuiz" class="fadeIn on">
               <div class="flex-column-center-center">
                 <!-- game info -->
                 <div class="flex-center-center">
@@ -222,11 +244,11 @@
                     </div>
                     <div class="flex-column-spacearound-flexend">
                       <div id="skinATeamScore" class="flex"></div>
-                      <p id="skinATeamValue">0 / 9</p>
+                      <p id="skinATeamValue">0 / 5</p>
                     </div>
                     <div class="flex-column-spacearound-flexend">
                       <div id="skinBTeamScore" class="flex"></div>
-                      <p id="skinBTeamValue">0 / 9</p>
+                      <p id="skinBTeamValue">0 / 5</p>
                     </div>
                   </div>
                   <!-- team -->
@@ -302,25 +324,25 @@
             </section>
             
             <!-- guessing game -->
-            <section id="section-guessingGame" class="animationXFast on">
-              <div>
+            <section id="section-guessingGame" class="fadeIn on">
+              <div class="flex-column-center-center">
                 <!-- game info -->
-                <div class="flex">
+                <div class="flex-center-center">
                   <!-- time , score -->
                   <div class="flex-column-spacearound-center">
-                    <div class="flex-column-flexend-flexend">
+                    <div class="flex-column-spacearound-flexend">
                       <div>
                         <div id="ggTimeBar"></div>
                       </div>
                       <p id="ggTimeValue">2 : 00</p>
                     </div>
-                    <div class="flex-column-flexend-flexend">
+                    <div class="flex-column-spacearound-flexend">
                       <div id="ggATeamScore" class="flex"></div>
-                      <p id="ggATeamValue">0 / 9</p>
+                      <p id="ggATeamValue">0 / 5</p>
                     </div>
-                    <div class="flex-column-flexend-flexend">
+                    <div class="flex-column-spacearound-flexend">
                       <div id="ggBTeamScore" class="flex"></div>
-                      <p id="ggBTeamValue">0 / 9</p>
+                      <p id="ggBTeamValue">0 / 5</p>
                     </div>
                   </div>
                   <!-- team -->
@@ -399,7 +421,7 @@
             </section>
             
             <!-- random champion -->
-            <section id="section-randomChampion" class="animationXFast on">
+            <section id="section-randomChampion" class="fadeIn on">
               <div class="flex-column-center-center">
                 <!-- summoner -->
                 <div id="summoner" class="flex-spacearound-center">
@@ -449,7 +471,7 @@
             </section>
 
             <!-- tarot card -->
-            <section id="section-tarotCard" class="animationXFast on">
+            <section id="section-tarotCard" class="fadeIn on">
               <div class="flex-column-spaceevenly-center">
                 <div class="flex-column-center-center">
                   <h2>타로 카드로 보는 오늘의 운세</h2>
@@ -478,8 +500,8 @@
                   <img src="./img/tarotCard/cardDefault.png" alt="" data-card="19" class="">
                   <img src="./img/tarotCard/cardDefault.png" alt="" data-card="20" class="">
                   <img src="./img/tarotCard/cardDefault.png" alt="" data-card="21" class="">
-                  <div id="tarotResult" class="flex-spacebetween-center hidden">
-                    <div>
+                  <div id="tarotResult" class="flex-spacebetween-center">
+                    <div class="on">
                       <img src="./img/tarotCard/0-The-Fool.png" alt="0" data-card="0" class="">
                       <img src="./img/tarotCard/1-The-Magician.png" alt="I" data-card="1" class="">
                       <img src="./img/tarotCard/2-The-High-Priestess.png" alt="II" data-card="2" class="">
@@ -503,7 +525,7 @@
                       <img src="./img/tarotCard/20-Judgement.png" alt="XX" data-card="20" class="">
                       <img src="./img/tarotCard/21-The-World.png" alt="XXI" data-card="21" class="">
                     </div>
-                    <p>
+                    <p class="on">
                       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero cumque vel eaque optio aperiam, corporis odio repudiandae nihil incidunt esse quos dolore nam quia iste adipisci officia aliquid ratione sit placeat eligendi minima possimus nostrum at. Pariatur voluptatibus, soluta ab et iusto delectus accusantium. Quasi provident eius quo impedit repellendus ullam temporibus officiis atque iure quibusdam nostrum tempora hic nulla odit iusto dicta, magni, illo eligendi assumenda fugiat dolores mollitia?
                     </p>
                   </div>
@@ -513,7 +535,7 @@
             </section>
 
             <!-- rightNav -->
-            <nav id="rightNav" class="animationXFast on">
+            <nav id="rightNav" class="fadeIn on">
               <div class="flex-center-center hidden">
                 <div id="gameSetting" class="flex-column-spacearound-flexstart">
                   <h3>게임 설정</h3>
@@ -521,29 +543,29 @@
                   <div class="flex-column-spacearound-flexstart">
                     <p>난이도 :</p>
                     <div class="level flex-spacearound-center">
-                      <div>Easy</div>
-                      <div>Normal</div>
-                      <div>Hard</div>
+                      <div data-level="0">Easy</div>
+                      <div class="settingSelect" data-level="1">Normal</div>
+                      <div data-level="2">Hard</div>
                     </div>
                   </div>
                   <!-- 승리 조건 -->
                   <div class="flex-column-spacearound-flexstart">
                     <p>승리 조건 :</p>
                     <div class="victory flex-spacearound-center">
-                      <div>3</div>
-                      <div>5</div>
-                      <div>7</div>
-                      <div>9</div>
+                      <div data-value="3">3</div>
+                      <div class="settingSelect" data-value="5">5</div>
+                      <div data-value="7">7</div>
+                      <div data-value="9">9</div>
                     </div>
                   </div>
                   <!-- 시간 제한 -->
                   <div class="flex-column-spacearound-flexstart">
                     <p>시간 제한 :</p>
                     <div class="timeLimit flex-spacearound-center">
-                      <div>1:30</div>
-                      <div>2:00</div>
-                      <div>2:30</div>
-                      <div>3:00</div>
+                      <div data-value="90">1:30</div>
+                      <div class="settingSelect" data-value="120">2:00</div>
+                      <div data-value="150">2:30</div>
+                      <div data-value="180">3:00</div>
                     </div>
                   </div>
                 </div>
@@ -555,12 +577,10 @@
     </div>
     
     <script src="./js/script.js" type="module" defer></script>
-    <script src="./js/summonerIcon.js"></script>
     <script src="./js/skinQuiz.js"></script>
     <script src="./js/randomChampion.js"></script>
     <script src="./js/guessingGame.js"></script>
     <script src="./js/score.js"></script>
-    <script src="./js/tarotCard.js"></script>
     <script src="./js/dashboard.js"></script>
   </div>
 </body>

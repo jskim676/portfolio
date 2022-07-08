@@ -27,7 +27,7 @@
 /* 3개로 나눔 */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div {
   width:90%;
-  height:30%;
+  height:calc(100%/3);
 }
 
 /* 바 전체 */
@@ -49,14 +49,14 @@
 
 /* aTeamScroe */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div {
-  width:calc(100%/9);
+  width:calc(100%/5);
   height:100%;
   background-color: var(--redteam);
 }
 
 /* bTeamScroe */
 #section-skinQuiz > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div > div {
-  width:calc(100%/9);
+  width:calc(100%/5);
   height:100%;
   background-color: var(--blueteam);
 }
