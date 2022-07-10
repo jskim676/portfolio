@@ -61,11 +61,21 @@
   width:auto;
   height:100%;
   position:absolute;
-  opacity:0;
+  /* opacity:0; */
 }
 
-#tarotResult > p {
-  width:60%;
+#tarotResult > div:nth-child(2) {
+  width:50%;
   height:100%;
 }
 
+#tarotResult > div:nth-child(2) > div {
+  height:100%;
+}
+
+#tarotResult > div:nth-child(2) > div > div {
+  height:70%;
+}
+
+#tarotResult > div:nth-child(2) > div > div > p {
+}

@@ -1,35 +1,35 @@
+const loginBtn = document.getElementById('loginBtn');
 function pwPrintName () {
   const idInputAnswer = document.getElementById('idInputAnswer');
   const pwInputAnswer = document.getElementById('pwInputAnswer');
   const loginScreen = document.getElementById('loginScreen');
-  const loginBtn = document.getElementById('loginBtn');
   const changeLoginScreen = document.getElementById('changeLoginScreen');
-  loginBtn.addEventListener('click', function() {
-    const idAppear = document.getElementById('idAppear');
-    const greeting = document.getElementById('greeting');
-    let userName = idInputAnswer.value;
-    if(idInputAnswer.value !== "" & pwInputAnswer.value !== "") {
-      idAppear.textContent = userName;
-      greeting.textContent = "님 반갑습니다";
-      idAppear.classList.add('animation-YFast');
-      greeting.classList.add('animation-YFast');
-      idAppear.style.transition = "1s";
-      greeting.style.transition = "1s";
-      idInputAnswer.value = null;
-      setTimeout(()=>{greeting.style.opacity = 0;},3000)
-      loginScreen.classList.add('hidden');
-      changeLoginScreen.classList.remove('hidden');
-      myIcon.classList.remove('hidden');
-      changeLoginScreen.children[0].children[0].src = myIcon.children[0].src;
-      changeLoginScreen.children[0].children[1].textContent = userName;
-      changeLoginScreen.children[0].classList.add('animation-YFast');
-      changeLoginScreen.children[1].classList.add('animation-YFast');
-      changeLoginScreen.children[2].classList.add('animation-YFast');
-    }
-  });
+  const idAppear = document.getElementById('idAppear');
+  const greeting = document.getElementById('greeting');
+  let userName = idInputAnswer.value;
+  if(idInputAnswer.value !== "" & pwInputAnswer.value !== "") {
+    idAppear.textContent = userName;
+    greeting.textContent = "님 반갑습니다";
+    idAppear.classList.add('animation-YFast');
+    greeting.classList.add('animation-YFast');
+    idAppear.style.transition = "1s";
+    greeting.style.transition = "1s";
+    idInputAnswer.value = null;
+    setTimeout(()=>{greeting.style.opacity = 0;},3000)
+    loginScreen.classList.add('hidden');
+    changeLoginScreen.classList.remove('hidden');
+    myIcon.classList.remove('hidden');
+    changeLoginScreen.children[0].children[0].src = myIcon.children[0].src;
+    changeLoginScreen.children[0].children[1].textContent = userName;
+    changeLoginScreen.children[0].classList.add('animation-YFast');
+    changeLoginScreen.children[1].classList.add('animation-YFast');
+    changeLoginScreen.children[2].classList.add('animation-YFast');
+  }
 }
+loginBtn.addEventListener('click', function() {
+  pwPrintName();
+});
 
-pwPrintName();
 
 
 const soloRank = document.getElementById('soloRank');

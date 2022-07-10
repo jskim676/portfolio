@@ -67,6 +67,7 @@ for(let i=0; i<ul.children.length; i++) {
         indiBox[i].style.opacity = 1;
         indiBox[i].classList.add('indicate');
         explain.children[i].style.opacity = 1;
+        playState = true;
       } else {
         main.children[i+1].classList.add('on');
         ul.children[i].classList.remove('menuSelect');
@@ -99,6 +100,7 @@ for(let j=0; j<indi.children[0].children.length; j++) {
         indiBox[j].style.opacity = 1;
         indiBox[j].classList.add('indicate');
         explain.children[j].style.opacity = 1;
+        playState = true;
       } else {
         main.children[j+1].classList.add('on');
         ul.children[j].classList.remove('select');

@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-.cursor {
+/* .cursor {
   display: inline-block;
   background-color: #ccc;
   margin-left: 0.1rem;
@@ -34,7 +34,7 @@
   50% { background-color: transparent; }
   99% { background-color: transparent; }
   100%  { background-color: #ccc; }
-}
+} */
 
 /* 스크롤 애니메이션 */
 #scroll-down {

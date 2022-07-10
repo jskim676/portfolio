@@ -35,13 +35,13 @@ function allIcon () {
         team1.classList.add('consistOf');
         team2.classList.remove('consistOf');
         let getDataset = event.target.dataset.icon;
-        for(j=0; j<team1.children.length; j++) {
-          team2.children[j].children[0].classList.add('hidden');
-          if(team1.children[j].dataset.icon === getDataset) {
-            team1.children[j].children[0].src = myIcon.children[0].src;
-            team1.children[j].children[0].classList.remove('hidden');
+        for(let k=0; k<team1.children.length; k++) {
+          team2.children[k].children[0].classList.add('hidden');
+          if(team1.children[k].dataset.icon === getDataset) {
+            team1.children[k].children[0].src = myIcon.children[0].src;
+            team1.children[k].children[0].classList.remove('hidden');
           } else {
-            team1.children[j].children[0].classList.add('hidden');
+            team1.children[k].children[0].classList.add('hidden');
           }
         }
       });
