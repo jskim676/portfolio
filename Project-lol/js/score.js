@@ -47,7 +47,7 @@ function gameTime(barValue, timeValue) {
     if(time<0) {
       clearInterval(timer);
       timeValue.innerHTML = "시간 종료";
-      alert('시간 종료');
+      // alert('시간 종료');
       playState = false;
       backDropFilter.classList.add('hidden');
       squareIcon.classList.remove('hidden');
