@@ -55,7 +55,6 @@ const nextGg = () => {
 }
 
 let squareAnswer = nextGg();
-const ggInputAnswer = document.getElementById('ggInputAnswer').value;
 const ggAppearAnswer = document.getElementById('ggAppearAnswer');
 
 // 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
@@ -65,6 +64,7 @@ function ggPrintName () {
       console.log(squareKey[j].name);
       if(ggAppearAnswer.children.length >= 0) {
         const answerBox = document.createElement('div');
+        const ggInputAnswer = document.getElementById('ggInputAnswer').value;
         ggAppearAnswer.appendChild(answerBox);
         answerBox.classList.add('answerBox');
         answerBox.innerText = ggInputAnswer;
