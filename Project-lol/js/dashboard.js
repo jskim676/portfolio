@@ -1,4 +1,5 @@
 const loginBtn = document.getElementById('loginBtn');
+// 아이디값이 확인되고 비밀번호 값에 엔터가 눌릴시 데이터 보내주기
 function pwPrintName () {
   const idInputAnswer = document.getElementById('idInputAnswer');
   const pwInputAnswer = document.getElementById('pwInputAnswer');
@@ -32,16 +33,17 @@ loginBtn.addEventListener('click', function() {
 
 
 
-const soloRank = document.getElementById('soloRank');
-const teamRank = document.getElementById('teamRank');
-
 function rankGame (target) {
   target.src = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/rankedcrests/06_diamond/images/diamond_baseface_matte.png";
   
-  let totalGame = 0;
+  let totalGame = Math.floor(Math.random()*(150-100)+100);
   let winRate = Math.floor(Math.random()*(100-50)+50);
-  totalGame = Math.floor(Math.random()*(150-100)+100);
+  // totalGame = Math.floor(Math.random()*(150-100)+100);
   target.nextElementSibling.children[1].textContent = `${Math.floor(100*winRate/totalGame)}% ${totalGame}전 ${winRate}승 ${totalGame-winRate}패`;
 }
 
-rankGame(soloRank); rankGame(teamRank);
+const rank = {
+  solo : document.getElementById('soloRank'),
+  team : document.getElementById('teamRank')
+}
+rankGame(rank.solo); rankGame(rank.team);

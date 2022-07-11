@@ -3,8 +3,6 @@ import typeText from "./typeText.js";
 import tarotCard from "./tarotCard.js";
 import allIcon from "./summonerIcon.js"
 
-
-
 // 글자 타이핑
 typeText();
 

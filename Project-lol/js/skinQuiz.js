@@ -5,6 +5,23 @@ const teamMember = {
   ggB : document.getElementById('ggBTeamMember'),
 }
 
+const skinATeamValue = document.getElementById('skinATeamValue');
+const skinBTeamValue = document.getElementById('skinBTeamValue');
+const ggATeamValue = document.getElementById('ggATeamValue');
+const ggBTeamValue = document.getElementById('ggBTeamValue');
+
+const skinTimeValue = document.getElementById('skinTimeValue');
+const skinTimeBar = document.getElementById('skinTimeBar');
+const ggTimeValue = document.getElementById('ggTimeValue');
+const ggTimeBar = document.getElementById('ggTimeBar');
+
+const teamScore = {
+  skinA : document.getElementById('skinATeamScore'),
+  skinB : document.getElementById('skinBTeamScore'),
+  ggA : document.getElementById('ggATeamScore'),
+  ggB : document.getElementById('ggBTeamScore'),
+}
+
 //챔피언의 일러스트 중 기본 스킨을 제외한 나머지 스킨을 배열안에 넣어 불러오는 형식 
 const skinAjax = new XMLHttpRequest();
 const skinURL = `https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/ko_kr/v1/skins.json`;

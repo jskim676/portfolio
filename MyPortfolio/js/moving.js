@@ -45,8 +45,6 @@ function moving (topbar,win,container) {
 
   if(topbar === scrolling) {
     topbar.addEventListener('mousemove', (e) => {
-      console.log(gameicon.style.top);
-      console.log(scrolling.style.top);
       if(isDragging) {
         const diffY = e.clientY - originY;
         const endOfYPoint = containerHeight - moveHeight;

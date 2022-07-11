@@ -57,7 +57,7 @@ const nextGg = () => {
 let squareAnswer = nextGg();
 const ggAppearAnswer = document.getElementById('ggAppearAnswer');
 
-// 답을 쓰게 되면 채팅창에 표기되며 정답일시 블러가 제거되고 맞춘 팀의 점수가 오름
+// 답을 쓰게 되면 채팅창에 표기되며 정답일시 공개가 되며 맞춘 팀의 점수가 오름
 function ggPrintName () {
   for(let j=0; j<squareKey.length; j++) {
     if(squareKey[j].id === squareAnswer) {
