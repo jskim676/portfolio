@@ -81,14 +81,14 @@
 
 /* [디지털디자인_웹디자인] 웹디자이너, 웹퍼블리셔 양성과정 */
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) {
-  width: 30vw;
+  width: 65%;
   height:inherit;
   border-bottom:0;
   border-radius: 5px 5px 0 0;
 }
 
 #curriculum-window > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) {
-  width:25vw;
+  width:35%;
   height:inherit;
   border-bottom: 2px solid var(--bgc-255);
 }

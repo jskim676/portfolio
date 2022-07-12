@@ -1,11 +1,20 @@
-import { gameicon, gameicons, fullGameicon, fullGameicons, gametime, fullGametime , scrolling, scrollingTop} from "./script.js";
+import { scrolling, scrollingTop } from "./script.js";
 
 function gameInfo () {
+  const gameicon = document.getElementById('gameicon');
+  const gameicons = Array.from(document.getElementById('gameicon').children);
+  const fullGameicon = document.getElementById('fullGameicon');
+  const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
+  const gametime = document.getElementById('gametime');
+  const fullGametime = document.getElementById('fullGametime');
+  
   const gameTime = (icons , time) => {
 
     // 게임 시간 데이터
     let gametimeData = ["League of Legends : 5,720 Hours", "Maplestory : 5,400 Hours", "Mabinogi : 3,500 Hours", "Dead by Daylight : 1,500 Hours", "PUBG : 1,250 Hours", "Apex Legends : 8,00 Hours", "Overwatch : 600 Hours", "Lost Ark : 400 Hours", "Left 4 Dead 2 : 360 Hours", "GTA 5 : 300 Hours", "Team Fortress 2 : 120 Hours", "Monster Hunter:World : 100 Hours"
     ]
+
+    time.textContent = gametimeData[0];
     
     // 게임 시간을 하단바에 표시해줌
     for(let i=0; i<gametimeData.length; i++) {

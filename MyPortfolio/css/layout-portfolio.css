@@ -120,7 +120,6 @@
   position:absolute;
   border:1px solid var(--bgc-238);
   opacity: 0.75;
-  z-index: 2;
 }
 
 #portfolio-window > div > div:nth-child(2) > div:nth-child(2) > div > p {
@@ -157,6 +156,12 @@
   height: 40%;
   background-color: var(--bgc-189);
 }
+
+#portfolio-window > div > div:nth-child(3) > div:nth-child(2) > button > a {
+  display:block; line-height:40px; text-align:center; text-decoration:none;
+}
+
+
 
 /* 작업표시줄 */
 #portfolio-taskBar > img {

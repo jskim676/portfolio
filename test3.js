@@ -14,3 +14,4 @@ temp = ahjin[1];
 ahjin[1] = ahjin[0];
 ahjin[0] = temp;
 console.log(ahjin);
+

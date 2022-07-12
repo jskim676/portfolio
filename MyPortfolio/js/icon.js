@@ -1,44 +1,60 @@
-function iconClick (target, win, btn) {
+import { icons, programName, qs, qsmark, idSet , src, textContent ,gameWinBtn, fullGameWinBtn} from "./script.js";
+
+function iconClick (target, win, btn, num) {
   target.addEventListener('dblclick', function() {
     num++;
     win.children[0].style.zIndex = num;
     win.classList.remove('hidden');
-    
+
     const createProgram = (name, icon, text) => {
       programName.program.appendChild(name);
       name.classList.add('window-style');
       name.appendChild(icon);
       name.appendChild(text);
-      if(name === programName.Name1) {
-        name.setAttribute('id','curriculum-taskBar');
-        icon.setAttribute("src", "./img/win98_icon/curriculum_icon.svg");
-        text.textContent = "Curriculum";
+
+      if(name === programName.Name0) {
+        name.setAttribute('id',`${idSet.zero}`);
+        icon.setAttribute("src", `${src.zero}`);
+        text.textContent = `${textContent.zero}`;
+      } else if(name === programName.Name1) {
+        name.setAttribute('id',`${idSet.one}`);
+        icon.setAttribute("src", `${src.one}`);
+        text.textContent = `${textContent.one}`;
       } else if (name === programName.Name2) {
-        name.setAttribute('id','portfolio-taskBar');
-        icon.setAttribute("src", "./img/win98_icon/portfolio_icon.svg");
-        text.textContent = "Portfolio";
-      } else {
-        name.setAttribute('id','contact-taskBar')
-        icon.setAttribute("src", "./img/win98_icon/contact_icon.svg");
-        text.textContent = "Contact";
+        name.setAttribute('id',`${idSet.two}`);
+        icon.setAttribute("src", `${src.two}`);
+        text.textContent = `${textContent.two}`;
+      } else if (name === programName.Name3) {
+        name.setAttribute('id',`${idSet.three}`)
+        icon.setAttribute("src", `${src.three}`);
+        text.textContent = `${textContent.three}`;
       }
+
       name.addEventListener('click', function() {
         num++;
-        win.children[0].style.zIndex = num+1;
+        win.children[0].style.zIndex = num;
       });
-      btn.addEventListener('click',e=> {
-        win.classList.add('hidden');
-        name.parentNode.removeChild(name);
+
+      btn.addEventListener('click',function () {
+        if(name.parentNode !== null) {
+          win.classList.add('hidden');
+          name.parentNode.removeChild(name);
+        }
       });
     }
 
-    createProgram(programName.Name1, programName.Name1Icon, programName.Name1Text);
-    createProgram(programName.Name2, programName.Name2Icon, programName.Name2Text);
-    createProgram(programName.Name3, programName.Name3Icon, programName.Name3Text);
-  
-    startWin.classList.add('hidden');
-    isStatus = true;
+    if(target === icons[0]) {
+      qs.classList.remove('hidden');
+      qsmark.classList.remove('hidden');
+      createProgram(programName.Name0, programName.Name0Icon, programName.Name0Text);
+    } else if(target === icons[1]) {
+      createProgram(programName.Name1, programName.Name1Icon, programName.Name1Text);
+    } else if (target === icons[2]) {
+      createProgram(programName.Name2, programName.Name2Icon, programName.Name2Text);
+    } else if (target === icons[3]) {
+      createProgram(programName.Name3, programName.Name3Icon, programName.Name3Text);
+    }
   }); 
 }
 
-iconClick(icons[1], win.cc, winBtn.cc); iconClick(icons[2], win.pf, winBtn.pf); iconClick(icons[3], win.ct, winBtn.ct);
+export default iconClick

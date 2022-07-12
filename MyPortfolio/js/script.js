@@ -2,19 +2,39 @@ import getTime from "./clock.js";
 import questionIncrease from "./questionIncrease.js";
 import moving from "./moving.js";
 import gameInfo from "./gameInfo.js";
+import iconClick from "./icon.js";
+import fullMode from "./fullMode.js";
 
 //스크롤 
 export const scrolling = document.getElementById('scroll')
-
 export let scrollingTop = scrolling.parentNode.getBoundingClientRect().height - scrolling.getBoundingClientRect().height
-
 const scrollParent = scrolling.parentNode;
 
-export let num = 1;
+let num = 1;
 
+export const idSet = {
+  zero : 'game-taskBar',
+  one : 'curriculum-taskBar',
+  two : 'portfolio-taskBar',
+  three : 'contact-taskBar'
+}
 
-const icons = document.getElementById('icon').children;
-const programName = {
+export const src = {
+  zero : './img/win98_icon/game_icon.svg',
+  one : './img/win98_icon/curriculum_icon.svg',
+  two : './img/win98_icon/portfolio_icon.svg',
+  three : './img/win98_icon/contact_icon.svg'
+}
+
+export const textContent = {
+  zero : 'Game',
+  one : 'Curriculum',
+  two : 'Portfolio',
+  three : 'Contact'
+}
+
+export const icons = document.getElementById('icon').children;
+export const programName = {
   program : document.getElementById('program'),
 
   Name0 : document.createElement('div'),
@@ -46,142 +66,34 @@ export const winBtn = {
   ct : document.getElementById('contact-window-button').children[0]
 }
 
-
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
-const main = document.getElementById('main');
-const qs = document.getElementById('question');
-const qsmark = document.querySelector('#clock > div > img');
+const desktop = document.getElementById('desktop');
+export const qs = document.getElementById('question');
+export const qsmark = document.querySelector('#clock > div > img');
 
 const root = document.getElementById('root');
 
 
-btnConfirm.addEventListener('click', function() {
-  helloWorld.classList.add('hidden');
-  main.classList.remove('hidden');
-})
-
 // --------------game --------------
-const gameWin = document.getElementById('game-window');
-const fullGameWin = document.getElementById('game-fullWindow');
-const gameWinBtn = Array.from(document.getElementById('game-window-button').children);
-const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
+export const gameWin = document.getElementById('game-window');
+export const fullGameWin = document.getElementById('game-fullWindow');
+export const gameWinBtn = Array.from(document.getElementById('game-window-button').children);
+export const fullGameWinBtn = Array.from(document.getElementById('game-fullWindow-button').children);
 
-const startWin = document.getElementById('start-window');
-const startBtn = document.getElementById('start-button');
+fullMode();
 
-
-// game icon
-icons[0].addEventListener('dblclick', function() {
-  // zIndex 값 설정
-  num++;
-  gameWin.children[0].style.zIndex = num+1;
-  
-  gameWin.classList.remove('hidden');
-  qs.classList.remove('hidden');
-  qsmark.classList.remove('hidden');
-  
-  programName.program.appendChild(programName.Name0);
-  programName.Name0.classList.add('window-style');
-  programName.Name0.setAttribute('id','game-taskBar')
-  programName.Name0.appendChild(programName.Name0Icon);
-  programName.Name0Icon.setAttribute("src", "./img/win98_icon/game_icon.svg");
-  programName.Name0.appendChild(programName.Name0Text);
-  programName.Name0Text.textContent = "Game";
-
-  programName.Name0.addEventListener('click', function() {
-    num++;
-    gameWin.children[0].style.zIndex = num+1;
+function classAddRemove (target, add, remove) {
+  target.addEventListener('click', function () {
+    add.classList.add('hidden');
+    remove.classList.remove('hidden');
   });
-  
-  startWin.classList.add('hidden');
-  isStatus = true
-});  
+}
 
+classAddRemove(btnConfirm, helloWorld, desktop);
+classAddRemove(fullGameWinBtn[0], fullGameWin, qs);
 
-let fullmode = false;
-// 최소화 버튼
-gameWinBtn[0].addEventListener('click', e=> {
-  gameWin.classList.add('hidden');
-  qs.classList.add('hidden');
-});
-
-// 최대화 버튼
-gameWinBtn[1].addEventListener('click', e=> {
-  gameWin.classList.add('hidden');
-  fullGameWin.classList.remove('hidden');
-  num++;
-  fullGameWin.children[0].style.zIndex = num+1;
-  fullmode = true;
-});
-
-// X 버튼
-gameWinBtn[2].addEventListener('click', e=>{
-  gameWin.classList.add('hidden');
-  qs.classList.add('hidden');
-  qsmark.classList.add('hidden');
-  programName.Name0.parentNode.removeChild(programName.Name0);
-});
-
-
-// 전체화면 최소화 버튼
-fullGameWinBtn[0].addEventListener('click', e=> {
-  fullGameWin.classList.add('hidden');
-  qs.classList.add('hidden');
-});
-
-// 전체화면 최대화 버튼
-fullGameWinBtn[1].addEventListener('click', e=> {
-  gameWin.classList.remove('hidden');
-  fullGameWin.classList.add('hidden');
-  fullmode = false;
-});
-
-// 전체화면 X 버튼
-fullGameWinBtn[2].addEventListener('click', e=>{
-  fullGameWin.classList.add('hidden');
-  qs.classList.add('hidden');
-  qsmark.classList.add('hidden');
-  programName.Name0.parentNode.removeChild(programName.Name0);
-});
-
-// 작업표시줄 쪽 프로그램 클릭시 최소화 해제
-programName.Name0.addEventListener('click', e=> {
-  if(fullmode === false) {
-    gameWin.classList.remove('hidden');
-    qs.classList.remove('hidden');
-  } else {
-    fullGameWin.classList.remove('hidden');
-    qs.classList.remove('hidden');
-  }
-});
-
-// 윈도우 상단바 더블 클릭시 최대화
-document.querySelector('.smallTopBar').addEventListener('dblclick', function() {
-  gameWin.classList.add('hidden');
-  fullGameWin.classList.remove('hidden');
-  num++;
-  fullGameWin.children[0].style.zIndex = num;
-  fullmode = true;
-});
-
-fullGameWin.children[0].children[0].addEventListener('dblclick', function() {
-  gameWin.classList.remove('hidden');
-  fullGameWin.classList.add('hidden');
-  num++;
-  fullGameWin.children[0].style.zIndex = num;
-  fullmode = false;
-});
-
-
-// -------------- gamelist 스크롤--------------
-export const gameicon = document.getElementById('gameicon');
-export const gameicons = Array.from(document.getElementById('gameicon').children);
-export const fullGameicon = document.getElementById('fullGameicon');
-export const fullGameicons = Array.from(document.getElementById('fullGameicon').children);
-export const gametime = document.getElementById('gametime');
-export const fullGametime = document.getElementById('fullGametime');
-
+// 게임 정보 확인
 gameInfo();
 
 // 질문 늘어나는 효과
@@ -189,111 +101,14 @@ questionIncrease(qs.children[0].children[0]);
 questionIncrease(qs.children[0].children[1]);
 
 
-// -------------- curriculum --------------
-const ccWin = document.getElementById('curriculum-window');
-const ccWinBtn = document.getElementById('curriculum-window-button').children[0];
-
-// icons[1].addEventListener('dblclick', function() {
-//   num++;
-//   ccWin.children[0].style.zIndex = num;
-//   ccWin.classList.remove('hidden');
-  
-//   programName.program.appendChild(programName.Name1);
-//   programName.Name1.classList.add('window-style');
-//   programName.Name1.setAttribute('id','curriculum-taskBar');
-//   programName.Name1.appendChild(programName.Name1Icon);
-//   programName.Name1Icon.setAttribute("src", "./img/win98_icon/curriculum_icon.svg");
-//   programName.Name1.appendChild(programName.Name1Text);
-//   programName.Name1Text.textContent = "Curriculum";
-
-//   programName.Name1.addEventListener('click', function() {
-//     num++;
-//     ccWin.children[0].style.zIndex = num+1;
-//   });
-
-  
-//   startWin.classList.add('hidden');
-//   isStatus = true;
-// }); 
-
-// ccWinBtn.addEventListener('click',e=> {
-//   ccWin.classList.add('hidden');
-//   programName.Name1.parentNode.removeChild(programName.Name1);
-// });
-
-
-// -------------- portfolio --------------
-const pfWin = document.getElementById('portfolio-window');
-const pfWinBtn = document.getElementById('portfolio-window-button').children[0];
-
-// icons[2].addEventListener('dblclick', function() {
-//   num++;
-//   pfWin.children[0].style.zIndex = num;
-//   pfWin.classList.remove('hidden');
-  
-//   programName.program.appendChild(programName.Name2);
-//   programName.Name2.classList.add('window-style');
-//   programName.Name2.setAttribute('id','portfolio-taskBar');
-//   programName.Name2Icon.setAttribute("src", "./img/win98_icon/portfolio_icon.svg");
-//   programName.Name2Text.textContent = "Portfolio";
-//   programName.Name2.appendChild(programName.Name2Icon);
-//   programName.Name2.appendChild(programName.Name2Text);
-
-//   programName.Name2.addEventListener('click', function() {
-//     num++;
-//     pfWin.children[0].style.zIndex = num+1;
-//   });
-
-//   startWin.classList.add('hidden');
-//   isStatus = true;
-// }); 
-
-// pfWinBtn.addEventListener('click',e=> {
-//   pfWin.classList.add('hidden');
-//   programName.Name2.parentNode.removeChild(programName.Name2);
-// });
-
-
-// -------------- contact --------------
-const ctWin = document.getElementById('contact-window');
-const ctWinBtn = document.getElementById('contact-window-button').children[0];
-
-// icons[3].addEventListener('dblclick', function() {
-//   num++;
-//   ctWin.children[0].style.zIndex = num;
-//   ctWin.classList.remove('hidden');
-  
-//   programName.program.appendChild(programName.Name3);
-//   programName.Name3.classList.add('window-style');
-//   programName.Name3.setAttribute('id','contact-taskBar')
-//   programName.Name3.appendChild(programName.Name3Icon);
-//   programName.Name3Icon.setAttribute("src", "./img/win98_icon/contact_icon.svg");
-//   programName.Name3.appendChild(programName.Name3Text);
-//   programName.Name3Text.textContent = "Contact";
-
-//   programName.Name3.addEventListener('click', function() {
-//     num++;
-//     ctWin.children[0].style.zIndex = num+1;
-//   });
-
-//   startWin.classList.add('hidden');
-//   isStatus = true;
-// }); 
-
-// ctWinBtn.addEventListener('click',e=> {
-//   ctWin.classList.add('hidden');
-//   programName.Name3.parentNode.removeChild(programName.Name3);
-// });
-
-
-
 // -------------- start --------------
+const startWin = document.getElementById('start-window');
+const startBtn = document.getElementById('start-button');
 
 let isStatus = true;
 startBtn.addEventListener('click',function() {
   num++;
   startWin.children[0].style.zIndex = num;
-
   if(isStatus === true) {
     startWin.classList.remove('hidden');
     isStatus = false;
@@ -303,7 +118,7 @@ startBtn.addEventListener('click',function() {
   }
 });
 
-main.children[0].addEventListener('click', e=> {
+desktop.addEventListener('click', function ()  {
   startWin.classList.add('hidden');
   isStatus = true;
 });
@@ -319,24 +134,25 @@ for(let k=0; k<skill.length; k++) {
   });
 }
 
-
-// -------------- clock --------------
-getTime();
-
-
 // -------------- zIndex --------------
 const topBar = Array.from(document.getElementsByClassName('top-bar'));
-// 윈도우 상단바에 마우스를 올려놓을시 zIndex값을 증가시켜 클릭하면 맨위로 오게하는듯한 연출
-for(let l=0; l<topBar.length; l++) {
-  topBar[l].addEventListener('mouseover',function() {
-    num++;
-  })
-}
 
-// -------------- move --------------
+
+// -------------- desktop icon --------------
+
+iconClick(icons[0], gameWin, gameWinBtn[2], num);
+iconClick(icons[1], win.cc, winBtn.cc, num); 
+iconClick(icons[2], win.pf, winBtn.pf, num); 
+iconClick(icons[3], win.ct, winBtn.ct, num);
+
+// -------------- topBar & scrolling move --------------
 moving(topBar[0],topBar[0].parentNode,root);
 moving(topBar[1],topBar[1].parentNode,root);
 moving(topBar[3],topBar[3].parentNode,root);
 moving(topBar[4],topBar[4].parentNode,root);
 moving(topBar[5],topBar[5].parentNode,root);
 moving(scrolling, scrolling, scrollParent);
+
+// -------------- clock --------------
+getTime();
+
