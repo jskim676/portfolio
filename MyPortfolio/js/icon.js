@@ -44,15 +44,23 @@ function iconClick (target, win, btn, num) {
     }
 
     if(target === icons[0]) {
-      qs.classList.remove('hidden');
-      qsmark.classList.remove('hidden');
-      createProgram(programName.Name0, programName.Name0Icon, programName.Name0Text);
+      if(document.querySelector(`#${idSet.zero}`) === null) {
+        qs.classList.remove('hidden');
+        qsmark.classList.remove('hidden');
+        createProgram(programName.Name0, programName.Name0Icon, programName.Name0Text);
+      }
     } else if(target === icons[1]) {
-      createProgram(programName.Name1, programName.Name1Icon, programName.Name1Text);
+      if(document.querySelector(`#${idSet.one}`) === null) {
+        createProgram(programName.Name1, programName.Name1Icon, programName.Name1Text);
+      }
     } else if (target === icons[2]) {
-      createProgram(programName.Name2, programName.Name2Icon, programName.Name2Text);
+      if(document.querySelector(`#${idSet.two}`) === null) {
+        createProgram(programName.Name2, programName.Name2Icon, programName.Name2Text);
+      }
     } else if (target === icons[3]) {
-      createProgram(programName.Name3, programName.Name3Icon, programName.Name3Text);
+      if(document.querySelector(`#${idSet.three}`) === null) {
+        createProgram(programName.Name3, programName.Name3Icon, programName.Name3Text);
+      }
     }
   }); 
 }

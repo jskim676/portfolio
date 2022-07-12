@@ -4,6 +4,7 @@ import moving from "./moving.js";
 import gameInfo from "./gameInfo.js";
 import iconClick from "./icon.js";
 import fullMode from "./fullMode.js";
+import start from "./start.js";
 
 //스크롤 
 export const scrolling = document.getElementById('scroll')
@@ -34,6 +35,7 @@ export const textContent = {
 }
 
 export const icons = document.getElementById('icon').children;
+// 작업표시줄에 생성되는 프로그램 변수
 export const programName = {
   program : document.getElementById('program'),
 
@@ -68,12 +70,11 @@ export const winBtn = {
 
 const helloWorld = document.getElementById('hello-world');
 const btnConfirm = document.getElementById('confirm');
-const desktop = document.getElementById('desktop');
+export const desktop = document.getElementById('desktop');
 export const qs = document.getElementById('question');
 export const qsmark = document.querySelector('#clock > div > img');
 
 const root = document.getElementById('root');
-
 
 // --------------game --------------
 export const gameWin = document.getElementById('game-window');
@@ -102,37 +103,7 @@ questionIncrease(qs.children[0].children[1]);
 
 
 // -------------- start --------------
-const startWin = document.getElementById('start-window');
-const startBtn = document.getElementById('start-button');
-
-let isStatus = true;
-startBtn.addEventListener('click',function() {
-  num++;
-  startWin.children[0].style.zIndex = num;
-  if(isStatus === true) {
-    startWin.classList.remove('hidden');
-    isStatus = false;
-  } else {
-    startWin.classList.add('hidden');
-    isStatus = true;
-  }
-});
-
-desktop.addEventListener('click', function ()  {
-  startWin.classList.add('hidden');
-  isStatus = true;
-});
-
-
-// 커리큘럼의 아이콘을 마우스 오버하였을시 시작 메뉴가 펼쳐져 설명이 나온다.
-const skill = Array.from(document.querySelectorAll('#skill > div > img'));
-for(let k=0; k<skill.length; k++) {
-  skill[k].addEventListener('mouseover', function() {
-    num++;
-    startWin.classList.remove('hidden');
-    startWin.style.zIndex = num;
-  });
-}
+start();
 
 // -------------- zIndex --------------
 const topBar = Array.from(document.getElementsByClassName('top-bar'));
