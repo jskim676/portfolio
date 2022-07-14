@@ -1,6 +1,7 @@
 import filmographyTitle from "./filmography.js";
 import slideAndHover from "./slideAndHover.js";
 import scrolling from "./scrolling.js";
+import ad from "./advertisement.js";
 
 const introTitle = document.getElementById('introTitle');
 
@@ -14,6 +15,7 @@ const sectionTitle = {
   five : document.getElementById('sectionFiveTitle'),
 }
 
+ad();
 
 scrolling(sectionTitle.one, sectionHeight/2, `animation-YFast`); scrolling(sectionTitle.two, sectionHeight*3/2, `animation-XFast`);
 scrolling(sectionTitle.three, sectionHeight*5/2, `animation-YFast`); scrolling(sectionTitle.four, sectionHeight*7/2, `animationXFast`);
