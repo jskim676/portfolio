@@ -26,14 +26,16 @@ const indiBox = document.querySelectorAll('#indicate > div > div');
 const rightNav = document.getElementById('rightNav');
 
 
-
-scrolling(sectionHeight/4, s2h1Text); scrolling(sectionHeight/1.5, img); scrolling(sectionHeight*5/4, s3h1Text); scrolling(sectionHeight*5/3, win); scrolling(sectionHeight*5/3, shortDescription);
+scrolling(sectionHeight/4, s2h1Text); 
+scrolling(sectionHeight/1.5, img); 
+scrolling(sectionHeight*5/4, s3h1Text); 
+scrolling(sectionHeight*5/3, win); 
+scrolling(sectionHeight*5/3, shortDescription);
 
 // --------------- section-3 list---------------
 const skinCog = document.getElementById('skinCog');
 const ggCog = document.getElementById('ggCog');
 const gameSetting = document.getElementById('gameSetting');
-
 
 function cog (target) {
   target.addEventListener('click',e=> {
@@ -77,7 +79,6 @@ for(let i=0; i<ul.children.length; i++) {
     if(ul.children[i].dataset.menu === "1"||ul.children[i].dataset.menu === "2") {
         rightNav.classList.remove('on');
         gameSetting.parentNode.classList.add('hidden');
-        // ggQuizSetting.classList.add('hidden');
       } else {
           rightNav.classList.add('on');
         }
@@ -110,7 +111,6 @@ for(let j=0; j<indi.children[0].children.length; j++) {
     if(indi.children[0].children[j].dataset.indi === "1"||indi.children[0].children[j].dataset.indi === "2") {
         rightNav.classList.remove('on');
         gameSetting.parentNode.classList.add('hidden');
-        // ggQuizSetting.classList.add('hidden');
       } else {
           rightNav.classList.add('on');
         }

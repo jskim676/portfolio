@@ -19,12 +19,12 @@ function pwPrintName () {
     setTimeout(()=>{greeting.style.opacity = 0;},3000)
     loginScreen.classList.add('hidden');
     changeLoginScreen.classList.remove('hidden');
-    myIcon.classList.remove('hidden');
-    changeLoginScreen.children[0].children[0].src = myIcon.children[0].src;
+    document.getElementById('myIcon').classList.remove('hidden');
+    changeLoginScreen.children[0].children[0].src = document.getElementById('myIcon').children[0].src;
     changeLoginScreen.children[0].children[1].textContent = userName;
-    changeLoginScreen.children[0].classList.add('animation-YFast');
-    changeLoginScreen.children[1].classList.add('animation-YFast');
-    changeLoginScreen.children[2].classList.add('animation-YFast');
+    for(let i=0; i<changeLoginScreen.children.length; i++) {
+      changeLoginScreen.children[i].classList.add('animation-YFast');
+    }
   }
 }
 loginBtn.addEventListener('click', function() {
@@ -38,7 +38,6 @@ function rankGame (target) {
   
   let totalGame = Math.floor(Math.random()*(150-100)+100);
   let winRate = Math.floor(Math.random()*(100-50)+50);
-  // totalGame = Math.floor(Math.random()*(150-100)+100);
   target.nextElementSibling.children[1].textContent = `${Math.floor(100*winRate/totalGame)}% ${totalGame}전 ${winRate}승 ${totalGame-winRate}패`;
 }
 

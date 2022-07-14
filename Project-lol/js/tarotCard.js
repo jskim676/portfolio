@@ -16,12 +16,19 @@ function tarotCard () {
   const tarotBtn = document.getElementById('tarotBtn');
   const tarotResult = document.getElementById('tarotResult');
   
+  for(let i=0; i<22; i++) {
+    const cardDefault = document.createElement('img');
+    tarotCard.appendChild(cardDefault);
+    cardDefault.setAttribute('data-card',`${i}`);
+    cardDefault.src = "./img/tarotCard/cardDefault.png";
+  }
+  
   const card = tarotCard.children;
   let cardIndex = Math.floor(Math.random()*card.length);
   let cardState = false;
   
   // 카드의 위치,각도
-  for(let i = 0; i < tarotCard.children.length-1; i++) {
+  for(let i = 0; i < tarotCard.children.length; i++) {
     function position () {
       card[i].style.zIndex = i;
       card[i].style.left = `${i*1.6}vw`;

@@ -55,16 +55,16 @@ const nextGg = () => {
 }
 
 let squareAnswer = nextGg();
-const ggAppearAnswer = document.getElementById('ggAppearAnswer');
 
 // 답을 쓰게 되면 채팅창에 표기되며 정답일시 공개가 되며 맞춘 팀의 점수가 오름
 function ggPrintName () {
   for(let j=0; j<squareKey.length; j++) {
     if(squareKey[j].id === squareAnswer) {
       console.log(squareKey[j].name);
+      const ggInputAnswer = document.getElementById('ggInputAnswer').value;
+      const ggAppearAnswer = document.getElementById('ggAppearAnswer');
       if(ggAppearAnswer.children.length >= 0) {
         const answerBox = document.createElement('div');
-        const ggInputAnswer = document.getElementById('ggInputAnswer').value;
         ggAppearAnswer.appendChild(answerBox);
         answerBox.classList.add('answerBox');
         answerBox.innerText = ggInputAnswer;
@@ -77,10 +77,10 @@ function ggPrintName () {
 
           if(teamMember.ggA.classList.contains('consistOf')) {
             score(teamScore.ggA);
-            ggATeamValue.innerText = `${teamScore.ggA.children.length} / 5`;
+            teamValue.ggA.innerText = `${teamScore.ggA.children.length} / 5`;
           } else if (teamMember.ggB.classList.contains('consistOf')){
             score(teamScore.ggB);
-            ggBTeamValue.innerText = `${teamScore.ggB.children.length} / 5`;
+            teamValue.ggB.innerText = `${teamScore.ggB.children.length} / 5`;
           }
         }
         if(teamScore.ggA.children.length === 5 || teamScore.ggB.children.length === 5 ){

@@ -9,6 +9,12 @@ const skinATeamValue = document.getElementById('skinATeamValue');
 const skinBTeamValue = document.getElementById('skinBTeamValue');
 const ggATeamValue = document.getElementById('ggATeamValue');
 const ggBTeamValue = document.getElementById('ggBTeamValue');
+const teamValue = {
+  skinA : document.getElementById('skinATeamValue'),
+  skinB : document.getElementById('skinBTeamValue'),
+  ggA : document.getElementById('ggATeamValue'),
+  ggB : document.getElementById('ggBTeamValue')
+}
 
 const skinTimeValue = document.getElementById('skinTimeValue');
 const skinTimeBar = document.getElementById('skinTimeBar');
@@ -90,10 +96,10 @@ function skinPrintName () {
           setTimeout(()=> { nextSkin() , skinAnswer = nextSkin()[1];}, 1500);
           if(teamMember.skinA.classList.contains('consistOf')) {
             score(teamScore.skinA);
-            skinATeamValue.innerText = `${teamScore.skinA.children.length} / 5`;
+            teamValue.skinA.innerText = `${teamScore.skinA.children.length} / 5`;
           } else if (teamMember.skinB.classList.contains('consistOf')){
             score(teamScore.skinB);
-            skinBTeamValue.innerText = `${teamScore.skinB.children.length} / 5`;
+            teamValue.skinB.innerText = `${teamScore.skinB.children.length} / 5`;
           }
         }
         if(teamScore.skinA.children.length === 5 || teamScore.skinB.children.length === 5 ){

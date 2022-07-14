@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    for(let i=0; i<20; i++){
+      const img = document.createElement('img');
+      img.src = "https://pds.saramin.co.kr/company/logo/202010/19/qifxe3_6ea9-1pppbj5_logo.png"
+      img.setAttribute('data-img',`${i}`);
+      root.appendChild(img);
+    }
+    console.log(root);
+
+
+  </script>
+</body>
+</html>
