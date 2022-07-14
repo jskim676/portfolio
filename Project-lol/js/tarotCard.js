@@ -12,9 +12,9 @@ function tarotCard () {
 
   todayDate();
 
-  const tarotCard = document.getElementById('tarotCard');
+  const tarotCard = document.querySelector('#tarotCard > div:nth-child(1)');
   const tarotBtn = document.getElementById('tarotBtn');
-  const tarotResult = document.getElementById('tarotResult');
+  const tarotResult = document.querySelector('#tarotCard > div:nth-child(2)');
   
   for(let i=0; i<22; i++) {
     const cardDefault = document.createElement('img');
@@ -60,15 +60,16 @@ function tarotCard () {
     tarotBtn.addEventListener('click',function() {
       const sectionTarotCard = document.querySelector('#section-tarotCard > div')
       if(cardState === true) {
-        card[i].classList.add('hidden');
+        tarotCard.classList.add('on');
         sectionTarotCard.classList.add('tarotBgc');
         sectionTarotCard.style.transition = "1s";
-        tarotResult.children[0].children[i].style.opacity = 1;
-        tarotResult.children[0].children[cardIndex].style.opacity = 1;
-        tarotResult.children[0].children[cardIndex].style.zIndex = 2;
+        console.log(tarotResult.children[i]);
+        tarotResult.children[i].style.opacity = 1;
+        tarotResult.children[cardIndex].style.opacity = 1;
+        tarotResult.children[cardIndex].style.zIndex = 2;
         let rotate = [0, 180];
-        tarotResult.children[0].children[cardIndex].style.transform = `rotate(${rotate[Math.floor(Math.random()*2)]}deg)`;
-        setTimeout(()=>{tarotResult.children[0].classList.remove('on'), tarotResult.children[1].children[cardIndex].classList.remove('on')},700);
+        tarotResult.children[cardIndex].style.transform = `rotate(${rotate[Math.floor(Math.random()*2)]}deg)`;
+        setTimeout(()=>{tarotResult.classList.remove('on'), document.querySelector('#tarotCard > div:nth-child(3)').children[cardIndex].classList.remove('on')},700);
       }
     });
   };
