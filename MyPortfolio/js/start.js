@@ -1,6 +1,5 @@
-import { desktop } from "./script.js";
-
 function start () {
+  const desktop = document.getElementById('desktop');
   const startWin = document.getElementById('start-window');
   const startBtn = document.getElementById('start-button');
   
@@ -17,6 +16,8 @@ function start () {
       isStatus = true;
     }
   });
+  
+  // 바탕화면 클릭 시 시작창은 꺼짐
   
   desktop.addEventListener('click', function ()  {
     startWin.classList.add('hidden');

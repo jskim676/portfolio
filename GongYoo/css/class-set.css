@@ -6,10 +6,6 @@
   visibility: hidden;
 }
 
-.opacityHalf {
-  opacity: 0.5;
-}
-
 .animationX {
   -webkit-animation: fadeInX 1.5s ease;
           animation: fadeInX 1.5s ease;

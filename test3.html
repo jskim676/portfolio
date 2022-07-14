@@ -5,26 +5,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    form.form-example {
-      display: flex;
-      flex-direction: column;
-    }
-
-
-  </style>
 </head>
 <body>
-  <form action="" method="get">
-    <div class="form-example">
-      <input type="text" name="id" id="id" required>
-    </div>
-    <div>
-      <input type="password" name="pw" id="pw" required>
-    </div>
-    <div>
-      <button></button>
-    </div>
-  </form>
+  <button></button>
 </body>
+<script>
+  const btn = document.querySelector('button');
+  console.log(btn);
+  let num = 1;
+  btn.addEventListener('click',function() {
+    num++;
+    console.log(num);
+  })
+  console.log(num);
+
+</script>
 </html>

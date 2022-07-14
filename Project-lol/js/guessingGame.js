@@ -24,10 +24,10 @@ const ggPlayBtn = document.getElementById('ggPlayBtn');
 
 ggPlayBtn.addEventListener('click', function() {
   if(playState === true) {
-    setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 CC기가 있나요? 있다면 어떤 CC기가 있나요?";}, 1000);
-    setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 마나 코스트를 사용하나요?";}, 5000);
-    setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 이동기를 가지고 있나요?";}, 9000);
-    setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 주로 어느 라인을 가는건가요?";}, 13000);
+    // setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 CC기가 있나요? 있다면 어떤 CC기가 있나요?";}, 1000);
+    // setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 마나 코스트를 사용하나요?";}, 5000);
+    // setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 이동기를 가지고 있나요?";}, 9000);
+    // setTimeout(()=> { const questionBox = document.createElement('div');  ggAppearAnswer.appendChild(questionBox); questionBox.innerText = "이 챔피언은 주로 어느 라인을 가는건가요?";}, 13000);
 
 
     squareIcon.classList.add('hidden');

@@ -1,4 +1,4 @@
-import { gameWin, gameWinBtn, fullGameWin, fullGameWinBtn, qs, qsmark, programName } from "./script.js";
+import { win, winBtn, qs, qsmark, programName } from "./script.js";
 
 function fullMode () {
   let fullmode = false;
@@ -8,20 +8,20 @@ function fullMode () {
   const minimize = (minBtn) => {
     minBtn.addEventListener('click', function ()  {
       if(fullmode === false) {
-        gameWin.classList.remove('hidden');
+        win.game.classList.remove('hidden');
         qs.classList.remove('hidden');
       } else {
-        fullGameWin.classList.remove('hidden');
+        win.fullGame.classList.remove('hidden');
         qs.classList.remove('hidden');
       }
-      if(minBtn === gameWinBtn[0]) {
-        gameWin.classList.add('hidden');
+      if(minBtn === winBtn.game[0]) {
+        win.game.classList.add('hidden');
         qs.classList.add('hidden');
       }
     });
   }
 
-  minimize(gameWinBtn[0]);
+  minimize(winBtn.game[0]);
   minimize(programName.Name0);
 
   // 최대화 버튼
@@ -30,15 +30,15 @@ function fullMode () {
       remove.classList.remove('hidden');
       add.classList.add('hidden');
       num++;
-      fullGameWin.children[0].style.zIndex = num;
+      win.fullGame.children[0].style.zIndex = num;
       fullmode = mode;
     });
   }
 
-  maximize(gameWinBtn[1], 'click',  fullGameWin, gameWin, true);
-  maximize(document.querySelector('.smallTopBar'), 'dblclick', fullGameWin, gameWin, false);
-  maximize(fullGameWin.children[0].children[0], 'dblclick', gameWin, fullGameWin, false);
-  maximize(fullGameWinBtn[1], 'click', gameWin, fullGameWin, false);
+  maximize(winBtn.game[1], 'click',  win.fullGame, win.game, true);
+  maximize(document.querySelector('.smallTopBar'), 'dblclick', win.fullGame, win.game, false);
+  maximize(win.fullGame.children[0].children[0], 'dblclick', win.game, win.fullGame, false);
+  maximize(winBtn.fullGame[1], 'click', win.game, win.fullGame, false);
 
   // X 버튼
   const xBtn = (xBtn,win) => {
@@ -49,8 +49,8 @@ function fullMode () {
       programName.Name0.parentNode.removeChild(programName.Name0);
     });
   }
-  xBtn(gameWinBtn[2], gameWin);
-  xBtn(fullGameWinBtn[2], fullGameWin);
+  xBtn(winBtn.game[2], win.game);
+  xBtn(winBtn.fullGame[2], win.fullGame);
 }
 
 export default fullMode

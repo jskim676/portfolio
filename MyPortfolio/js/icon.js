@@ -1,9 +1,29 @@
-import { icons, programName, qs, qsmark, idSet , src, textContent ,gameWinBtn, fullGameWinBtn} from "./script.js";
+import { icons, programName, qs, qsmark} from "./script.js";
 
-function iconClick (target, win, btn, num) {
+function iconClick (target, win, btn) {
+  const idSet = {
+    zero : 'game-taskBar',
+    one : 'curriculum-taskBar',
+    two : 'portfolio-taskBar',
+    three : 'contact-taskBar'
+  }
+  const src = {
+    zero : './img/win98_icon/game_icon.svg',
+    one : './img/win98_icon/curriculum_icon.svg',
+    two : './img/win98_icon/portfolio_icon.svg',
+    three : './img/win98_icon/contact_icon.svg'
+  }
+  const textContent = {
+    zero : 'Game',
+    one : 'Curriculum',
+    two : 'Portfolio',
+    three : 'Contact'
+  }
   target.addEventListener('dblclick', function() {
-    num++;
-    win.children[0].style.zIndex = num;
+    // let num = 1;
+    // num++;
+    // win.children[0].style.zIndex = num;
+    // console.log(num);
     win.classList.remove('hidden');
 
     const createProgram = (name, icon, text) => {
@@ -42,26 +62,23 @@ function iconClick (target, win, btn, num) {
         }
       });
     }
-
-    if(target === icons[0]) {
-      if(document.querySelector(`#${idSet.zero}`) === null) {
-        qs.classList.remove('hidden');
-        qsmark.classList.remove('hidden');
-        createProgram(programName.Name0, programName.Name0Icon, programName.Name0Text);
-      }
-    } else if(target === icons[1]) {
-      if(document.querySelector(`#${idSet.one}`) === null) {
-        createProgram(programName.Name1, programName.Name1Icon, programName.Name1Text);
-      }
-    } else if (target === icons[2]) {
-      if(document.querySelector(`#${idSet.two}`) === null) {
-        createProgram(programName.Name2, programName.Name2Icon, programName.Name2Text);
-      }
-    } else if (target === icons[3]) {
-      if(document.querySelector(`#${idSet.three}`) === null) {
-        createProgram(programName.Name3, programName.Name3Icon, programName.Name3Text);
+    
+    const desktopIcon = (icon, idSet, pgname, pgicon, pgtext) => {
+      if(target === icon) {
+        if(document.querySelector(idSet) === null) {
+          createProgram(pgname, pgicon, pgtext);
+          if(target === icons[0]) {
+            qs.classList.remove('hidden');
+            qsmark.classList.remove('hidden');
+          }
+        }
       }
     }
+
+    desktopIcon(icons[0], `#${idSet.zero}`, programName.Name0, programName.Name0Icon, programName.Name0Text);
+    desktopIcon(icons[1], `#${idSet.one}`, programName.Name1, programName.Name1Icon, programName.Name1Text);
+    desktopIcon(icons[2], `#${idSet.two}`, programName.Name2, programName.Name2Icon, programName.Name2Text);
+    desktopIcon(icons[3], `#${idSet.three}`, programName.Name3, programName.Name3Icon, programName.Name3Text);
   }); 
 }
 

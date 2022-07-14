@@ -1,8 +1,9 @@
-import { scrolling,scrollingTop} from "./script.js";
+import { scrolling, scrollingTop } from "./script.js";
 
-function moving (topbar,win,container, num) {
+function moving (topbar,win,container) {
   const {width:containerWidth, height:containerHeight} = container.getBoundingClientRect();
   const {width:moveWidth, height:moveHeight} = win.getBoundingClientRect();
+  let num = 1;
   
   let isDragging = null;
   let originLeft = null;
@@ -18,9 +19,7 @@ function moving (topbar,win,container, num) {
     originTop = win.offsetTop;
   });
   
-  win.addEventListener('mouseup', function() {
-    num++;
-    win.style.zIndex = num;
+  win.addEventListener('mouseover', function() {
   });
   
   document.addEventListener('mouseup', (e) => {

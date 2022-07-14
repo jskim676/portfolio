@@ -7,85 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="root"></div>
+  <button id="te">click</button>
+  <img src="" alt="">
   <script>
-const ajax = new XMLHttpRequest();
-const championURL = "https://ddragon.leagueoflegends.com/cdn/12.6.1/data/en_US/champion.json";
-ajax.open('GET', championURL, true);
-ajax.send();
+    const ajax = new XMLHttpRequest();
+    const iconURL = "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/profile-icons.json";
+    ajax.open('GET', iconURL, true);
+    ajax.send();
 
-const hardCc = ["Knock", "Stun", "Root", "root", "Taunts", "stun", "Suppresses", "Grounded", "Pulling", "Silencing", "Fear", "pulls", "Drags","Charms", "Airborne", "knock", "Asleep", "taunt"];
-const dash = ["dash", "leap","re-appear", "teleport", "rams into", "charges forward", "launches", "vaults", "Lunges"];
-
-let hardCcHave = false;
-let manaHave = false;
-let dashHave = false;
-
-const information = setTimeout(()=>{
-  const champions = Object.values(JSON.parse(ajax.response).data);
-  console.log(champions);
-  let ranChampion = champions[Math.floor(Math.random()*champions.length)].id;
-  console.log(ranChampion);
-  const infoURL = `http://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/champion/${ranChampion}.json`;
-  ajax.open('GET', infoURL, false);
-  ajax.send();
-  const info = JSON.parse(ajax.response).data;
-  console.log(info[ranChampion]);
-  const mana = info[ranChampion].partype;
-  const skills = info[ranChampion].spells;
-  const passive = info[ranChampion].passive;
-  const roll = info[ranChampion].tags.shift();
-  console.log(passive.description);
-  const ccContent = hardCc.filter(x=>passive.description.includes(x));
-  console.log(ccContent);
-  const dashContent = dash.filter(x=>passive.description.includes(x));
-  console.log(dashContent);
-
-  for(let i=0; i<skills.length; i++) {
-    console.log(skills[i].tooltip);
-    const skillContent = hardCc.filter(x=>skills[i].description.includes(x));
-    const skillToolTipContent = hardCc.filter(x=>skills[i].tooltip.includes(x));
-    console.log(skillToolTipContent);
-
-    const dashSkillContent = dash.filter(x=>skills[i].description.includes(x));
-    console.log(dashSkillContent);
-    const dashToolTipContent = dash.filter(x=>skills[i].tooltip.includes(x));
-    console.log(dashToolTipContent);
-
-
-    if (skillToolTipContent.length !== 0 || skillContent.length !== 0 || ccContent.length !== 0) {
-      hardCcHave = true;
-    }
-    if (mana === "Mana") {
-      manaHave = true;
-    }
-    if (dashToolTipContent.length !== 0 || dashSkillContent.length !== 0 || dashContent.length !== 0) {
-      dashHave = true;
-    }
-  }
-  setTimeout(()=>{
-    console.log(`${info[ranChampion].name}은(는) 역할군이 ${roll}입니다`);
-    if(hardCcHave === true) {
-      console.log(`${info[ranChampion].name}은(는) 하드 CC기를 갖고있습니다`);
-    } else {
-      console.log(`${info[ranChampion].name}은(는) 하드 CC기를 갖고있지 않습니다`);
-    }
-    if(manaHave === true) {
-      console.log(`${info[ranChampion].name}은(는) 마나 코스트를 사용합니다`);
-    } else {
-      console.log(`${info[ranChampion].name}은(는) 마나 코스트를 사용하지않습니다`);
-    }
-    if(dashHave === true) {
-      console.log(`${info[ranChampion].name}은(는) 이동기를 갖고있습니다`);
-    } else {
-      console.log(`${info[ranChampion].name}은(는) 이동기를 갖고있지않습니다`);
-    }
-
-
-    console.log()
-
-  },1000);
-},500);
+    window.addEventListener('load', function() {
+      const test = ajax.response;
+      console.log(test);
+    })
+    console.log(ajax.response);
 
 
 
