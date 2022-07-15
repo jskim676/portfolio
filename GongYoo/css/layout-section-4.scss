@@ -1,6 +1,6 @@
 #section-4 {
   width:var(--vw-100);
-  height:var(--vh-150);
+  height:var(--vh-100);
 
   & > div:nth-child(1) {
     width:inherit;
@@ -36,21 +36,41 @@
 
     & > div {
       width:70%;
-      height:90%;
+      height:70%;
 
       & > div {
-        width:100%;
-        height:40%;
-
+        width:25%;
+        height:100%;
+        
         & > div {
-          width:25%;
-          height:100%;
+          width:100%;
+          height:25%;
         }
 
         & > img {
-          width:25%;
-          height:100%;
+          width:100%;
+          height:75%;
         }
+      }
+
+      & > div:nth-child(1) > div:nth-child(1) {
+        background-color: var(--kanu-bgc);
+        color:var(--kanu-text);
+      }
+
+      & > div:nth-child(2) > div:nth-child(1) {
+        background-color: var(--discovery-bgc);
+        color:var(--discovery-text);
+      }
+
+      & > div:nth-child(3) > div:nth-child(1) {
+        background:var(--ssg-bgc);
+        color:var(--discovery-bgc);
+      }
+
+      & > div:nth-child(4) > div:nth-child(1) {
+        background-color: var(--terra-bgc);
+        color:var(--discovery-bgc);
       }
     }
   }

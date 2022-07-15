@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAA;EAAC,MAAM,EAAC,CAAC;EAAE,OAAO,EAAC,CAAC;EAAE,UAAU,EAAE,UAAU;CAAG;;AAChD,AAAA,EAAE,CAAA;EAAC,UAAU,EAAC,IAAI;CAAG;;AAErB,AAAA,IAAI,CAAC;EACH,UAAU,EAAC,MAAM;EACjB,UAAU,EAAC,IAAI;CAChB;;AAED,AAAA,KAAK,CAAC;EACJ,KAAK,EAAC,aAAa;EACnB,MAAM,EAAC,aAAa;EACpB,KAAK,EAAC,iBAAiB;CACxB",
-    "sources": [
-        "layout-common.scss"
-    ],
-    "names": [],
-    "file": "layout-common.css"
-}

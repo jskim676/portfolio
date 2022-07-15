@@ -1,7 +1,6 @@
 #section-5 {
   width: var(--vw-100);
   height: var(--vh-200);
-  border: 1px solid red;
 }
 
 #section-5 > div:nth-child(1) {
