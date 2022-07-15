@@ -2,6 +2,8 @@
 li{list-style:none;}
 
 body {
+  width:var(--vw-100);
+  height:var(--vh-700);
   overflow-x:hidden; 
   overflow-y:auto;
 }
