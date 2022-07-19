@@ -21,4 +21,22 @@ body {
   height: var(--vh-700);
   color: var(--text-color);
 }
+
+#root > nav {
+  width: 2%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+}
+
+#root > nav > ul {
+  width: 75%;
+  height: 60%;
+}
+
+#root > nav > ul > li {
+  width: 40%;
+  height: 15%;
+  border: 1px solid green;
+}
 /*# sourceMappingURL=layout-common.css.map */

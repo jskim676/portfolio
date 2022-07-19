@@ -13,7 +13,6 @@
 #section-1 > div:nth-child(1) > div {
   width: 75%;
   height: 50%;
-  opacity: 0;
 }
 
 #section-1 > div:nth-child(1) > div > h1:nth-child(1) {

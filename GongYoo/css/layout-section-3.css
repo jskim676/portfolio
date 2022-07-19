@@ -53,7 +53,7 @@
 }
 
 #section-3 > div:nth-child(3) > div:nth-child(1) > div {
-  width: 10%;
+  width: 8%;
 }
 
 #section-3 > div:nth-child(3) > div:nth-child(1) > div > i {
@@ -61,7 +61,7 @@
 }
 
 #section-3 > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) {
-  width: 90%;
+  width: 80%;
   height: 70%;
   overflow: hidden;
   position: relative;
@@ -115,7 +115,7 @@
 }
 
 #section-3 > div:nth-child(4) > div:nth-child(1) > div {
-  width: 10%;
+  width: 8%;
 }
 
 #section-3 > div:nth-child(4) > div:nth-child(1) > div > i {
@@ -123,7 +123,7 @@
 }
 
 #section-3 > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) {
-  width: 90%;
+  width: 80%;
   height: 70%;
   overflow: hidden;
   position: relative;

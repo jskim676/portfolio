@@ -6,6 +6,16 @@
   visibility: hidden;
 }
 
+.fadeIn {
+  -webkit-animation: fadeIn 1.5s ease;
+          animation: fadeIn 1.5s ease;
+}
+
+.fadeInFast {
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
+}
+
 .animationX {
   -webkit-animation: fadeInX 1.5s ease;
           animation: fadeInX 1.5s ease;
@@ -44,6 +54,24 @@
 .animation-YFast {
   -webkit-animation: fadeIn-Y 0.5s ease;
           animation: fadeIn-Y 0.5s ease;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeInX {
@@ -148,6 +176,10 @@
             transform: translateY(0);
     opacity: 1;
   }
+}
+
+.select {
+  background-color: blue;
 }
 
 .leftBtn {

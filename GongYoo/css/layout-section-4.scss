@@ -39,7 +39,7 @@
       height:70%;
 
       & > div {
-        width:25%;
+        width:22%;
         height:100%;
         
         & > div {
@@ -61,6 +61,10 @@
       & > div:nth-child(2) > div:nth-child(1) {
         background-color: var(--discovery-bgc);
         color:var(--discovery-text);
+
+        & > p {
+          font-size:12px;
+        }
       }
 
       & > div:nth-child(3) > div:nth-child(1) {

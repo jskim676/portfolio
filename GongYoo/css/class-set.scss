@@ -2,6 +2,10 @@
 
 .hidden { visibility: hidden;}
 
+.fadeIn {animation:fadeIn 1.5s ease;}
+
+.fadeInFast {animation:fadeIn 0.5s ease;}
+
 .animationX {animation:fadeInX 1.5s ease;}
 
 .animation-X {animation:fadeIn-X 1.5s ease;}
@@ -17,6 +21,16 @@
 .animationYFast {animation:fadeInY 0.5s ease;}
 
 .animation-YFast {animation:fadeIn-Y 0.5s ease;}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes fadeInX {
   0% {
@@ -60,6 +74,10 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.select {
+  background-color: blue;
 }
 
 .leftBtn {
