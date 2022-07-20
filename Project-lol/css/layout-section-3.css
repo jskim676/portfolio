@@ -40,10 +40,11 @@
 
 #shortDescription {
   width:inherit;
-  height:6vh;
+  height:10vh;
 }
 
 #shortDescription > div {
+  height:8vh;
   opacity: 0;
   position:absolute;
 }
@@ -150,8 +151,4 @@
   margin-left:5%;
 }
 
-#detailDescription {
-  width:19vw;
-  height:inherit;
-}
 
