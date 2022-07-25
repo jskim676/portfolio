@@ -1,4 +1,4 @@
-function scrolling (target, height, animation) {
+function scrolling (target, height, nav, animation) {
   window.addEventListener('wheel',e=> {
     let winY = window.pageYOffset;
     if(winY > height) {

@@ -3,7 +3,7 @@ import slideAndHover from "./slideAndHover.js";
 import scrolling from "./scrolling.js";
 import ad from "./advertisement.js";
 
-// const ul = document.querySelector('nav > ul');
+export const ul = document.querySelector('nav > ul');
 
 const introTitle = document.getElementById('introTitle');
 
@@ -17,12 +17,11 @@ export const sectionTitle = {
   five : document.getElementById('sectionFiveTitle'),
 }
 
-ad();
 
 scrolling(sectionTitle.one, sectionHeight/2, `animation-YFast`); scrolling(sectionTitle.two, sectionHeight*3/2, `animation-XFast`);
 scrolling(sectionTitle.three, sectionHeight*5/2, `animation-XFast`); scrolling(sectionTitle.four, sectionHeight*7/2, `animationXFast`);
 scrolling(sectionTitle.five, sectionHeight*9/2, `animation-YFast`); 
-// scrolling(ul,sectionHeight/2,`fadeInFast`);
+scrolling(ul,sectionHeight/2,`fadeInFast`);
 
 filmographyTitle();
 slideAndHover();
@@ -30,13 +29,16 @@ slideAndHover();
 
 
 
-// const section = {
-//   one : document.getElementById('section-1'),
-//   two: document.getElementById('section-2'),
-//   three : document.getElementById('section-3'),
-//   four : document.getElementById('section-4'),
-//   five : document.getElementById('section-5'),
-// }
+export const section = {
+  one : document.getElementById('section-1'),
+  two: document.getElementById('section-2'),
+  three : document.getElementById('section-3'),
+  four : document.getElementById('section-4'),
+  five : document.getElementById('section-5'),
+}
+
+
+ad();
 
 // const {height : pageHeight} = section.one.getBoundingClientRect();
 
@@ -49,7 +51,6 @@ slideAndHover();
 //     })
 //   });
 // }
-
 
 
 // ul.addEventListener('click', e=> {

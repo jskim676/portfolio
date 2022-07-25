@@ -26,10 +26,11 @@
 }
 
 #section-4 > div:nth-child(1) > div:nth-child(2) {
-  width: 20%;
-  height: 50%;
+  width: 25%;
+  height: 70%;
   border: solid var(--award-color);
-  border-width: 0 4px;
+  border-width: 0 5px;
+  font-size: 20px;
 }
 
 #section-4 > div:nth-child(2) {
@@ -38,46 +39,69 @@
 }
 
 #section-4 > div:nth-child(2) > div {
-  width: 70%;
-  height: 70%;
+  width: 60%;
+  height: 80%;
 }
 
-#section-4 > div:nth-child(2) > div > div {
-  width: 22%;
+#section-4 > div:nth-child(2) > div > div:nth-child(1) {
+  width: 25%;
+  height: 100%;
+  border: 1px solid red;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div {
+  width: 100%;
   height: 100%;
 }
 
-#section-4 > div:nth-child(2) > div > div > div {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div > div {
   width: 100%;
-  height: 25%;
+  height: 60%;
 }
 
-#section-4 > div:nth-child(2) > div > div > img {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div > img {
   width: 100%;
   height: 75%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
   background-color: var(--kanu-bgc);
   color: var(--kanu-text);
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
   background-color: var(--discovery-bgc);
   color: var(--discovery-text);
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > p {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > p {
   font-size: 12px;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(3) > div:nth-child(1) {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
   background: var(--ssg-bgc);
   color: var(--discovery-bgc);
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(4) > div:nth-child(1) {
+#section-4 > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) {
   background-color: var(--terra-bgc);
   color: var(--discovery-bgc);
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) {
+  width: 70%;
+  height: 100%;
+  border: 1px solid blue;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > img {
+  width: auto;
+  height: 100%;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div {
+  width: 40%;
+  height: 100%;
+  border: 1px solid green;
 }
 /*# sourceMappingURL=layout-section-4.css.map */

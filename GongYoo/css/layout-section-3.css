@@ -26,19 +26,18 @@
   margin-left: 33vw;
 }
 
-#section-3 > div:nth-child(2) > h2:nth-child(1) {
+#section-3 > div:nth-child(2) > h2 {
   font-size: 75px;
   font-weight: 700;
 }
 
-#section-3 > div:nth-child(2) > h2:nth-child(2) {
-  font-size: 75px;
-  font-weight: 700;
+#section-3 > div:nth-child(2) > div {
+  width: 1.5%;
+  height: 30%;
+  background-color: var(--text-color);
 }
 
 #section-3 > div:nth-child(2) > h2:nth-child(3) {
-  font-size: 75px;
-  font-weight: 700;
   opacity: 0.1;
 }
 

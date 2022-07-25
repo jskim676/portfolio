@@ -25,19 +25,18 @@
 
     margin-left:33vw;
 
-    & > h2:nth-child(1) {
+    & > h2 {
       font-size: 75px;
       font-weight: 700;
     }
 
-    & > h2:nth-child(2) {
-      font-size: 75px;
-      font-weight: 700;
+    & > div {
+      width:1.5%;
+      height:30%;
+      background-color: var(--text-color);
     }
     
     & > h2:nth-child(3) {
-      font-size: 75px;
-      font-weight: 700;
       opacity: 0.1;
     }
   }
