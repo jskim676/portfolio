@@ -2,6 +2,7 @@ import filmographyTitle from "./filmography.js";
 import slideAndHover from "./slideAndHover.js";
 import scrolling from "./scrolling.js";
 import ad from "./advertisement.js";
+import nav from "./nav.js";
 
 export const ul = document.querySelector('nav > ul');
 
@@ -40,6 +41,7 @@ export const section = {
 
 ad();
 
+nav ();
 // const {height : pageHeight} = section.one.getBoundingClientRect();
 
 // for(let i=0; i<ul.children.length; i++) {
