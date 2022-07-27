@@ -19,6 +19,8 @@ export const sectionTitle = {
 }
 
 
+
+
 scrolling(sectionTitle.one, sectionHeight/2, `animation-YFast`); scrolling(sectionTitle.two, sectionHeight*3/2, `animation-XFast`);
 scrolling(sectionTitle.three, sectionHeight*5/2, `animation-XFast`); scrolling(sectionTitle.four, sectionHeight*7/2, `animationXFast`);
 scrolling(sectionTitle.five, sectionHeight*9/2, `animation-YFast`); 
@@ -38,6 +40,7 @@ export const section = {
   five : document.getElementById('section-5'),
 }
 
+export const {height : pageHeight} = section.one.getBoundingClientRect();
 
 ad();
 

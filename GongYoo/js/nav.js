@@ -1,7 +1,6 @@
-import { ul , section } from "./script.js";
+import { ul , pageHeight } from "./script.js";
 
 function nav () {
-  const {height : pageHeight} = section.one.getBoundingClientRect();
 
   for(let i=0; i<ul.children.length; i++) {
     ul.children[i].addEventListener('click',function () {

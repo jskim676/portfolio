@@ -78,43 +78,54 @@
 }
 
 #section-4 > div:nth-child(2) > div > div:nth-child(2) {
-  width: 70%;
+  width: 75%;
   height: 100%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > img {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > div {
   width: auto;
   height: 100%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div {
-  width: 50%;
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > div > img {
+  width: 100%;
   height: 100%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
+  width: 40%;
+  height: 100%;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
   width: 100%;
   height: 60%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(1) > p {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > p {
   padding: 10px;
   font-size: 20px;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(2) {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
   width: 100%;
   height: 30%;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(2) > div {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div {
   width: 40%;
   height: 5%;
   border: 1px solid black;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div > div:nth-child(2) > div > div {
-  width: 90%;
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div {
   height: 100%;
   background-color: blue;
 }

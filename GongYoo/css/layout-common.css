@@ -33,6 +33,9 @@ body {
 #root > nav > ul {
   width: 75%;
   height: 60%;
+  opacity: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 #root > nav > ul > li {
