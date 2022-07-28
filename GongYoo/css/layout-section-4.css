@@ -102,31 +102,23 @@
 #section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) {
   width: 40%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
-  width: 100%;
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div {
+  width: 400%;
   height: 60%;
+  position: absolute;
 }
 
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > p {
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > div {
+  width: 100%;
+  height: 100%;
+}
+
+#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div > div > p {
   padding: 10px;
   font-size: 20px;
-}
-
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
-  width: 100%;
-  height: 30%;
-}
-
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div {
-  width: 40%;
-  height: 5%;
-  border: 1px solid black;
-}
-
-#section-4 > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div {
-  height: 100%;
-  background-color: blue;
 }
 /*# sourceMappingURL=layout-section-4.css.map */
